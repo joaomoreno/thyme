@@ -1,0 +1,230 @@
+// !$*UTF8*$!
+{
+	089C165DFE840E0CC02AAC07 /* English */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1171, 560}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 45}";
+		};
+	};
+	256AC3D80F4B6AC300CF3369 /* ThymeAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1171, 630}}";
+			sepNavSelRange = "{32, 0}";
+			sepNavVisRange = "{0, 862}";
+		};
+	};
+	256AC3D90F4B6AC300CF3369 /* ThymeAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1171, 1665}}";
+			sepNavSelRange = "{1933, 0}";
+			sepNavVisRange = "{1815, 687}";
+		};
+	};
+	256AC3F00F4B6AF500CF3369 /* Thyme_Prefix.pch */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1171, 555}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 139}";
+		};
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = CF00AF0F1120CEEF00F3503E /* Tyme */;
+		activeTarget = 8D1107260486CEB800E47090 /* Thyme */;
+		addToTargets = (
+			8D1107260486CEB800E47090 /* Thyme */,
+		);
+		breakpoints = (
+		);
+		codeSenseManager = CF00AF231120CF0600F3503E /* Code sense */;
+		executables = (
+			CF00AF0F1120CEEF00F3503E /* Tyme */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					993,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 287455640;
+			PBXWorkspaceStateSaveDate = 287455640;
+		};
+		perUserProjectItems = {
+			CF00B02D1120E57500F3503E /* PBXTextBookmark */ = CF00B02D1120E57500F3503E /* PBXTextBookmark */;
+			CF00B02F1120E57500F3503E /* PBXTextBookmark */ = CF00B02F1120E57500F3503E /* PBXTextBookmark */;
+			CF893CC51120E9F700710DC9 /* PBXTextBookmark */ = CF893CC51120E9F700710DC9 /* PBXTextBookmark */;
+			CF893CC61120E9F700710DC9 /* PBXTextBookmark */ = CF893CC61120E9F700710DC9 /* PBXTextBookmark */;
+			CF893CC71120E9F700710DC9 /* PBXTextBookmark */ = CF893CC71120E9F700710DC9 /* PBXTextBookmark */;
+			CF893CC81120E9F700710DC9 /* PlistBookmark */ = CF893CC81120E9F700710DC9 /* PlistBookmark */;
+			CF99FFFD11223A2F007AC3C4 /* PBXTextBookmark */ = CF99FFFD11223A2F007AC3C4 /* PBXTextBookmark */;
+			CFE726D4112235C300FFBDAB /* PBXTextBookmark */ = CFE726D4112235C300FFBDAB /* PBXTextBookmark */;
+		};
+		sourceControlManager = CF00AF221120CF0600F3503E /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	29B97316FDCFA39411CA2CEA /* main.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1171, 555}}";
+			sepNavSelRange = "{20, 0}";
+			sepNavVisRange = "{0, 241}";
+		};
+	};
+	8D1107260486CEB800E47090 /* Thyme */ = {
+		activeExec = 0;
+		executables = (
+			CF00AF0F1120CEEF00F3503E /* Tyme */,
+		);
+	};
+	CF00AF0F1120CEEF00F3503E /* Tyme */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = Tyme;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	CF00AF221120CF0600F3503E /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	CF00AF231120CF0600F3503E /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	CF00B02D1120E57500F3503E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CF00B02E1120E57500F3503E /* NSRunLoop.h */;
+		name = "NSRunLoop.h: 30";
+		rLen = 60;
+		rLoc = 706;
+		rType = 0;
+		vrLen = 1016;
+		vrLoc = 0;
+	};
+	CF00B02E1120E57500F3503E /* NSRunLoop.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = NSRunLoop.h;
+		path = /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSRunLoop.h;
+		sourceTree = "<absolute>";
+	};
+	CF00B02F1120E57500F3503E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 089C165DFE840E0CC02AAC07 /* English */;
+		name = "InfoPlist.strings: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 45;
+		vrLoc = 0;
+	};
+	CF893CC51120E9F700710DC9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D80F4B6AC300CF3369 /* ThymeAppDelegate.h */;
+		name = "ThymeAppDelegate.h: 3";
+		rLen = 0;
+		rLoc = 32;
+		rType = 0;
+		vrLen = 862;
+		vrLoc = 0;
+	};
+	CF893CC61120E9F700710DC9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3F00F4B6AF500CF3369 /* Thyme_Prefix.pch */;
+		name = "Thyme_Prefix.pch: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 139;
+		vrLoc = 0;
+	};
+	CF893CC71120E9F700710DC9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 3";
+		rLen = 0;
+		rLoc = 20;
+		rType = 0;
+		vrLen = 241;
+		vrLoc = 0;
+	};
+	CF893CC81120E9F700710DC9 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Thyme-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			LSUIElement,
+		);
+		name = "/Users/joao/Desktop/Tyme/Thyme-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	CF99FFFD11223A2F007AC3C4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D90F4B6AC300CF3369 /* ThymeAppDelegate.m */;
+		name = "ThymeAppDelegate.m: 84";
+		rLen = 0;
+		rLoc = 1933;
+		rType = 0;
+		vrLen = 687;
+		vrLoc = 1815;
+	};
+	CFE726D4112235C300FFBDAB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D90F4B6AC300CF3369 /* ThymeAppDelegate.m */;
+		name = "ThymeAppDelegate.m: 73";
+		rLen = 0;
+		rLoc = 1770;
+		rType = 0;
+		vrLen = 715;
+		vrLoc = 1785;
+	};
+}
