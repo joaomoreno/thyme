@@ -1,15 +1,8 @@
-h3. Introduction
-
 Thyme is a standalone application which times your tasks, one by one.
-
-h3. Usage
 
 Open the application and notice that now you have a timer on your OS X status bar. You can click it to start or stop it. That's it!
 
-h3. Shortcut
+The start / stop action can be triggered by the keyboard shortcut: **Ctrl+T**.
 
-The start / stop action can be triggered by the keyboard shortcut: Ctrl+T.
+__João Moreno, 2010__
 
-h3. Credits
-
-João Moreno, 2010
