@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ThymeAppDelegate : NSObject <NSApplicationDelegate>
+@interface ThymeAppDelegate : NSObject
 {
     NSInteger seconds;
     Boolean isTicking;

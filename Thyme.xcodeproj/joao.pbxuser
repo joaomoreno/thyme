@@ -2,7 +2,7 @@
 {
 	089C165DFE840E0CC02AAC07 /* English */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1171, 560}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1171, 511}}";
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 45}";
 		};
@@ -10,15 +10,15 @@
 	256AC3D80F4B6AC300CF3369 /* ThymeAppDelegate.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1171, 630}}";
-			sepNavSelRange = "{32, 0}";
-			sepNavVisRange = "{0, 862}";
+			sepNavSelRange = "{195, 0}";
+			sepNavVisRange = "{0, 787}";
 		};
 	};
 	256AC3D90F4B6AC300CF3369 /* ThymeAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1171, 1665}}";
-			sepNavSelRange = "{1933, 0}";
-			sepNavVisRange = "{1815, 687}";
+			sepNavIntBoundsRect = "{{0, 0}, {1171, 1635}}";
+			sepNavSelRange = "{922, 0}";
+			sepNavVisRange = "{0, 770}";
 		};
 	};
 	256AC3F00F4B6AF500CF3369 /* Thyme_Prefix.pch */ = {
@@ -64,18 +64,18 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 287455640;
-			PBXWorkspaceStateSaveDate = 287455640;
+			PBXPerProjectTemplateStateSaveDate = 289349887;
+			PBXWorkspaceStateSaveDate = 289349887;
 		};
 		perUserProjectItems = {
 			CF00B02D1120E57500F3503E /* PBXTextBookmark */ = CF00B02D1120E57500F3503E /* PBXTextBookmark */;
-			CF00B02F1120E57500F3503E /* PBXTextBookmark */ = CF00B02F1120E57500F3503E /* PBXTextBookmark */;
-			CF893CC51120E9F700710DC9 /* PBXTextBookmark */ = CF893CC51120E9F700710DC9 /* PBXTextBookmark */;
+			CF3F7DE3113F2116008D82FB /* PBXTextBookmark */ = CF3F7DE3113F2116008D82FB /* PBXTextBookmark */;
+			CF3F7DE4113F2116008D82FB /* PBXTextBookmark */ = CF3F7DE4113F2116008D82FB /* PBXTextBookmark */;
+			CF3F7DE6113F211F008D82FB /* PBXTextBookmark */ = CF3F7DE6113F211F008D82FB /* PBXTextBookmark */;
 			CF893CC61120E9F700710DC9 /* PBXTextBookmark */ = CF893CC61120E9F700710DC9 /* PBXTextBookmark */;
 			CF893CC71120E9F700710DC9 /* PBXTextBookmark */ = CF893CC71120E9F700710DC9 /* PBXTextBookmark */;
 			CF893CC81120E9F700710DC9 /* PlistBookmark */ = CF893CC81120E9F700710DC9 /* PlistBookmark */;
-			CF99FFFD11223A2F007AC3C4 /* PBXTextBookmark */ = CF99FFFD11223A2F007AC3C4 /* PBXTextBookmark */;
-			CFE726D4112235C300FFBDAB /* PBXTextBookmark */ = CFE726D4112235C300FFBDAB /* PBXTextBookmark */;
+			CFAB63F6113F20950034E752 /* PBXTextBookmark */ = CFAB63F6113F20950034E752 /* PBXTextBookmark */;
 		};
 		sourceControlManager = CF00AF221120CF0600F3503E /* Source Control */;
 		userBuildSettings = {
@@ -155,7 +155,7 @@
 		path = /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSRunLoop.h;
 		sourceTree = "<absolute>";
 	};
-	CF00B02F1120E57500F3503E /* PBXTextBookmark */ = {
+	CF3F7DE3113F2116008D82FB /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 089C165DFE840E0CC02AAC07 /* English */;
 		name = "InfoPlist.strings: 1";
@@ -165,14 +165,24 @@
 		vrLen = 45;
 		vrLoc = 0;
 	};
-	CF893CC51120E9F700710DC9 /* PBXTextBookmark */ = {
+	CF3F7DE4113F2116008D82FB /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 256AC3D80F4B6AC300CF3369 /* ThymeAppDelegate.h */;
-		name = "ThymeAppDelegate.h: 3";
+		name = "ThymeAppDelegate.h: 11";
 		rLen = 0;
-		rLoc = 32;
+		rLoc = 195;
 		rType = 0;
-		vrLen = 862;
+		vrLen = 787;
+		vrLoc = 0;
+	};
+	CF3F7DE6113F211F008D82FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D90F4B6AC300CF3369 /* ThymeAppDelegate.m */;
+		name = "ThymeAppDelegate.m: 43";
+		rLen = 0;
+		rLoc = 922;
+		rType = 0;
+		vrLen = 770;
 		vrLoc = 0;
 	};
 	CF893CC61120E9F700710DC9 /* PBXTextBookmark */ = {
@@ -207,24 +217,14 @@
 		rLen = 0;
 		rLoc = 9223372036854775808;
 	};
-	CF99FFFD11223A2F007AC3C4 /* PBXTextBookmark */ = {
+	CFAB63F6113F20950034E752 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 256AC3D90F4B6AC300CF3369 /* ThymeAppDelegate.m */;
-		name = "ThymeAppDelegate.m: 84";
+		name = "ThymeAppDelegate.m: 43";
 		rLen = 0;
-		rLoc = 1933;
+		rLoc = 922;
 		rType = 0;
-		vrLen = 687;
-		vrLoc = 1815;
-	};
-	CFE726D4112235C300FFBDAB /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 256AC3D90F4B6AC300CF3369 /* ThymeAppDelegate.m */;
-		name = "ThymeAppDelegate.m: 73";
-		rLen = 0;
-		rLoc = 1770;
-		rType = 0;
-		vrLen = 715;
-		vrLoc = 1785;
+		vrLen = 1025;
+		vrLoc = 446;
 	};
 }
