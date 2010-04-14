@@ -1,0 +1,8 @@
+Thyme is a standalone application which times your tasks, one by one.
+
+Open the application and notice that now you have a timer on your OS X status bar. You can click it to start or stop it. That's it!
+
+The start / stop action can be triggered by the keyboard shortcut: **Ctrl+T**.
+
+__João Moreno, 2010__
+

@@ -7,8 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "DDHotKeyCenter.h"
+#import <Growl/Growl.h>
 
-@interface ThymeAppDelegate : NSObject
+@interface ThymeAppDelegate : NSObject <NSApplicationDelegate, GrowlApplicationBridgeDelegate>
 {
     NSInteger seconds;
     Boolean isTicking;
@@ -16,6 +18,8 @@
     
     NSThread *timerThread;
     NSStatusItem *statusItem;
+	
+	DDHotKeyCenter *hotKeyCenter;
     
     IBOutlet NSWindow *window;
     IBOutlet NSMenu *menu;
@@ -29,6 +33,7 @@
 
 @property(assign) NSThread *timerThread;
 @property(retain) NSStatusItem *statusItem;
+@property(retain) DDHotKeyCenter *hotKeyCenter;
 
 @property(retain) IBOutlet NSWindow *window;
 @property(retain) IBOutlet NSMenu *menu;
