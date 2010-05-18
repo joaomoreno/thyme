@@ -18,8 +18,8 @@
     
     NSThread *timerThread;
     NSStatusItem *statusItem;
-	
-	DDHotKeyCenter *hotKeyCenter;
+    
+    DDHotKeyCenter *hotKeyCenter;
     
     IBOutlet NSWindow *window;
     IBOutlet NSMenu *menu;

@@ -9,16 +9,16 @@
 	};
 	256AC3D80F4B6AC300CF3369 /* ThymeAppDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {694, 598}}";
-			sepNavSelRange = "{833, 0}";
-			sepNavVisRange = "{131, 894}";
+			sepNavIntBoundsRect = "{{0, 0}, {1110, 741}}";
+			sepNavSelRange = "{476, 0}";
+			sepNavVisRange = "{0, 1102}";
 		};
 	};
 	256AC3D90F4B6AC300CF3369 /* ThymeAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {817, 2496}}";
-			sepNavSelRange = "{2716, 0}";
-			sepNavVisRange = "{2731, 847}";
+			sepNavIntBoundsRect = "{{0, 0}, {1110, 2910}}";
+			sepNavSelRange = "{1629, 0}";
+			sepNavVisRange = "{1121, 1161}";
 			sepNavWindowFrame = "{{15, 15}, {750, 558}}";
 		};
 	};
@@ -32,6 +32,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Release;
 		activeExecutable = CF00AF0F1120CEEF00F3503E /* Tyme */;
+		activeSDKPreference = macosx10.6;
 		activeTarget = 8D1107260486CEB800E47090 /* Thyme */;
 		addToTargets = (
 			8D1107260486CEB800E47090 /* Thyme */,
@@ -48,7 +49,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					516,
+					932,
 					20,
 					48,
 					43,
@@ -65,8 +66,8 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 292427211;
-			PBXWorkspaceStateSaveDate = 292427211;
+			PBXPerProjectTemplateStateSaveDate = 295873325;
+			PBXWorkspaceStateSaveDate = 295873325;
 		};
 		perUserProjectItems = {
 			CF007EB5116E1BF30028AA45 /* PBXTextBookmark */ = CF007EB5116E1BF30028AA45 /* PBXTextBookmark */;
@@ -74,21 +75,16 @@
 			CF007EC1116E1D540028AA45 /* PBXTextBookmark */ = CF007EC1116E1D540028AA45 /* PBXTextBookmark */;
 			CF007F99116E1E210028AA45 /* PBXTextBookmark */ = CF007F99116E1E210028AA45 /* PBXTextBookmark */;
 			CF007F9B116E1E210028AA45 /* PBXTextBookmark */ = CF007F9B116E1E210028AA45 /* PBXTextBookmark */;
-			CF00804C116E72FA0028AA45 /* PBXTextBookmark */ = CF00804C116E72FA0028AA45 /* PBXTextBookmark */;
-			CF00804E116E72FA0028AA45 /* PBXTextBookmark */ = CF00804E116E72FA0028AA45 /* PBXTextBookmark */;
-			CF008050116E72FA0028AA45 /* PBXTextBookmark */ = CF008050116E72FA0028AA45 /* PBXTextBookmark */;
-			CF008052116E72FA0028AA45 /* PBXTextBookmark */ = CF008052116E72FA0028AA45 /* PBXTextBookmark */;
-			CF008054116E72FA0028AA45 /* PBXTextBookmark */ = CF008054116E72FA0028AA45 /* PBXTextBookmark */;
 			CF008088116E78A00028AA45 /* PBXTextBookmark */ = CF008088116E78A00028AA45 /* PBXTextBookmark */;
 			CF00808A116E78A00028AA45 /* PBXTextBookmark */ = CF00808A116E78A00028AA45 /* PBXTextBookmark */;
 			CF00808B116E78A00028AA45 /* PBXTextBookmark */ = CF00808B116E78A00028AA45 /* PBXTextBookmark */;
 			CF0080C7116E814B0028AA45 /* PBXTextBookmark */ = CF0080C7116E814B0028AA45 /* PBXTextBookmark */;
-			CF0082E0116E81DE0028AA45 /* PBXTextBookmark */ = CF0082E0116E81DE0028AA45 /* PBXTextBookmark */;
 			CF0082F0116E85370028AA45 /* PlistBookmark */ = CF0082F0116E85370028AA45 /* PlistBookmark */;
-			CF00831A116E8BDD0028AA45 /* PBXTextBookmark */ = CF00831A116E8BDD0028AA45 /* PBXTextBookmark */;
-			CF008323116E8FCB0028AA45 /* PlistBookmark */ = CF008323116E8FCB0028AA45 /* PlistBookmark */;
-			CF008324116E8FCB0028AA45 /* PBXTextBookmark */ = CF008324116E8FCB0028AA45 /* PBXTextBookmark */;
 			CF00B02D1120E57500F3503E /* PBXTextBookmark */ = CF00B02D1120E57500F3503E /* PBXTextBookmark */;
+			CF4C6F2C118CC2410038FDE3 /* PBXTextBookmark */ = CF4C6F2C118CC2410038FDE3 /* PBXTextBookmark */;
+			CF4C6F3B118CC27A0038FDE3 /* PlistBookmark */ = CF4C6F3B118CC27A0038FDE3 /* PlistBookmark */;
+			CF8EA8AE11A2AC500019AD24 /* PBXTextBookmark */ = CF8EA8AE11A2AC500019AD24 /* PBXTextBookmark */;
+			CFC25E4D118CFF2A001A178E /* PBXTextBookmark */ = CFC25E4D118CFF2A001A178E /* PBXTextBookmark */;
 		};
 		sourceControlManager = CF00AF221120CF0600F3503E /* Source Control */;
 		userBuildSettings = {
@@ -112,6 +108,7 @@
 			sepNavIntBoundsRect = "{{0, 0}, {726, 455}}";
 			sepNavSelRange = "{493, 0}";
 			sepNavVisRange = "{0, 1026}";
+			sepNavWindowFrame = "{{15, 59}, {1170, 814}}";
 		};
 	};
 	CF007EB5116E1BF30028AA45 /* PBXTextBookmark */ = {
@@ -126,6 +123,7 @@
 	};
 	CF007EB6116E1BF30028AA45 /* NSApplication.h */ = {
 		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
 		name = NSApplication.h;
 		path = /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/AppKit.framework/Versions/C/Headers/NSApplication.h;
 		sourceTree = "<absolute>";
@@ -162,6 +160,7 @@
 	};
 	CF007F9A116E1E210028AA45 /* CarbonEventsCore.h */ = {
 		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
 		name = CarbonEventsCore.h;
 		path = /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/Headers/CarbonEventsCore.h;
 		sourceTree = "<absolute>";
@@ -178,88 +177,9 @@
 	};
 	CF007F9C116E1E210028AA45 /* CarbonEvents.h */ = {
 		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
 		name = CarbonEvents.h;
 		path = /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/Headers/CarbonEvents.h;
-		sourceTree = "<absolute>";
-	};
-	CF00804C116E72FA0028AA45 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = CF00804D116E72FA0028AA45 /* SR_LeopardView.h */;
-		name = "SR_LeopardView.h: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 212;
-		vrLoc = 0;
-	};
-	CF00804D116E72FA0028AA45 /* SR_LeopardView.h */ = {
-		isa = PBXFileReference;
-		name = SR_LeopardView.h;
-		path = "/Users/joao/Desktop/shortcutrecorder-read-only/build/Debug/ShortcutRecorder.framework/Headers/SR_LeopardView.h";
-		sourceTree = "<absolute>";
-	};
-	CF00804E116E72FA0028AA45 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = CF00804F116E72FA0028AA45 /* SRValidator.h */;
-		name = "SRValidator.h: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 819;
-		vrLoc = 0;
-	};
-	CF00804F116E72FA0028AA45 /* SRValidator.h */ = {
-		isa = PBXFileReference;
-		name = SRValidator.h;
-		path = "/Users/joao/Desktop/shortcutrecorder-read-only/build/Debug/ShortcutRecorder.framework/Headers/SRValidator.h";
-		sourceTree = "<absolute>";
-	};
-	CF008050116E72FA0028AA45 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = CF008051116E72FA0028AA45 /* SRKeyCodeTransformer.h */;
-		name = "SRKeyCodeTransformer.h: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 302;
-		vrLoc = 0;
-	};
-	CF008051116E72FA0028AA45 /* SRKeyCodeTransformer.h */ = {
-		isa = PBXFileReference;
-		name = SRKeyCodeTransformer.h;
-		path = "/Users/joao/Desktop/shortcutrecorder-read-only/build/Debug/ShortcutRecorder.framework/Headers/SRKeyCodeTransformer.h";
-		sourceTree = "<absolute>";
-	};
-	CF008052116E72FA0028AA45 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = CF008053116E72FA0028AA45 /* SRCommon.h */;
-		name = "SRCommon.h: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 598;
-		vrLoc = 0;
-	};
-	CF008053116E72FA0028AA45 /* SRCommon.h */ = {
-		isa = PBXFileReference;
-		name = SRCommon.h;
-		path = "/Users/joao/Desktop/shortcutrecorder-read-only/build/Debug/ShortcutRecorder.framework/Headers/SRCommon.h";
-		sourceTree = "<absolute>";
-	};
-	CF008054116E72FA0028AA45 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = CF008055116E72FA0028AA45 /* SRRecorderCell.h */;
-		name = "SRRecorderCell.h: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 785;
-		vrLoc = 0;
-	};
-	CF008055116E72FA0028AA45 /* SRRecorderCell.h */ = {
-		isa = PBXFileReference;
-		name = SRRecorderCell.h;
-		path = "/Users/joao/Desktop/shortcutrecorder-read-only/build/Debug/ShortcutRecorder.framework/Headers/SRRecorderCell.h";
 		sourceTree = "<absolute>";
 	};
 	CF00807D116E75E80028AA45 /* DDHotKeyCenter.h */ = {
@@ -271,9 +191,9 @@
 	};
 	CF00807E116E75E80028AA45 /* DDHotKeyCenter.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {2784, 3029}}";
-			sepNavSelRange = "{7703, 16}";
-			sepNavVisRange = "{6686, 1275}";
+			sepNavIntBoundsRect = "{{0, 0}, {2784, 3360}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1065}";
 		};
 	};
 	CF008088116E78A00028AA45 /* PBXTextBookmark */ = {
@@ -288,6 +208,7 @@
 	};
 	CF008089116E78A00028AA45 /* NSEvent.h */ = {
 		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
 		name = NSEvent.h;
 		path = /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/AppKit.framework/Versions/C/Headers/NSEvent.h;
 		sourceTree = "<absolute>";
@@ -296,8 +217,8 @@
 		isa = PBXTextBookmark;
 		fRef = CF00807E116E75E80028AA45 /* DDHotKeyCenter.m */;
 		name = "DDHotKeyCenter.m: 244";
-		rLen = 16;
-		rLoc = 7703;
+		rLen = 0;
+		rLoc = 1099;
 		rType = 0;
 		vrLen = 1275;
 		vrLoc = 6686;
@@ -322,16 +243,6 @@
 		vrLen = 45;
 		vrLoc = 0;
 	};
-	CF0082E0116E81DE0028AA45 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 256AC3D80F4B6AC300CF3369 /* ThymeAppDelegate.h */;
-		name = "ThymeAppDelegate.h: 36";
-		rLen = 0;
-		rLoc = 833;
-		rType = 0;
-		vrLen = 894;
-		vrLoc = 131;
-	};
 	CF0082F0116E85370028AA45 /* PlistBookmark */ = {
 		isa = PlistBookmark;
 		fRef = CF0080C2116E80820028AA45 /* Growl Registration Ticket.growlRegDict */;
@@ -342,37 +253,6 @@
 		name = "/Users/joao/Desktop/Thyme/Growl Registration Ticket.growlRegDict";
 		rLen = 0;
 		rLoc = 2147483647;
-	};
-	CF00831A116E8BDD0028AA45 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 256AC3D90F4B6AC300CF3369 /* ThymeAppDelegate.m */;
-		name = "ThymeAppDelegate.m: 141";
-		rLen = 0;
-		rLoc = 2716;
-		rType = 0;
-		vrLen = 713;
-		vrLoc = 2542;
-	};
-	CF008323116E8FCB0028AA45 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 8D1107310486CEB800E47090 /* Thyme-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/joao/Desktop/Thyme/Thyme-Info.plist";
-		rLen = 0;
-		rLoc = 2147483647;
-	};
-	CF008324116E8FCB0028AA45 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 256AC3D90F4B6AC300CF3369 /* ThymeAppDelegate.m */;
-		name = "ThymeAppDelegate.m: 141";
-		rLen = 0;
-		rLoc = 2716;
-		rType = 0;
-		vrLen = 847;
-		vrLoc = 2731;
 	};
 	CF00AF0F1120CEEF00F3503E /* Tyme */ = {
 		isa = PBXExecutable;
@@ -434,5 +314,46 @@
 		name = NSRunLoop.h;
 		path = /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSRunLoop.h;
 		sourceTree = "<absolute>";
+	};
+	CF4C6F2C118CC2410038FDE3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D90F4B6AC300CF3369 /* ThymeAppDelegate.m */;
+		name = "ThymeAppDelegate.m: 78";
+		rLen = 0;
+		rLoc = 1629;
+		rType = 0;
+		vrLen = 1161;
+		vrLoc = 1121;
+	};
+	CF4C6F3B118CC27A0038FDE3 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Thyme-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/joao/Desktop/Thyme/Thyme-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	CF8EA8AE11A2AC500019AD24 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D80F4B6AC300CF3369 /* ThymeAppDelegate.h */;
+		name = "ThymeAppDelegate.h: 23";
+		rLen = 0;
+		rLoc = 476;
+		rType = 0;
+		vrLen = 1102;
+		vrLoc = 0;
+	};
+	CFC25E4D118CFF2A001A178E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D80F4B6AC300CF3369 /* ThymeAppDelegate.h */;
+		name = "ThymeAppDelegate.h: 27";
+		rLen = 0;
+		rLoc = 610;
+		rType = 0;
+		vrLen = 1102;
+		vrLoc = 0;
 	};
 }
