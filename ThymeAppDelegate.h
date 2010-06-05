@@ -3,7 +3,6 @@
 //  Thyme
 //
 //  Created by João Moreno on 2/8/10.
-//  Copyright 2010 Apple Inc. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
@@ -12,34 +11,55 @@
 
 @interface ThymeAppDelegate : NSObject <NSApplicationDelegate, GrowlApplicationBridgeDelegate>
 {
+    // Session
+    NSInteger hours;
+    NSInteger minutes;
     NSInteger seconds;
+    
+    // Timer
     Boolean isTicking;
     NSTimer *timer;
-    
     NSThread *timerThread;
-    NSStatusItem *statusItem;
     
+    // Hotkeys
     DDHotKeyCenter *hotKeyCenter;
     
-    IBOutlet NSWindow *window;
-    IBOutlet NSMenu *menu;
-    IBOutlet NSMenuItem *startStopItem;
-    IBOutlet NSMenuItem *resetItem;
+    // Interface
+    NSWindow *window;
+    NSPersistentStoreCoordinator *persistentStoreCoordinator;
+    NSManagedObjectModel *managedObjectModel;
+    NSManagedObjectContext *managedObjectContext;
+    
+    NSStatusItem *statusItem;
+    NSMenu *menu;
+    NSMenuItem *startStopItem;
+    NSMenuItem *resetItem;
+    
+    NSMenuItem *sessionsMenuSeparator;
+    NSMenuItem *sessionsMenuClearItem;
+    NSMutableArray *sessionsMenuItems;
 }
 
-@property NSInteger seconds;
-@property Boolean isTicking;
 @property(retain) NSTimer *timer;
-
 @property(assign) NSThread *timerThread;
-@property(retain) NSStatusItem *statusItem;
+
 @property(retain) DDHotKeyCenter *hotKeyCenter;
 
-@property(retain) IBOutlet NSWindow *window;
-@property(retain) IBOutlet NSMenu *menu;
-@property(retain) IBOutlet NSMenuItem *startStopItem;
-@property(retain) IBOutlet NSMenuItem *resetItem;
+@property(nonatomic, retain) IBOutlet NSWindow *window;
+@property(nonatomic, retain, readonly) IBOutlet NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property(nonatomic, retain, readonly) IBOutlet NSManagedObjectModel *managedObjectModel;
+@property(nonatomic, retain, readonly) IBOutlet NSManagedObjectContext *managedObjectContext;
 
+@property(retain) NSStatusItem *statusItem;
+@property(nonatomic, retain) IBOutlet NSMenu *menu;
+@property(nonatomic, retain) IBOutlet NSMenuItem *startStopItem;
+@property(nonatomic, retain) IBOutlet NSMenuItem *resetItem;
+
+@property(nonatomic, retain) NSMenuItem *sessionsMenuSeparator;
+@property(nonatomic, retain) NSMenuItem *sessionsMenuClearItem;
+@property(nonatomic, retain) NSMutableArray *sessionsMenuItems;
+
+- (IBAction)saveAction:sender;
 - (IBAction)startStop:(id)sender;
 - (IBAction)reset:(id)sender;
 

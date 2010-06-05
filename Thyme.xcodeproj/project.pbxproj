@@ -17,6 +17,12 @@
 		CF0080C3116E80820028AA45 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = CF0080C2116E80820028AA45 /* Growl Registration Ticket.growlRegDict */; };
 		CF0082E7116E83960028AA45 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF0082E6116E83960028AA45 /* Growl.framework */; };
 		CF00B0091120E26D00F3503E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF00B0081120E26D00F3503E /* MainMenu.xib */; };
+		CF0779E311B9568900439C51 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0779E211B9568900439C51 /* Session.m */; };
+		CF7FFC0B11B942E4005A78A3 /* DataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = CF7FFC0A11B942E4005A78A3 /* DataModel.xcdatamodel */; };
+		CFE78F1511BA73B700C2A003 /* logo.icns in Resources */ = {isa = PBXBuildFile; fileRef = CFE78F1411BA73B700C2A003 /* logo.icns */; };
+		CFE78F5511BA786A00C2A003 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CFE78F5411BA786A00C2A003 /* Credits.rtf */; };
+		CFE78F5911BA797A00C2A003 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = CFE78F5811BA797A00C2A003 /* LICENSE */; };
+		CFE78F8211BA7D5D00C2A003 /* logo_small.png in Resources */ = {isa = PBXBuildFile; fileRef = CFE78F8111BA7D5D00C2A003 /* logo_small.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,6 +56,13 @@
 		CF0080C2116E80820028AA45 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 		CF0082E6116E83960028AA45 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 		CF00B0081120E26D00F3503E /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		CF0779E111B9568900439C51 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
+		CF0779E211B9568900439C51 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
+		CF7FFC0A11B942E4005A78A3 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		CFE78F1411BA73B700C2A003 /* logo.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = logo.icns; sourceTree = "<group>"; };
+		CFE78F5411BA786A00C2A003 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		CFE78F5811BA797A00C2A003 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		CFE78F8111BA7D5D00C2A003 /* logo_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_small.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +120,7 @@
 		29B97314FDCFA39411CA2CEA /* Thyme */ = {
 			isa = PBXGroup;
 			children = (
+				CF7FFC0911B942E4005A78A3 /* Models */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -128,10 +142,14 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CFE78F8111BA7D5D00C2A003 /* logo_small.png */,
+				CFE78F1411BA73B700C2A003 /* logo.icns */,
 				CF00B0081120E26D00F3503E /* MainMenu.xib */,
 				8D1107310486CEB800E47090 /* Thyme-Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				CF0080C2116E80820028AA45 /* Growl Registration Ticket.growlRegDict */,
+				CFE78F5411BA786A00C2A003 /* Credits.rtf */,
+				CFE78F5811BA797A00C2A003 /* LICENSE */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -144,6 +162,16 @@
 				CF0082E6116E83960028AA45 /* Growl.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF7FFC0911B942E4005A78A3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CF7FFC0A11B942E4005A78A3 /* DataModel.xcdatamodel */,
+				CF0779E111B9568900439C51 /* Session.h */,
+				CF0779E211B9568900439C51 /* Session.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +221,10 @@
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				CF00B0091120E26D00F3503E /* MainMenu.xib in Resources */,
 				CF0080C3116E80820028AA45 /* Growl Registration Ticket.growlRegDict in Resources */,
+				CFE78F1511BA73B700C2A003 /* logo.icns in Resources */,
+				CFE78F5511BA786A00C2A003 /* Credits.rtf in Resources */,
+				CFE78F5911BA797A00C2A003 /* LICENSE in Resources */,
+				CFE78F8211BA7D5D00C2A003 /* logo_small.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +238,8 @@
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				256AC3DA0F4B6AC300CF3369 /* ThymeAppDelegate.m in Sources */,
 				CF00807F116E75E80028AA45 /* DDHotKeyCenter.m in Sources */,
+				CF7FFC0B11B942E4005A78A3 /* DataModel.xcdatamodel in Sources */,
+				CF0779E311B9568900439C51 /* Session.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,8 +264,6 @@
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../shortcutrecorder-read-only/build/Debug\"",
-					"\"$(SRCROOT)/../shortcutrecorder-read-only/build/Release\"",
 					"\"$(SRCROOT)\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -253,8 +285,6 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../shortcutrecorder-read-only/build/Debug\"",
-					"\"$(SRCROOT)/../shortcutrecorder-read-only/build/Release\"",
 					"\"$(SRCROOT)\"",
 				);
 				GCC_MODEL_TUNING = G5;
@@ -276,7 +306,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx10.5;
 			};
 			name = Debug;
 		};
@@ -289,7 +319,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx10.5;
 			};
 			name = Release;
 		};
