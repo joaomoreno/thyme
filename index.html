@@ -10,21 +10,22 @@
 	<style type="text/css">
 		body {
   		margin-top: 1.0em;
-  		background-color: #3b8c49;
+  		background-color: #fff;
 		  font-family: "Helvetica,Arial,FreeSans";
-  		color: #ffffff;
+  		color: #111;
     }
     #container {
       margin: 0 auto;
       width: 700px;
     }
-		h1 { font-size: 3.8em; color: #c473b6; margin-bottom: 3px; }
-		h1 .small { font-size: 0.4em; }
+		h1 { font-size: 3.8em; color: #e33; margin-bottom: 3px; padding-top: 40px }
+		h1 .small { font-size: 0.4em;  }
 		h1 a { text-decoration: none }
-		h2 { font-size: 1.5em; color: #c473b6; }
-    h3 { text-align: center; color: #c473b6; }
-    a { color: #c473b6; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
+		h2 { font-size: 1.5em; color: #e33; }
+    h3 { text-align: center; color: #e33; }
+    a { color: #e33; padding: 2px 0px; }
+    a.highlight:hover { color: #fff; background-color: #e33; }
+    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic; line-height: 1.3em; }
     .download { float: right; }
 		pre { background: #000; color: #fff; padding: 15px;}
     hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
@@ -39,42 +40,31 @@
   <div id="container">
 
     <div class="download">
-      <a href="http://github.com/joaomoreno/thyme/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/joaomoreno/thyme/tarball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
+      <a class="nohighlight" href="http://github.com/downloads/joaomoreno/thyme/thyme-0.1.dmg"><img border="0" src="screen.png"></a>
     </div>
 
-    <h1><a href="http://github.com/joaomoreno/thyme">thyme</a>
-      <span class="small">by <a href="http://github.com/joaomoreno">joaomoreno</a></span></h1>
+    <h1><a class="highlight" href="http://github.com/joaomoreno/thyme">thyme</a>
+      <span class="small">by <a class="highlight" href="http://joaomoreno.com/">João</a></span></h1>
 
     <div class="description">
-      Thyme is a timer for OS X. It's as simple as that.
+      Thyme is a timer for OS X. <br/>It's as simple as that.
     </div>
 
-    <p>Keep track of the time you spend in your tasks with Thyme. It gives you everything you would need in a barebones time tracking application, while being unobtrusive, placing itself on the OS X status bar.</p><h2>Install</h2>
-<p>Just drag to the Applications folder.</p>
-<h2>License</h2>
-<p>GNU GPLv3</p>
-<h2>Authors</h2>
-<p>João (mail@joaomoreno.com)<br/><br/>      </p>
-<h2>Contact</h2>
-<p>João (mail@joaomoreno.com)<br/>      </p>
+    <p>With Thyme you can keep track of the time you spend doing your tasks.</p><p>Thyme also remembers every time you use it, just so that you don't have to worry about it anymore.</p>
 
-
-    <h2>Download</h2>
+    <h2>Download &amp; Install</h2>
     <p>
-      You can download this project in either
-      <a href="http://github.com/joaomoreno/thyme/zipball/master">zip</a> or
-      <a href="http://github.com/joaomoreno/thyme/tarball/master">tar</a> formats.
+        Once you get the <a class="highlight" href="http://github.com/downloads/joaomoreno/thyme/thyme-0.1.dmg">latest binary</a>, you can drag Thyme to your Applications folder. 
     </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
+
+    <h2>Source Code</h2>
+    <p>You clone the project with <a class="highlight" href="http://git-scm.com">git</a>
       by running:
       <pre>$ git clone git://github.com/joaomoreno/thyme</pre>
     </p>
 
     <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/joaomoreno/thyme">joaomoreno/thyme</a>
+      get the source code on GitHub : <a class="highlight" href="http://github.com/joaomoreno/thyme">joaomoreno/thyme</a>
     </div>
 
   </div>
