@@ -309,14 +309,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ThymeAppDelegate.h</string>
+								<string>Thyme-Info.plist</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -324,11 +322,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ThymeAppDelegate.h</string>
+										<string>Thyme-Info.plist</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CFE78FDC11BAB8F000C2A003</string>
+										<string>CFBCE56311BE647000D7C459</string>
 										<key>history</key>
 										<array>
 											<string>CF00B02D1120E57500F3503E</string>
@@ -346,12 +344,12 @@
 											<string>CFE78F3E11BA75AC00C2A003</string>
 											<string>CFE78F7C11BA7D3500C2A003</string>
 											<string>CFE78F7D11BA7D3500C2A003</string>
-											<string>CFE78F8511BA7DAD00C2A003</string>
 											<string>CFE78F8611BA7DAD00C2A003</string>
 											<string>CFE78F9211BA7E3700C2A003</string>
 											<string>CFE78F9311BA7E3700C2A003</string>
 											<string>CFE78FD411BAB88100C2A003</string>
-											<string>CFE78FD511BAB88100C2A003</string>
+											<string>CFFF50A511BE7E8D006B223C</string>
+											<string>CFFF50BB11BE7E8D006B223C</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -409,9 +407,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>CFE78EF011B9CBBA00C2A003</string>
+				<string>CFBCE56411BE647000D7C459</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>CFE78EF111B9CBBA00C2A003</string>
+				<string>CFBCE56511BE647000D7C459</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -549,10 +547,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>CFE78FDD11BAB8F000C2A003</string>
-		<string>1C530D57069F1CE1000CFCEE</string>
-		<string>CFE78EFB11B9CBBA00C2A003</string>
-		<string>CFE78EFC11B9CBBA00C2A003</string>
+		<string>CFBCE56E11BE647000D7C459</string>
+		<string>CFBCE56F11BE647000D7C459</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>CF00AF201120CF0500F3503E</string>
@@ -580,7 +576,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ThymeAppDelegate.h</string>
+								<string></string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -597,8 +593,6 @@
 							<string>272pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -638,7 +632,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>CF00AF201120CF0500F3503E</string>
-				<string>CFE78EF211B9CBBA00C2A003</string>
+				<string>CFBCE56611BE647000D7C459</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -760,13 +754,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>CFE78EF311B9CBBA00C2A003</string>
+				<string>CFBCE56711BE647000D7C459</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>CFE78EF411B9CBBA00C2A003</string>
-				<string>CFE78EF511B9CBBA00C2A003</string>
-				<string>CFE78EF611B9CBBA00C2A003</string>
-				<string>CFE78EF711B9CBBA00C2A003</string>
-				<string>CFE78EF811B9CBBA00C2A003</string>
+				<string>CFBCE56811BE647000D7C459</string>
+				<string>CFBCE56911BE647000D7C459</string>
+				<string>CFBCE56A11BE647000D7C459</string>
+				<string>CFBCE56B11BE647000D7C459</string>
+				<string>CFBCE56C11BE647000D7C459</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -885,8 +879,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -922,7 +914,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>CFE78EF911B9CBBA00C2A003</string>
+				<string>CFBCE56D11BE647000D7C459</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
