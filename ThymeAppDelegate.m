@@ -39,7 +39,6 @@
 
 @synthesize timer;
 @synthesize timerThread;
-@synthesize hotKeyCenter;
 @synthesize statusItem;
 @synthesize window;
 @synthesize menu;
@@ -256,18 +255,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     [window close];
-    
-    // Configure the Global hotkey
-    DDHotKeyCenter *center = [[DDHotKeyCenter alloc] init];
-    self.hotKeyCenter = center;
-    [center release];
-    
-    [hotKeyCenter registerHotKeyWithKeyCode:KEYCODE_T
-                              modifierFlags:NSControlKeyMask
-                                     target:self
-                                     action:@selector(keyPressed)
-                                     object:nil];
-    
+        
     // Configure Growl
     [GrowlApplicationBridge setGrowlDelegate:self];
     
@@ -516,7 +504,6 @@
     [timer release];
     [timerThread release];
     [statusItem release];
-    [hotKeyCenter release];
     
     [sessionsMenuSeparator release];
     [sessionsMenuClearItem release];

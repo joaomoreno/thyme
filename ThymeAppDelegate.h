@@ -6,7 +6,6 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "DDHotKeyCenter.h"
 #import <Growl/Growl.h>
 
 #if (MAC_OS_X_VERSION_MAX_ALLOWED <= MAC_OS_X_VERSION_10_5)
@@ -24,9 +23,6 @@
     Boolean isTicking;
     NSTimer *timer;
     NSThread *timerThread;
-    
-    // Hotkeys
-    DDHotKeyCenter *hotKeyCenter;
     
     // Interface
     NSWindow *window;
@@ -46,8 +42,6 @@
 
 @property(retain) NSTimer *timer;
 @property(assign) NSThread *timerThread;
-
-@property(retain) DDHotKeyCenter *hotKeyCenter;
 
 @property(nonatomic, retain) IBOutlet NSWindow *window;
 @property(nonatomic, retain, readonly) IBOutlet NSPersistentStoreCoordinator *persistentStoreCoordinator;

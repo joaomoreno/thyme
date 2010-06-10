@@ -270,11 +270,16 @@
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>089C165CFE840E0CC02AAC07</string>
 								<string>29B97323FDCFA39411CA2CEA</string>
+								<string>1058C7A0FEA54F0111CA2CBB</string>
+								<string>1058C7A2FEA54F0111CA2CBB</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
+									<integer>23</integer>
+									<integer>22</integer>
+									<integer>21</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -309,12 +314,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Thyme-Info.plist</string>
+								<string>ThymeAppDelegate.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -322,11 +329,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Thyme-Info.plist</string>
+										<string>ThymeAppDelegate.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CFBCE56311BE647000D7C459</string>
+										<string>CFC61EE711C182C3000EDBF5</string>
 										<key>history</key>
 										<array>
 											<string>CF00B02D1120E57500F3503E</string>
@@ -346,10 +353,9 @@
 											<string>CFE78F7D11BA7D3500C2A003</string>
 											<string>CFE78F8611BA7DAD00C2A003</string>
 											<string>CFE78F9211BA7E3700C2A003</string>
-											<string>CFE78F9311BA7E3700C2A003</string>
-											<string>CFE78FD411BAB88100C2A003</string>
-											<string>CFFF50A511BE7E8D006B223C</string>
-											<string>CFFF50BB11BE7E8D006B223C</string>
+											<string>CFC61EDA11C182A4000EDBF5</string>
+											<string>CFC61EDB11C182A4000EDBF5</string>
+											<string>CFC61EDC11C182A4000EDBF5</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -407,9 +413,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>CFBCE56411BE647000D7C459</string>
+				<string>CFC61CCC11C181C0000EDBF5</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>CFBCE56511BE647000D7C459</string>
+				<string>CFC61CCD11C181C0000EDBF5</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -547,10 +553,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>CFBCE56E11BE647000D7C459</string>
-		<string>CFBCE56F11BE647000D7C459</string>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>CF00AF201120CF0500F3503E</string>
 		<string>/Users/joao/Desktop/Thyme/Thyme.xcodeproj</string>
 	</array>
@@ -593,6 +595,8 @@
 							<string>272pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -632,7 +636,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>CF00AF201120CF0500F3503E</string>
-				<string>CFBCE56611BE647000D7C459</string>
+				<string>CFC61CCE11C181C0000EDBF5</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
