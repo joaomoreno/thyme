@@ -8,15 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		256AC3DA0F4B6AC300CF3369 /* ThymeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* ThymeAppDelegate.m */; };
-		613692EC11A2982A005A594E /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF0082E6116E83960028AA45 /* Growl.framework */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
-		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		CF0080C3116E80820028AA45 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = CF0080C2116E80820028AA45 /* Growl Registration Ticket.growlRegDict */; };
-		CF0082E7116E83960028AA45 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF0082E6116E83960028AA45 /* Growl.framework */; };
 		CF00B0091120E26D00F3503E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF00B0081120E26D00F3503E /* MainMenu.xib */; };
 		CF0779E311B9568900439C51 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0779E211B9568900439C51 /* Session.m */; };
 		CF7FFC0B11B942E4005A78A3 /* DataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = CF7FFC0A11B942E4005A78A3 /* DataModel.xcdatamodel */; };
+		CFCB2A8D11C29D8F00E311D7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFCB2A8C11C29D8F00E311D7 /* Cocoa.framework */; };
 		CFE78F1511BA73B700C2A003 /* logo.icns in Resources */ = {isa = PBXBuildFile; fileRef = CFE78F1411BA73B700C2A003 /* logo.icns */; };
 		CFE78F5511BA786A00C2A003 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CFE78F5411BA786A00C2A003 /* Credits.rtf */; };
 		CFE78F5911BA797A00C2A003 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = CFE78F5811BA797A00C2A003 /* LICENSE */; };
@@ -30,7 +27,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				613692EC11A2982A005A594E /* Growl.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,7 +34,6 @@
 
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		256AC3D80F4B6AC300CF3369 /* ThymeAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThymeAppDelegate.h; sourceTree = "<group>"; };
 		256AC3D90F4B6AC300CF3369 /* ThymeAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThymeAppDelegate.m; sourceTree = "<group>"; };
@@ -47,12 +42,11 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Thyme-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Thyme-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Thyme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thyme.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF0080C2116E80820028AA45 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
-		CF0082E6116E83960028AA45 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 		CF00B0081120E26D00F3503E /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		CF0779E111B9568900439C51 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
 		CF0779E211B9568900439C51 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
 		CF7FFC0A11B942E4005A78A3 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		CFCB2A8C11C29D8F00E311D7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		CFE78F1411BA73B700C2A003 /* logo.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = logo.icns; sourceTree = "<group>"; };
 		CFE78F5411BA786A00C2A003 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		CFE78F5811BA797A00C2A003 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -64,8 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
-				CF0082E7116E83960028AA45 /* Growl.framework in Frameworks */,
+				CFCB2A8D11C29D8F00E311D7 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,8 +77,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CF0082E6116E83960028AA45 /* Growl.framework */,
-				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+				CFCB2A8C11C29D8F00E311D7 /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -137,7 +129,6 @@
 				CF00B0081120E26D00F3503E /* MainMenu.xib */,
 				8D1107310486CEB800E47090 /* Thyme-Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
-				CF0080C2116E80820028AA45 /* Growl Registration Ticket.growlRegDict */,
 				CFE78F5411BA786A00C2A003 /* Credits.rtf */,
 				CFE78F5811BA797A00C2A003 /* LICENSE */,
 			);
@@ -209,7 +200,6 @@
 			files = (
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				CF00B0091120E26D00F3503E /* MainMenu.xib in Resources */,
-				CF0080C3116E80820028AA45 /* Growl Registration Ticket.growlRegDict in Resources */,
 				CFE78F1511BA73B700C2A003 /* logo.icns in Resources */,
 				CFE78F5511BA786A00C2A003 /* Credits.rtf in Resources */,
 				CFE78F5911BA797A00C2A003 /* LICENSE in Resources */,

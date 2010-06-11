@@ -277,9 +277,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>23</integer>
-									<integer>22</integer>
-									<integer>21</integer>
+									<integer>15</integer>
+									<integer>11</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -314,14 +313,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ThymeAppDelegate.h</string>
+								<string>Thyme-Info.plist</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -329,33 +326,42 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ThymeAppDelegate.h</string>
+										<string>Thyme-Info.plist</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CFC61EE711C182C3000EDBF5</string>
+										<string>CFCB2B1211C2A20300E311D7</string>
 										<key>history</key>
 										<array>
-											<string>CF00B02D1120E57500F3503E</string>
-											<string>CF007EB5116E1BF30028AA45</string>
-											<string>CF007F99116E1E210028AA45</string>
-											<string>CF007F9B116E1E210028AA45</string>
-											<string>CF008088116E78A00028AA45</string>
-											<string>CF7FFBDA11B94238005A78A3</string>
 											<string>CF077A3B11B95CC600439C51</string>
 											<string>CFE78F3511BA75AC00C2A003</string>
 											<string>CFE78F3611BA75AC00C2A003</string>
-											<string>CFE78F3811BA75AC00C2A003</string>
 											<string>CFE78F3B11BA75AC00C2A003</string>
 											<string>CFE78F3C11BA75AC00C2A003</string>
-											<string>CFE78F3E11BA75AC00C2A003</string>
 											<string>CFE78F7C11BA7D3500C2A003</string>
 											<string>CFE78F7D11BA7D3500C2A003</string>
 											<string>CFE78F8611BA7DAD00C2A003</string>
 											<string>CFE78F9211BA7E3700C2A003</string>
+											<string>CFCB2AE811C2A0D100E311D7</string>
+											<string>CFCB2B0911C2A1DB00E311D7</string>
+											<string>CFCB2B0A11C2A1DB00E311D7</string>
 											<string>CFC61EDA11C182A4000EDBF5</string>
-											<string>CFC61EDB11C182A4000EDBF5</string>
-											<string>CFC61EDC11C182A4000EDBF5</string>
+										</array>
+										<key>prevStack</key>
+										<array>
+											<string>CFCB2AD811C29FFC00E311D7</string>
+											<string>CFCB2AD911C29FFC00E311D7</string>
+											<string>CFCB2ADA11C29FFC00E311D7</string>
+											<string>CFCB2ADF11C2A06200E311D7</string>
+											<string>CFCB2AE011C2A06200E311D7</string>
+											<string>CFCB2AE111C2A06200E311D7</string>
+											<string>CFCB2AE211C2A06200E311D7</string>
+											<string>CFCB2AE311C2A06200E311D7</string>
+											<string>CFCB2AE411C2A06200E311D7</string>
+											<string>CFCB2AE511C2A06200E311D7</string>
+											<string>CFCB2AEA11C2A0D100E311D7</string>
+											<string>CFCB2B0B11C2A1DB00E311D7</string>
+											<string>CFCB2B0C11C2A1DB00E311D7</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -413,9 +419,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>CFC61CCC11C181C0000EDBF5</string>
+				<string>CFCB2A9E11C29DC200E311D7</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>CFC61CCD11C181C0000EDBF5</string>
+				<string>CFCB2A9F11C29DC200E311D7</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -553,8 +559,10 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>CF00AF201120CF0500F3503E</string>
-		<string>/Users/joao/Desktop/Thyme/Thyme.xcodeproj</string>
+		<string>1C78EAAD065D492600B07095</string>
+		<string>/Users/joao/Desktop/thyme/Thyme.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 59 1440 819 0 0 1440 878 </string>
@@ -573,36 +581,36 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>ThymeAppDelegate.h</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1440, 272}}</string>
+								<string>{{0, 0}, {1145, 295}}</string>
 								<key>RubberWindowFrame</key>
-								<string>0 60 1440 818 0 0 1440 878 </string>
+								<string>282 190 1145 532 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>272pt</string>
+							<string>295pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>XCMainBuildResultsModuleGUID</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Build Results</string>
+								<string>Build</string>
 								<key>XCBuildResultsTrigger_Collapse</key>
 								<integer>1021</integer>
 								<key>XCBuildResultsTrigger_Open</key>
@@ -611,18 +619,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 277}, {1440, 500}}</string>
+								<string>{{0, 300}, {1145, 191}}</string>
 								<key>RubberWindowFrame</key>
-								<string>0 60 1440 818 0 0 1440 878 </string>
+								<string>282 190 1145 532 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXBuildResultsModule</string>
 							<key>Proportion</key>
-							<string>500pt</string>
+							<string>191pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>777pt</string>
+					<string>491pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -636,7 +644,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>CF00AF201120CF0500F3503E</string>
-				<string>CFC61CCE11C181C0000EDBF5</string>
+				<string>CFCB2A9A11C29DB500E311D7</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -645,7 +653,7 @@
 			<key>WindowContentMinSize</key>
 			<string>486 300</string>
 			<key>WindowString</key>
-			<string>0 60 1440 818 0 0 1440 878 </string>
+			<string>282 190 1145 532 0 0 1440 878 </string>
 			<key>WindowToolGUID</key>
 			<string>CF00AF201120CF0500F3503E</string>
 			<key>WindowToolIsVisible</key>
@@ -758,13 +766,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>CFBCE56711BE647000D7C459</string>
+				<string>CFCB2AB711C29EC600E311D7</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>CFBCE56811BE647000D7C459</string>
-				<string>CFBCE56911BE647000D7C459</string>
-				<string>CFBCE56A11BE647000D7C459</string>
-				<string>CFBCE56B11BE647000D7C459</string>
-				<string>CFBCE56C11BE647000D7C459</string>
+				<string>CFCB2AB811C29EC600E311D7</string>
+				<string>CFCB2AB911C29EC600E311D7</string>
+				<string>CFCB2ABA11C29EC600E311D7</string>
+				<string>CFCB2ABB11C29EC600E311D7</string>
+				<string>CFCB2ABC11C29EC600E311D7</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -883,6 +891,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -918,7 +928,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>CFBCE56D11BE647000D7C459</string>
+				<string>CFCB2ACA11C29EE300E311D7</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
@@ -928,7 +938,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

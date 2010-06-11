@@ -6,7 +6,6 @@
 //
 
 #import "ThymeAppDelegate.h"
-#import <Growl/Growl.h>
 #import "Session.h"
 
 #define KEYCODE_T 17
@@ -18,14 +17,11 @@
 - (void)tick;
 - (void)startTimer;
 
-- (void)startWithNotification:(Boolean)notification;
-- (void)stopWithNotification:(Boolean)notification;
+- (void)start;
+- (void)stop;
 - (void)reset;
 
 - (void)keyPressed;
-
-- (void)notifyStart;
-- (void)notifyStop;
 
 - (void)saveCurrentSession;
 
@@ -60,7 +56,6 @@
 
 - (void)setTime
 {
-    
     if (ZERO_TIME && !isTicking)
     {
         [statusItem setLength:26.0];
@@ -70,14 +65,13 @@
     else
     {
         if (hours > 0)
-            [statusItem setLength:72.0];
+            [statusItem setLength:74.0];
         else
-            [statusItem setLength:46.0];
+			[statusItem setLength:52.0];
         
         [statusItem setTitle:[self currentTimerValue]];
         [statusItem setImage:nil];
     }
-
 }
 
 - (void)tick
@@ -111,7 +105,7 @@
 
 #pragma mark Controller
 
-- (void)startWithNotification:(Boolean)notification
+- (void)start
 {
     timerThread = [[NSThread alloc] initWithTarget:self selector:@selector(startTimer) object:nil];
     [timerThread start];
@@ -120,13 +114,10 @@
     [resetItem setEnabled:YES];
     isTicking = YES;
     
-    if (notification)
-        [self notifyStart];
-    
     [self setTime];
 }
 
-- (void)stopWithNotification:(Boolean)notification
+- (void)stop
 {
     [timer invalidate];
     [timer release];
@@ -135,9 +126,6 @@
     [startStopItem setTitle:@"Continue"];
     isTicking = NO;
     
-    if (notification)
-        [self notifyStop];
-    
     [self setTime];
 }
 
@@ -145,7 +133,7 @@
 {
     hours = minutes = seconds = 0;
     
-    [self stopWithNotification:NO];
+    [self stop];
     [resetItem setEnabled:NO];
     [startStopItem setTitle:@"Start"];
 }
@@ -195,9 +183,9 @@
 - (IBAction)startStop:(id)sender
 {
     if (!isTicking)
-        [self startWithNotification:NO];
+        [self start];
     else 
-        [self stopWithNotification:NO];
+        [self stop];
 }
 
 - (IBAction)reset:(id)sender
@@ -216,48 +204,11 @@
     [self clearSessionsFromMenu];
 }
 
-#pragma mark Keyboard Events
-
-- (void)keyPressed
-{
-    if (!isTicking)
-        [self startWithNotification:YES];
-    else 
-        [self stopWithNotification:YES];
-}
-
-#pragma mark Growl Notifications
-
-- (void)notifyStart
-{
-    [GrowlApplicationBridge notifyWithTitle:@"Thyme"
-                                description:@"Started counting"
-                           notificationName:@"start"
-                                   iconData:nil
-                                   priority:0
-                                   isSticky:NO
-                               clickContext:nil];
-}
-
-- (void)notifyStop
-{
-    [GrowlApplicationBridge notifyWithTitle:@"Thyme"
-                                description:[@"Paused at " stringByAppendingString:[self currentTimerValue]]
-                           notificationName:@"start"
-                                   iconData:nil
-                                   priority:0
-                                   isSticky:NO
-                               clickContext:nil];
-}
-
 #pragma mark NSApplication
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     [window close];
-        
-    // Configure Growl
-    [GrowlApplicationBridge setGrowlDelegate:self];
     
     // Create class attributes
     NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:20];
