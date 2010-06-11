@@ -9,11 +9,7 @@
 #import "DDHotKeyCenter.h"
 #import <Growl/Growl.h>
 
-#if (MAC_OS_X_VERSION_MAX_ALLOWED <= MAC_OS_X_VERSION_10_5)
-@interface ThymeAppDelegate : NSObject <GrowlApplicationBridgeDelegate>
-#else
 @interface ThymeAppDelegate : NSObject <NSApplicationDelegate, GrowlApplicationBridgeDelegate>
-#endif
 {
     // Session
     NSInteger hours;
