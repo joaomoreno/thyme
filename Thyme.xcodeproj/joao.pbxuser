@@ -16,9 +16,9 @@
 	};
 	256AC3D90F4B6AC300CF3369 /* ThymeAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1110, 8235}}";
-			sepNavSelRange = "{6755, 0}";
-			sepNavVisRange = "{6044, 1752}";
+			sepNavIntBoundsRect = "{{0, 0}, {1110, 8610}}";
+			sepNavSelRange = "{3115, 0}";
+			sepNavVisRange = "{2881, 1290}";
 			sepNavWindowFrame = "{{15, 15}, {750, 558}}";
 		};
 	};
@@ -88,8 +88,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 297969605;
-			PBXWorkspaceStateSaveDate = 297969605;
+			PBXPerProjectTemplateStateSaveDate = 300662900;
+			PBXWorkspaceStateSaveDate = 300662900;
 		};
 		perUserProjectItems = {
 			CF007EB5116E1BF30028AA45 /* PBXTextBookmark */ = CF007EB5116E1BF30028AA45 /* PBXTextBookmark */;
@@ -98,11 +98,11 @@
 			CF008088116E78A00028AA45 /* PBXTextBookmark */ = CF008088116E78A00028AA45 /* PBXTextBookmark */;
 			CF00B02D1120E57500F3503E /* PBXTextBookmark */ = CF00B02D1120E57500F3503E /* PBXTextBookmark */;
 			CF077A3B11B95CC600439C51 /* XDModelBookmark */ = CF077A3B11B95CC600439C51 /* XDModelBookmark */;
+			CF7CF6BB11E9E77800E67462 /* PlistBookmark */ = CF7CF6BB11E9E77800E67462 /* PlistBookmark */;
+			CF7CF6BD11E9E77800E67462 /* PBXTextBookmark */ = CF7CF6BD11E9E77800E67462 /* PBXTextBookmark */;
 			CF7FFBDA11B94238005A78A3 /* PBXTextBookmark */ = CF7FFBDA11B94238005A78A3 /* PBXTextBookmark */;
-			CFBC42F911C2A79300136CB5 /* PBXTextBookmark */ = CFBC42F911C2A79300136CB5 /* PBXTextBookmark */;
+			CFB79C1611EBC07700CC2698 /* PBXTextBookmark */ = CFB79C1611EBC07700CC2698 /* PBXTextBookmark */;
 			CFBC42FA11C2A79300136CB5 /* PBXTextBookmark */ = CFBC42FA11C2A79300136CB5 /* PBXTextBookmark */;
-			CFBC43D411C2A86D00136CB5 /* PlistBookmark */ = CFBC43D411C2A86D00136CB5 /* PlistBookmark */;
-			CFBC43D511C2A86D00136CB5 /* PlistBookmark */ = CFBC43D511C2A86D00136CB5 /* PlistBookmark */;
 			CFD02ADB11C198B6005C866A /* PBXTextBookmark */ = CFD02ADB11C198B6005C866A /* PBXTextBookmark */;
 			CFD02ADC11C198B6005C866A /* PBXTextBookmark */ = CFD02ADC11C198B6005C866A /* PBXTextBookmark */;
 			CFE78F3511BA75AC00C2A003 /* PBXTextBookmark */ = CFE78F3511BA75AC00C2A003 /* PBXTextBookmark */;
@@ -310,6 +310,27 @@
 		fRef = CF7FFC0A11B942E4005A78A3 /* DataModel.xcdatamodel */;
 		fallbackIsa = PBXBookmark;
 	};
+	CF7CF6BB11E9E77800E67462 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Thyme-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/joao/Projects/Thyme/Thyme-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	CF7CF6BD11E9E77800E67462 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D90F4B6AC300CF3369 /* ThymeAppDelegate.m */;
+		name = "ThymeAppDelegate.m: 154";
+		rLen = 0;
+		rLoc = 3115;
+		rType = 0;
+		vrLen = 1331;
+		vrLoc = 2881;
+	};
 	CF7FFBDA11B94238005A78A3 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = CF0080C2116E80820028AA45 /* Growl Registration Ticket.growlRegDict */;
@@ -479,15 +500,15 @@
 			sepNavWindowFrame = "{{15, 59}, {1170, 814}}";
 		};
 	};
-	CFBC42F911C2A79300136CB5 /* PBXTextBookmark */ = {
+	CFB79C1611EBC07700CC2698 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 256AC3D90F4B6AC300CF3369 /* ThymeAppDelegate.m */;
-		name = "ThymeAppDelegate.m: 282";
+		name = "ThymeAppDelegate.m: 154";
 		rLen = 0;
-		rLoc = 6755;
+		rLoc = 3115;
 		rType = 0;
-		vrLen = 1752;
-		vrLoc = 6044;
+		vrLen = 1290;
+		vrLoc = 2881;
 	};
 	CFBC42FA11C2A79300136CB5 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -498,28 +519,6 @@
 		rType = 0;
 		vrLen = 1185;
 		vrLoc = 0;
-	};
-	CFBC43D411C2A86D00136CB5 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 8D1107310486CEB800E47090 /* Thyme-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/joao/Desktop/Thyme/Thyme-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	CFBC43D511C2A86D00136CB5 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 8D1107310486CEB800E47090 /* Thyme-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/joao/Desktop/Thyme/Thyme-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
 	};
 	CFD02ADB11C198B6005C866A /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
