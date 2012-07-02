@@ -40,8 +40,18 @@
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:[[AppDelegate.managedObjectModel entitiesByName] valueForKey:@"Session"]];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date"
+                                                                   ascending:YES
+                                                                  comparator:^NSComparisonResult(NSDate* a, NSDate* b) {
+                                                                      return [b compare:a];
+                                                                  }];
+    
+    [request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    
     NSArray *result = [AppDelegate.managedObjectContext executeFetchRequest:request error:nil];
     [request release];
+    
     return result;
 }
 
