@@ -10,6 +10,7 @@
 #import "Session.h"
 
 #define KEYCODE_T 17
+#define KEYCODE_R 15
 #define ZERO_TIME (hours == 0 && minutes == 0 && seconds == 0)
 
 @interface ThymeAppDelegate(hidden)
@@ -23,6 +24,7 @@
 - (void)reset;
 
 - (void)keyPressed;
+- (void)resetTimer;
 
 - (void)notifyStart;
 - (void)notifyStop;
@@ -227,6 +229,12 @@
         [self stopWithNotification:YES];
 }
 
+- (void)resetTimer
+{
+    [self saveCurrentSession];
+    [self reset];   
+}
+
 #pragma mark Growl Notifications
 
 - (void)notifyStart
@@ -267,6 +275,12 @@
                                      target:self
                                      action:@selector(keyPressed)
                                      object:nil];
+                                     
+    [hotKeyCenter registerHotKeyWithKeyCode:KEYCODE_R
+                              modifierFlags:NSControlKeyMask
+                                     target:self
+                                     action:@selector(resetTimer)
+                                     object:nil];                                     
     
     // Configure Growl
     [GrowlApplicationBridge setGrowlDelegate:self];
