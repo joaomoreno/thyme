@@ -46,6 +46,8 @@
 @synthesize window;
 @synthesize menu;
 @synthesize startStopItem;
+@synthesize subfiveItem;
+@synthesize addfiveItem;
 @synthesize resetItem;
 @synthesize sessionsMenuSeparator;
 @synthesize sessionsMenuClearItem;
@@ -153,6 +155,18 @@
     [startStopItem setTitle:@"Start"];
 }
 
+- (void)subfive
+{
+    minutes = minutes - 5;
+    [self setTime];
+}
+
+- (void)addfive
+{
+    minutes = minutes + 5;
+    [self setTime];
+}
+
 - (void)clearSessionsFromMenu
 {
     [menu removeItem:self.sessionsMenuSeparator];
@@ -201,6 +215,16 @@
         [self startWithNotification:NO];
     else 
         [self stopWithNotification:NO];
+}
+
+- (IBAction)subfive:(id)sender
+{
+    minutes = minutes - 5;
+}
+
+- (IBAction)addfive:(id)sender
+{
+    minutes = minutes + 5;
 }
 
 - (IBAction)reset:(id)sender

@@ -34,6 +34,8 @@
     NSMenu *menu;
     NSMenuItem *startStopItem;
     NSMenuItem *resetItem;
+    NSMenuItem *subfiveItem;
+    NSMenuItem *addfiveItem;
     
     NSMenuItem *sessionsMenuSeparator;
     NSMenuItem *sessionsMenuClearItem;
@@ -54,6 +56,8 @@
 @property(nonatomic, retain) IBOutlet NSMenu *menu;
 @property(nonatomic, retain) IBOutlet NSMenuItem *startStopItem;
 @property(nonatomic, retain) IBOutlet NSMenuItem *resetItem;
+@property(nonatomic, retain) IBOutlet NSMenuItem *subfiveItem;
+@property(nonatomic, retain) IBOutlet NSMenuItem *addfiveItem;
 
 @property(nonatomic, retain) NSMenuItem *sessionsMenuSeparator;
 @property(nonatomic, retain) NSMenuItem *sessionsMenuClearItem;
@@ -61,6 +65,8 @@
 
 - (IBAction)saveAction:sender;
 - (IBAction)startStop:(id)sender;
+- (IBAction)subfive:(id)sender;
+- (IBAction)addfive:(id)sender;
 - (IBAction)reset:(id)sender;
 
 @end
