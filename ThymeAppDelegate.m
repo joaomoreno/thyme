@@ -55,10 +55,14 @@
 
 - (NSString*)currentTimerValue
 {
-    if (hours > 0)
-        return [NSString stringWithFormat:@"%02d:%02d:%02d", hours, minutes, seconds];
-    else
-        return [NSString stringWithFormat:@"%02d:%02d", minutes, seconds];
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+
+    if (hours > 0) {
+        return [NSString stringWithFormat:@"%02ld:%02ld:%02ld", (long) hours, (long) minutes, (long) seconds];
+    } else {
+        return [NSString stringWithFormat:@"%02ld:%02ld", (long) minutes, (long) seconds];
+    }
 }
 
 - (void)setTime
