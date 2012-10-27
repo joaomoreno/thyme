@@ -17,6 +17,11 @@
 		CF0080C3116E80820028AA45 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = CF0080C2116E80820028AA45 /* Growl Registration Ticket.growlRegDict */; };
 		CF0082E7116E83960028AA45 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF0082E6116E83960028AA45 /* Growl.framework */; };
 		CF00B0091120E26D00F3503E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF00B0081120E26D00F3503E /* MainMenu.xib */; };
+		CF06879A163C9CEC006796A6 /* scriptSupport.sdef in Resources */ = {isa = PBXBuildFile; fileRef = CF068799163C9CEC006796A6 /* scriptSupport.sdef */; };
+		CF06879D163C9EBC006796A6 /* StartCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = CF06879C163C9EBC006796A6 /* StartCommand.m */; };
+		CF0687A0163CA40E006796A6 /* StopCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = CF06879F163CA40E006796A6 /* StopCommand.m */; };
+		CF0687A3163CA41B006796A6 /* PauseCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0687A2163CA41B006796A6 /* PauseCommand.m */; };
+		CF0687A6163CA42D006796A6 /* ToggleCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0687A5163CA42D006796A6 /* ToggleCommand.m */; };
 		CF0779E311B9568900439C51 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0779E211B9568900439C51 /* Session.m */; };
 		CF7FFC0B11B942E4005A78A3 /* DataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = CF7FFC0A11B942E4005A78A3 /* DataModel.xcdatamodel */; };
 		CFE78F1511BA73B700C2A003 /* logo.icns in Resources */ = {isa = PBXBuildFile; fileRef = CFE78F1411BA73B700C2A003 /* logo.icns */; };
@@ -56,6 +61,15 @@
 		CF0080C2116E80820028AA45 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 		CF0082E6116E83960028AA45 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 		CF00B0081120E26D00F3503E /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		CF068799163C9CEC006796A6 /* scriptSupport.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = scriptSupport.sdef; sourceTree = "<group>"; };
+		CF06879B163C9EBC006796A6 /* StartCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartCommand.h; sourceTree = "<group>"; };
+		CF06879C163C9EBC006796A6 /* StartCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartCommand.m; sourceTree = "<group>"; };
+		CF06879E163CA40E006796A6 /* StopCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopCommand.h; sourceTree = "<group>"; };
+		CF06879F163CA40E006796A6 /* StopCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopCommand.m; sourceTree = "<group>"; };
+		CF0687A1163CA41B006796A6 /* PauseCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PauseCommand.h; sourceTree = "<group>"; };
+		CF0687A2163CA41B006796A6 /* PauseCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PauseCommand.m; sourceTree = "<group>"; };
+		CF0687A4163CA42D006796A6 /* ToggleCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToggleCommand.h; sourceTree = "<group>"; };
+		CF0687A5163CA42D006796A6 /* ToggleCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToggleCommand.m; sourceTree = "<group>"; };
 		CF0779E111B9568900439C51 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
 		CF0779E211B9568900439C51 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
 		CF7FFC0A11B942E4005A78A3 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -86,6 +100,14 @@
 				CF00807E116E75E80028AA45 /* DDHotKeyCenter.m */,
 				256AC3D80F4B6AC300CF3369 /* ThymeAppDelegate.h */,
 				256AC3D90F4B6AC300CF3369 /* ThymeAppDelegate.m */,
+				CF06879B163C9EBC006796A6 /* StartCommand.h */,
+				CF06879C163C9EBC006796A6 /* StartCommand.m */,
+				CF06879E163CA40E006796A6 /* StopCommand.h */,
+				CF06879F163CA40E006796A6 /* StopCommand.m */,
+				CF0687A1163CA41B006796A6 /* PauseCommand.h */,
+				CF0687A2163CA41B006796A6 /* PauseCommand.m */,
+				CF0687A4163CA42D006796A6 /* ToggleCommand.h */,
+				CF0687A5163CA42D006796A6 /* ToggleCommand.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -150,6 +172,7 @@
 				CF0080C2116E80820028AA45 /* Growl Registration Ticket.growlRegDict */,
 				CFE78F5411BA786A00C2A003 /* Credits.rtf */,
 				CFE78F5811BA797A00C2A003 /* LICENSE */,
+				CF068799163C9CEC006796A6 /* scriptSupport.sdef */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -232,6 +255,7 @@
 				CFE78F5511BA786A00C2A003 /* Credits.rtf in Resources */,
 				CFE78F5911BA797A00C2A003 /* LICENSE in Resources */,
 				CFE78F8211BA7D5D00C2A003 /* logo_small.png in Resources */,
+				CF06879A163C9CEC006796A6 /* scriptSupport.sdef in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +271,10 @@
 				CF00807F116E75E80028AA45 /* DDHotKeyCenter.m in Sources */,
 				CF7FFC0B11B942E4005A78A3 /* DataModel.xcdatamodel in Sources */,
 				CF0779E311B9568900439C51 /* Session.m in Sources */,
+				CF06879D163C9EBC006796A6 /* StartCommand.m in Sources */,
+				CF0687A0163CA40E006796A6 /* StopCommand.m in Sources */,
+				CF0687A3163CA41B006796A6 /* PauseCommand.m in Sources */,
+				CF0687A6163CA42D006796A6 /* ToggleCommand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +310,7 @@
 				INFOPLIST_FILE = "Thyme-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = Thyme;
+				SDKROOT = macosx10.7;
 			};
 			name = Debug;
 		};
@@ -301,6 +330,7 @@
 				INFOPLIST_FILE = "Thyme-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = Thyme;
+				SDKROOT = macosx10.7;
 			};
 			name = Release;
 		};

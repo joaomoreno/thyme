@@ -19,14 +19,11 @@
 - (void)tick;
 - (void)startTimer;
 
-- (void)startWithNotification:(Boolean)notification;
-- (void)stopWithNotification:(Boolean)notification;
-- (void)reset;
-
 - (void)keyPressed;
 - (void)resetTimer;
 
 - (void)notifyStart;
+- (void)notifyPause;
 - (void)notifyStop;
 
 - (void)saveCurrentSession;
@@ -120,39 +117,64 @@
 
 - (void)startWithNotification:(Boolean)notification
 {
-    timerThread = [[NSThread alloc] initWithTarget:self selector:@selector(startTimer) object:nil];
-    [timerThread start];
-    
-    [startStopItem setTitle:@"Pause"];
-    [resetItem setEnabled:YES];
-    isTicking = YES;
-    
-    if (notification)
-        [self notifyStart];
+    if (!isTicking) {
+        timerThread = [[NSThread alloc] initWithTarget:self selector:@selector(startTimer) object:nil];
+        [timerThread start];
+        
+        [startStopItem setTitle:@"Pause"];
+        [resetItem setEnabled:YES];
+        isTicking = YES;
+        
+        if (notification) {
+            [self notifyStart];
+        }
+    }
+        
+    [self setTime];
+}
+
+- (void)pauseWithNotification:(Boolean)notification
+{
+    if (isTicking) {
+        [timer invalidate];
+        [timer release];
+        [timerThread release];
+        
+        [startStopItem setTitle:@"Continue"];
+        isTicking = NO;
+        
+        if (notification) {
+            [self notifyPause];
+        }
+    }
     
     [self setTime];
+}
+
+- (void)toggleWithNotification:(Boolean)notification
+{
+    if (!isTicking) {
+        [self startWithNotification:notification];
+    } else {
+        [self pauseWithNotification:notification];
+    }
 }
 
 - (void)stopWithNotification:(Boolean)notification
 {
-    [timer invalidate];
-    [timer release];
-    [timerThread release];
-    
-    [startStopItem setTitle:@"Continue"];
-    isTicking = NO;
-    
-    if (notification)
+    if (notification) {
         [self notifyStop];
-    
-    [self setTime];
+    }
+
+    [self saveCurrentSession];
+    [self resetWithNotification:NO];
 }
 
-- (void)reset
+- (void)resetWithNotification:(Boolean)notification
 {
     hours = minutes = seconds = 0;
     
-    [self stopWithNotification:NO];
+    [self pauseWithNotification:notification];
     [resetItem setEnabled:NO];
     [startStopItem setTitle:@"Start"];
 }
@@ -201,16 +223,13 @@
 
 - (IBAction)startStop:(id)sender
 {
-    if (!isTicking)
-        [self startWithNotification:NO];
-    else 
-        [self stopWithNotification:NO];
+    [self toggleWithNotification:NO];
 }
 
 - (IBAction)reset:(id)sender
 {
     [self saveCurrentSession];
-    [self reset];
+    [self resetWithNotification:NO];
 }
 
 - (IBAction)clear:(id)sender
@@ -227,16 +246,13 @@
 
 - (void)keyPressed
 {
-    if (!isTicking)
-        [self startWithNotification:YES];
-    else 
-        [self stopWithNotification:YES];
+    [self toggleWithNotification:YES];
 }
 
 - (void)resetTimer
 {
     [self saveCurrentSession];
-    [self reset];   
+    [self stopWithNotification:YES];
 }
 
 #pragma mark Growl Notifications
@@ -252,10 +268,21 @@
                                clickContext:nil];
 }
 
-- (void)notifyStop
+- (void)notifyPause
 {
     [GrowlApplicationBridge notifyWithTitle:@"Thyme"
                                 description:[@"Paused at " stringByAppendingString:[self currentTimerValue]]
+                           notificationName:@"start"
+                                   iconData:nil
+                                   priority:0
+                                   isSticky:NO
+                               clickContext:nil];
+}
+
+- (void)notifyStop
+{
+    [GrowlApplicationBridge notifyWithTitle:@"Thyme"
+                                description:[@"Stopped at " stringByAppendingString:[self currentTimerValue]]
                            notificationName:@"start"
                                    iconData:nil
                                    priority:0
@@ -314,7 +341,7 @@
     
     // Start controller
     
-    [self reset];
+    [self resetWithNotification:NO];
 }
 
 /**

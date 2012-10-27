@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+
+<dictionary title="Thyme">
+    <suite name="Thyme Suite" code="THYM" description="Thyme Scripts">
+        <command name="start" code="starttim" description="Start timer">
+            <cocoa class="StartCommand"/>
+        </command>
+        <command name="stop" code="stoptime" description="Stop timer">
+            <cocoa class="StopCommand"/>
+        </command>
+        <command name="pause" code="pausetim" description="Pause timer">
+            <cocoa class="PauseCommand"/>
+        </command>
+        <command name="toggle" code="toggleti" description="Toggle timer">
+            <cocoa class="ToggleCommand"/>
+        </command>
+    </suite>
+</dictionary>

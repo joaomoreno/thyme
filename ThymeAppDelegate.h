@@ -59,6 +59,11 @@
 @property(nonatomic, retain) NSMenuItem *sessionsMenuClearItem;
 @property(nonatomic, retain) NSMutableArray *sessionsMenuItems;
 
+- (void)startWithNotification:(Boolean)notification;
+- (void)pauseWithNotification:(Boolean)notification;
+- (void)toggleWithNotification:(Boolean)notification;
+- (void)stopWithNotification:(Boolean)notification;
+
 - (IBAction)saveAction:sender;
 - (IBAction)startStop:(id)sender;
 - (IBAction)reset:(id)sender;
