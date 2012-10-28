@@ -31,6 +31,7 @@
     hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
     .footer { text-align:center; padding-top:30px; font-style: italic; }
     p { line-height: 28px; font-size: 17px; }
+    code { font-size: 80%; color: #e33; }
 	</style>
 	
 </head>
@@ -41,7 +42,7 @@
   <div id="container">
 
     <div class="download">
-      <a class="nohighlight" href="http://github.com/downloads/joaomoreno/thyme/thyme-0.2.dmg"><img border="0" src="screen.png"></a>
+      <a class="nohighlight" href="https://github.com/downloads/joaomoreno/thyme/Thyme%200.3.dmg"><img border="0" src="screen.png"></a>
     </div>
 
     <h1><a class="highlight" href="http://github.com/joaomoreno/thyme">Thyme</a>
@@ -51,19 +52,23 @@
       Thyme is a timer for OS X. <br/>It's as simple as that.
     </div>
 
-    <p>With Thyme you can keep track of the time you spend doing your tasks.</p><p>Thyme also remembers every time you use it, just so that you don't have to worry about it anymore.</p>
+    <p>With Thyme you can keep track of the time you spend doing your tasks. Thyme also remembers every time you used it, so you don't have to.</p>
 
-    <h2>Easter Egg</h2>
+    <h2>Keyboard Shortcuts</h2>
 
-    <p><strong>Ctrl-T</strong> is a global hotkey that starts and pauses Thyme. Try it!</p>
+    <p>At any time, press <strong>Ctrl-T</strong> to start and pause Thyme. <strong>Ctrl-R</strong> stops it.</p>
 
     <h2>Download &amp; Install</h2>
+    <p><a class="highlight" href="https://github.com/downloads/joaomoreno/thyme/Thyme%200.3.dmg">Download Thyme 0.3</a></p>
+
     <p>
-        Once you get the <a class="highlight" href="http://github.com/downloads/joaomoreno/thyme/thyme-0.2.dmg">latest binary</a>, you can drag Thyme to your Applications folder. 
+      <strong><em>New in 0.3:</em></strong> Thyme now supports four Applescript commands: <code>start</code>, <code>stop</code>, <code>pause</code> and <code>toggle</code>. Example:
     </p>
 
     <p>
-        <strong>Hey! Leopard (10.5) users </strong>, you guys should download <a class="highlight" href="http://github.com/downloads/joaomoreno/thyme/thyme-0.2-leopard.dmg">this release</a>. Sorry but (for now) you won't have any hotkey functionalities.
+<pre>tell application "Thyme"
+    start # other commands: stop, pause, toggle
+end tell</pre>
     </p>
 
     <h2>Source Code</h2>
