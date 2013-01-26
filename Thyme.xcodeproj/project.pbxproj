@@ -12,6 +12,7 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		AE000F6316B457E1009A89B0 /* logo_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE000F6216B457E1009A89B0 /* logo_small@2x.png */; };
 		CF00806E116E75A40028AA45 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF00806D116E75A40028AA45 /* Carbon.framework */; };
 		CF00807F116E75E80028AA45 /* DDHotKeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = CF00807E116E75E80028AA45 /* DDHotKeyCenter.m */; };
 		CF0080C3116E80820028AA45 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = CF0080C2116E80820028AA45 /* Growl Registration Ticket.growlRegDict */; };
@@ -55,6 +56,7 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Thyme-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Thyme-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Thyme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thyme.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE000F6216B457E1009A89B0 /* logo_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_small@2x.png"; sourceTree = "<group>"; };
 		CF00806D116E75A40028AA45 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		CF00807D116E75E80028AA45 /* DDHotKeyCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHotKeyCenter.h; sourceTree = "<group>"; };
 		CF00807E116E75E80028AA45 /* DDHotKeyCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHotKeyCenter.m; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				CFE78F8111BA7D5D00C2A003 /* logo_small.png */,
+				AE000F6216B457E1009A89B0 /* logo_small@2x.png */,
 				CFE78F1411BA73B700C2A003 /* logo.icns */,
 				CF00B0081120E26D00F3503E /* MainMenu.xib */,
 				8D1107310486CEB800E47090 /* Thyme-Info.plist */,
@@ -256,6 +259,7 @@
 				CFE78F5911BA797A00C2A003 /* LICENSE in Resources */,
 				CFE78F8211BA7D5D00C2A003 /* logo_small.png in Resources */,
 				CF06879A163C9CEC006796A6 /* scriptSupport.sdef in Resources */,
+				AE000F6316B457E1009A89B0 /* logo_small@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

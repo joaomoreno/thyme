@@ -69,7 +69,7 @@
     {
         [statusItem setLength:26.0];
         [statusItem setTitle:@""];
-        [statusItem setImage:[NSImage imageNamed:@"logo_small.png"]];
+        [statusItem setImage:[NSImage imageNamed:@"logo_small"]];
     }
     else
     {
