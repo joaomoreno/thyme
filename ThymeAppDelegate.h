@@ -6,20 +6,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "DDHotKeyCenter.h"
 #import <Growl/Growl.h>
+#import "DDHotKeyCenter.h"
+#import "Stopwatch.h"
 
-@interface ThymeAppDelegate : NSObject <NSApplicationDelegate, GrowlApplicationBridgeDelegate>
+@interface ThymeAppDelegate : NSObject <NSApplicationDelegate, GrowlApplicationBridgeDelegate, StopwatchDelegate>
 {
-    // Session
-    NSInteger hours;
-    NSInteger minutes;
-    NSInteger seconds;
-    
     // Timer
-    Boolean isTicking;
-    NSTimer *timer;
-    NSThread *timerThread;
+    Stopwatch* stopwatch;
     
     // Hotkeys
     DDHotKeyCenter *hotKeyCenter;
@@ -40,8 +34,7 @@
     NSMutableArray *sessionsMenuItems;
 }
 
-@property(retain) NSTimer *timer;
-@property(assign) NSThread *timerThread;
+@property(nonatomic, retain) Stopwatch *stopwatch;
 
 @property(retain) DDHotKeyCenter *hotKeyCenter;
 

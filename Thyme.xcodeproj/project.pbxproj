@@ -25,6 +25,7 @@
 		CF0687A6163CA42D006796A6 /* ToggleCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0687A5163CA42D006796A6 /* ToggleCommand.m */; };
 		CF0779E311B9568900439C51 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0779E211B9568900439C51 /* Session.m */; };
 		CF7FFC0B11B942E4005A78A3 /* DataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = CF7FFC0A11B942E4005A78A3 /* DataModel.xcdatamodel */; };
+		CFDFADE316F4C606008BF5F3 /* Stopwatch.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDFADE216F4C606008BF5F3 /* Stopwatch.m */; };
 		CFE78F1511BA73B700C2A003 /* logo.icns in Resources */ = {isa = PBXBuildFile; fileRef = CFE78F1411BA73B700C2A003 /* logo.icns */; };
 		CFE78F5511BA786A00C2A003 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CFE78F5411BA786A00C2A003 /* Credits.rtf */; };
 		CFE78F5911BA797A00C2A003 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = CFE78F5811BA797A00C2A003 /* LICENSE */; };
@@ -75,6 +76,8 @@
 		CF0779E111B9568900439C51 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
 		CF0779E211B9568900439C51 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
 		CF7FFC0A11B942E4005A78A3 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		CFDFADE116F4C606008BF5F3 /* Stopwatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stopwatch.h; sourceTree = "<group>"; };
+		CFDFADE216F4C606008BF5F3 /* Stopwatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stopwatch.m; sourceTree = "<group>"; };
 		CFE78F1411BA73B700C2A003 /* logo.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = logo.icns; sourceTree = "<group>"; };
 		CFE78F5411BA786A00C2A003 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		CFE78F5811BA797A00C2A003 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -102,6 +105,8 @@
 				CFDFADDD16F4C189008BF5F3 /* Commands */,
 				256AC3D80F4B6AC300CF3369 /* ThymeAppDelegate.h */,
 				256AC3D90F4B6AC300CF3369 /* ThymeAppDelegate.m */,
+				CFDFADE116F4C606008BF5F3 /* Stopwatch.h */,
+				CFDFADE216F4C606008BF5F3 /* Stopwatch.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -311,6 +316,7 @@
 				CF0687A0163CA40E006796A6 /* StopCommand.m in Sources */,
 				CF0687A3163CA41B006796A6 /* PauseCommand.m in Sources */,
 				CF0687A6163CA42D006796A6 /* ToggleCommand.m in Sources */,
+				CFDFADE316F4C606008BF5F3 /* Stopwatch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

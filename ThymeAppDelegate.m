@@ -14,21 +14,17 @@
 #define ZERO_TIME (hours == 0 && minutes == 0 && seconds == 0)
 
 @interface ThymeAppDelegate(hidden)
-- (NSString*)currentTimerValue;
-- (void)setTime;
-- (void)tick;
 - (void)startTimer;
-
-- (void)keyPressed;
 - (void)resetTimer;
 
 - (void)notifyStart;
 - (void)notifyPause;
 - (void)notifyStop;
 
-- (void)saveCurrentSession;
+- (void)save:(NSTimeInterval)value;
 
 - (IBAction)clear:(id)sender;
+- (void)updateStatusBar;
 - (void)clearSessionsFromMenu;
 - (void)addSessionToMenu:(Session*)session;
 @end
@@ -36,8 +32,7 @@
 
 @implementation ThymeAppDelegate
 
-@synthesize timer;
-@synthesize timerThread;
+@synthesize stopwatch;
 @synthesize hotKeyCenter;
 @synthesize statusItem;
 @synthesize window;
@@ -48,135 +43,65 @@
 @synthesize sessionsMenuClearItem;
 @synthesize sessionsMenuItems;
 
-#pragma mark Timer
-
-- (NSString*)currentTimerValue
-{
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-
-    if (hours > 0) {
-        return [NSString stringWithFormat:@"%02ld:%02ld:%02ld", (long) hours, (long) minutes, (long) seconds];
-    } else {
-        return [NSString stringWithFormat:@"%02ld:%02ld", (long) minutes, (long) seconds];
-    }
-}
-
-- (void)setTime
-{
-    
-    if (ZERO_TIME && !isTicking)
-    {
-        [statusItem setLength:26.0];
-        [statusItem setTitle:@""];
-        [statusItem setImage:[NSImage imageNamed:@"logo_small"]];
-    }
-    else
-    {
-        if (hours > 0)
-            [statusItem setLength:72.0];
-        else
-            [statusItem setLength:46.0];
-        
-        [statusItem setTitle:[self currentTimerValue]];
-        [statusItem setImage:nil];
-    }
-
-}
-
-- (void)tick
-{
-    seconds++;
-    
-    if (seconds >= 60)
-    {
-        minutes++;
-        seconds = 0;
-    }
-    
-    if (minutes >= 60)
-    {
-        hours++;
-        minutes = 0;
-    }
-    
-    [self setTime];
-}
-
-- (void)startTimer
-{
-    NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
-    NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
-    self.timer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(tick) userInfo:nil repeats:YES];
-    [runLoop addTimer:self.timer forMode:NSDefaultRunLoopMode];
-    [runLoop run];
-    [pool release];
-}
-
 #pragma mark Controller
 
 - (void)startWithNotification:(Boolean)notification
 {
-    if (!isTicking) {
-        timerThread = [[NSThread alloc] initWithTarget:self selector:@selector(startTimer) object:nil];
-        [timerThread start];
+    if (![self.stopwatch isActive]) {
+        [self.stopwatch start];
         
         [startStopItem setTitle:@"Pause"];
         [resetItem setEnabled:YES];
-        isTicking = YES;
         
         if (notification) {
             [self notifyStart];
         }
     }
-        
-    [self setTime];
 }
 
 - (void)pauseWithNotification:(Boolean)notification
 {
-    if (isTicking) {
-        [timer invalidate];
-        [timer release];
-        [timerThread release];
+    if ([self.stopwatch isActive]) {
+        [self.stopwatch pause];
         
         [startStopItem setTitle:@"Continue"];
-        isTicking = NO;
         
         if (notification) {
             [self notifyPause];
         }
     }
-    
-    [self setTime];
 }
 
 - (void)toggleWithNotification:(Boolean)notification
 {
-    if (!isTicking) {
-        [self startWithNotification:notification];
-    } else {
+    if ([self.stopwatch isActive]) {
         [self pauseWithNotification:notification];
+    } else {
+        [self startWithNotification:notification];
     }
 }
 
 - (void)stopWithNotification:(Boolean)notification
 {
+    [self resetWithNotification:NO];
+    
     if (notification) {
         [self notifyStop];
     }
-
-    [self saveCurrentSession];
-    [self resetWithNotification:NO];
 }
 
 - (void)resetWithNotification:(Boolean)notification
 {
-    hours = minutes = seconds = 0;
-    
-    [self pauseWithNotification:notification];
-    [resetItem setEnabled:NO];
-    [startStopItem setTitle:@"Start"];
+    if (![self.stopwatch isStopped]) {
+        [self.stopwatch stop];
+        
+        [startStopItem setTitle:@"Start"];
+        [resetItem setEnabled:NO];
+        
+        if (notification) {
+            [self notifyPause];
+        }
+    }
 }
 
 - (void)clearSessionsFromMenu
@@ -184,8 +109,9 @@
     [menu removeItem:self.sessionsMenuSeparator];
     [menu removeItem:self.sessionsMenuClearItem];
     
-    for (NSMenuItem *item in self.sessionsMenuItems)
+    for (NSMenuItem *item in self.sessionsMenuItems) {
         [menu removeItem:item];
+    }
     
     [self.sessionsMenuItems removeAllObjects];
 }
@@ -209,8 +135,13 @@
 
 #pragma mark Model
 
-- (void)saveCurrentSession
+- (void)save:(NSTimeInterval)value
 {
+    long seconds = (long) round(value);
+    long hours = seconds / 3600;
+    long minutes = (seconds / 60) % 60;
+    seconds = seconds % 60;
+
     if (seconds > 0 || minutes > 0 || hours > 0)
     {
         Session *session = [Session sessionWithSeconds:seconds minutes:minutes hours:hours];
@@ -228,31 +159,61 @@
 
 - (IBAction)reset:(id)sender
 {
-    [self saveCurrentSession];
     [self resetWithNotification:NO];
 }
 
 - (IBAction)clear:(id)sender
 {
-    for (Session *session in [Session allSessions])
+    for (Session *session in [Session allSessions]) {
         [self.managedObjectContext deleteObject:session];
+    }
     
     [self saveAction:self];
     
     [self clearSessionsFromMenu];
 }
 
+- (void)updateStatusBar {
+    if ([self.stopwatch isStopped]) {
+        [statusItem setLength:26.0];
+        [statusItem setTitle:@""];
+        [statusItem setImage:[NSImage imageNamed:@"logo_small"]];
+    } else {
+        [statusItem setLength:[self.stopwatch value] > 3600 ? 72.0 : 46.0];
+        [statusItem setTitle:[self.stopwatch description]];
+        [statusItem setImage:nil];
+    }
+}
+
 #pragma mark Keyboard Events
 
-- (void)keyPressed
+- (void)startTimer
 {
     [self toggleWithNotification:YES];
 }
 
 - (void)resetTimer
 {
-    [self saveCurrentSession];
     [self stopWithNotification:YES];
+}
+
+#pragma mark Stopwatch Delegate
+
+- (void) didStart:(id)stopwatch {
+    [self updateStatusBar];
+}
+
+- (void) didPause:(id)_stopwatch {
+    [self updateStatusBar];
+}
+
+- (void) didStop:(id)stopwatch withValue:(NSTimeInterval)value {
+    [self save:value];
+    [self updateStatusBar];
+}
+
+- (void) didChange:(id)stopwatch {
+    [self updateStatusBar];
 }
 
 #pragma mark Growl Notifications
@@ -271,7 +232,7 @@
 - (void)notifyPause
 {
     [GrowlApplicationBridge notifyWithTitle:@"Thyme"
-                                description:[@"Paused at " stringByAppendingString:[self currentTimerValue]]
+                                description:[@"Paused at " stringByAppendingString:[self.stopwatch description]]
                            notificationName:@"start"
                                    iconData:nil
                                    priority:0
@@ -282,7 +243,7 @@
 - (void)notifyStop
 {
     [GrowlApplicationBridge notifyWithTitle:@"Thyme"
-                                description:[@"Stopped at " stringByAppendingString:[self currentTimerValue]]
+                                description:[@"Stopped at " stringByAppendingString:[self.stopwatch description]]
                            notificationName:@"start"
                                    iconData:nil
                                    priority:0
@@ -304,7 +265,7 @@
     [hotKeyCenter registerHotKeyWithKeyCode:KEYCODE_T
                               modifierFlags:NSControlKeyMask
                                      target:self
-                                     action:@selector(keyPressed)
+                                     action:@selector(startTimer)
                                      object:nil];
                                      
     [hotKeyCenter registerHotKeyWithKeyCode:KEYCODE_R
@@ -326,21 +287,21 @@
     NSMenuItem *clearMenuItem = [[NSMenuItem alloc] initWithTitle:@"Clear" action:@selector(clear:) keyEquivalent:@""];
     self.sessionsMenuClearItem = clearMenuItem;
     [clearMenuItem release];
-
+    
+    self.stopwatch = [[Stopwatch alloc] initWithDelegate:self];
+    
     NSStatusBar *statusBar = [NSStatusBar systemStatusBar];
     self.statusItem = [statusBar statusItemWithLength:46.0];
     [statusItem setHighlightMode:YES];
     [statusItem setMenu:menu];
-    
-    isTicking = NO;
+    [self updateStatusBar];
     
     // Populate data
-    
-    for (Session *session in [Session allSessions])
+    for (Session *session in [Session allSessions]) {
         [self addSessionToMenu:session];
+    }
     
     // Start controller
-    
     [self resetWithNotification:NO];
 }
 
@@ -498,7 +459,7 @@
     if (!managedObjectContext)
         return NSTerminateNow;
     
-    [self saveCurrentSession];
+    [self.stopwatch stop];
     
     if (![managedObjectContext commitEditing])
     {
@@ -558,8 +519,7 @@
     [persistentStoreCoordinator release];
     [managedObjectModel release];
     
-    [timer release];
-    [timerThread release];
+    self.stopwatch = nil;
     [statusItem release];
     [hotKeyCenter release];
     
