@@ -135,15 +135,13 @@
 
 #pragma mark Model
 
-- (void)save:(NSTimeInterval)value
-{
-    long seconds = (long) round(value);
-    long hours = seconds / 3600;
-    long minutes = (seconds / 60) % 60;
-    seconds = seconds % 60;
+- (void)save:(NSTimeInterval)value {
+    long totalSeconds = (long) floor(value);
+    long hours = totalSeconds / 3600;
+    long minutes = (totalSeconds / 60) % 60;
+    long seconds = totalSeconds % 60;
 
-    if (seconds > 0 || minutes > 0 || hours > 0)
-    {
+    if (totalSeconds > 0) {
         Session *session = [Session sessionWithSeconds:seconds minutes:minutes hours:hours];
         [self saveAction:self];
         [self addSessionToMenu:session];

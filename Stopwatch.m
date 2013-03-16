@@ -41,7 +41,7 @@
 }
 
 - (NSString*) description {
-    long seconds = (long) round([self value]);
+    long seconds = (long) floor([self value]);
     long hours = seconds / 3600;
     long minutes = (seconds / 60) % 60;
     seconds = seconds % 60;
