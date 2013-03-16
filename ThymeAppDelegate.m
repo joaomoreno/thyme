@@ -6,7 +6,6 @@
 //
 
 #import "ThymeAppDelegate.h"
-#import <Growl/Growl.h>
 #import "Session.h"
 
 #define KEYCODE_T 17
@@ -18,8 +17,8 @@
 - (void)resetTimer;
 
 - (void)notifyStart;
-- (void)notifyPause;
-- (void)notifyStop;
+- (void)notifyPauseWithDescription:(NSString*)description;
+- (void)notifyStopWithDescription:(NSString*)description;
 
 - (void)save:(NSTimeInterval)value;
 
@@ -67,7 +66,7 @@
         [startStopItem setTitle:@"Continue"];
         
         if (notification) {
-            [self notifyPause];
+            [self notifyPauseWithDescription:[self.stopwatch description]];
         }
     }
 }
@@ -83,23 +82,27 @@
 
 - (void)stopWithNotification:(Boolean)notification
 {
-    [self resetWithNotification:NO];
-    
-    if (notification) {
-        [self notifyStop];
+    if (![self.stopwatch isStopped]) {
+        NSString* description = [self.stopwatch description];
+        [self resetWithNotification:NO];
+        
+        if (notification) {
+            [self notifyStopWithDescription:description];
+        }
     }
 }
 
 - (void)resetWithNotification:(Boolean)notification
 {
     if (![self.stopwatch isStopped]) {
+        NSString* description = [self.stopwatch description];
         [self.stopwatch stop];
         
         [startStopItem setTitle:@"Start"];
         [resetItem setEnabled:NO];
         
         if (notification) {
-            [self notifyPause];
+            [self notifyPauseWithDescription:description];
         }
     }
 }
@@ -214,39 +217,42 @@
     [self updateStatusBar];
 }
 
-#pragma mark Growl Notifications
+#pragma mark Notifications
 
 - (void)notifyStart
 {
-    [GrowlApplicationBridge notifyWithTitle:@"Thyme"
-                                description:@"Started counting"
-                           notificationName:@"start"
-                                   iconData:nil
-                                   priority:0
-                                   isSticky:NO
-                               clickContext:nil];
+    NSUserNotification* notification = [[NSUserNotification alloc] init];
+    
+    notification.title = @"Thyme";
+    notification.informativeText = @"Started";
+    
+    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
 }
 
-- (void)notifyPause
+- (void)notifyPauseWithDescription:(NSString*)description
 {
-    [GrowlApplicationBridge notifyWithTitle:@"Thyme"
-                                description:[@"Paused at " stringByAppendingString:[self.stopwatch description]]
-                           notificationName:@"start"
-                                   iconData:nil
-                                   priority:0
-                                   isSticky:NO
-                               clickContext:nil];
+    NSUserNotification* notification = [[NSUserNotification alloc] init];
+    
+    notification.title = @"Thyme";
+    notification.informativeText = [@"Paused at " stringByAppendingString:description];
+    
+    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
 }
 
-- (void)notifyStop
+- (void)notifyStopWithDescription:(NSString*)description
 {
-    [GrowlApplicationBridge notifyWithTitle:@"Thyme"
-                                description:[@"Stopped at " stringByAppendingString:[self.stopwatch description]]
-                           notificationName:@"start"
-                                   iconData:nil
-                                   priority:0
-                                   isSticky:NO
-                               clickContext:nil];
+    NSUserNotification* notification = [[NSUserNotification alloc] init];
+    
+    notification.title = @"Thyme";
+    notification.informativeText = [@"Stopped at " stringByAppendingString:description];
+    
+    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
+}
+
+#pragma mark NSUserNotificationCenterDelegate
+
+- (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification {
+    return YES;
 }
 
 #pragma mark NSApplication
@@ -272,8 +278,8 @@
                                      action:@selector(resetTimer)
                                      object:nil];                                     
     
-    // Configure Growl
-    [GrowlApplicationBridge setGrowlDelegate:self];
+    // Configure notifications
+    [NSUserNotificationCenter defaultUserNotificationCenter].delegate = self;
     
     // Create class attributes
     NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:20];

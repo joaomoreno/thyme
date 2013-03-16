@@ -6,11 +6,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <Growl/Growl.h>
 #import "DDHotKeyCenter.h"
 #import "Stopwatch.h"
 
-@interface ThymeAppDelegate : NSObject <NSApplicationDelegate, GrowlApplicationBridgeDelegate, StopwatchDelegate>
+@interface ThymeAppDelegate : NSObject <NSApplicationDelegate, NSUserNotificationCenterDelegate, StopwatchDelegate>
 {
     // Timer
     Stopwatch* stopwatch;

@@ -8,15 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		256AC3DA0F4B6AC300CF3369 /* ThymeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* ThymeAppDelegate.m */; };
-		613692EC11A2982A005A594E /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF0082E6116E83960028AA45 /* Growl.framework */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		AE000F6316B457E1009A89B0 /* logo_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE000F6216B457E1009A89B0 /* logo_small@2x.png */; };
 		CF00806E116E75A40028AA45 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF00806D116E75A40028AA45 /* Carbon.framework */; };
 		CF00807F116E75E80028AA45 /* DDHotKeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = CF00807E116E75E80028AA45 /* DDHotKeyCenter.m */; };
-		CF0080C3116E80820028AA45 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = CF0080C2116E80820028AA45 /* Growl Registration Ticket.growlRegDict */; };
-		CF0082E7116E83960028AA45 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF0082E6116E83960028AA45 /* Growl.framework */; };
 		CF00B0091120E26D00F3503E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF00B0081120E26D00F3503E /* MainMenu.xib */; };
 		CF06879A163C9CEC006796A6 /* scriptSupport.sdef in Resources */ = {isa = PBXBuildFile; fileRef = CF068799163C9CEC006796A6 /* scriptSupport.sdef */; };
 		CF06879D163C9EBC006796A6 /* StartCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = CF06879C163C9EBC006796A6 /* StartCommand.m */; };
@@ -39,7 +36,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				613692EC11A2982A005A594E /* Growl.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,8 +57,6 @@
 		CF00806D116E75A40028AA45 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		CF00807D116E75E80028AA45 /* DDHotKeyCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHotKeyCenter.h; sourceTree = "<group>"; };
 		CF00807E116E75E80028AA45 /* DDHotKeyCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHotKeyCenter.m; sourceTree = "<group>"; };
-		CF0080C2116E80820028AA45 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
-		CF0082E6116E83960028AA45 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 		CF00B0081120E26D00F3503E /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		CF068799163C9CEC006796A6 /* scriptSupport.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = scriptSupport.sdef; sourceTree = "<group>"; };
 		CF06879B163C9EBC006796A6 /* StartCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartCommand.h; sourceTree = "<group>"; };
@@ -91,7 +85,6 @@
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				CF00806E116E75A40028AA45 /* Carbon.framework in Frameworks */,
-				CF0082E7116E83960028AA45 /* Growl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,7 +158,6 @@
 			children = (
 				CFDFADE016F4C43B008BF5F3 /* XIB */,
 				CFDFADDF16F4C41E008BF5F3 /* Logo */,
-				CF0080C2116E80820028AA45 /* Growl Registration Ticket.growlRegDict */,
 				CF068799163C9CEC006796A6 /* scriptSupport.sdef */,
 				8D1107310486CEB800E47090 /* Thyme-Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
@@ -180,7 +172,6 @@
 			children = (
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
-				CF0082E6116E83960028AA45 /* Growl.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -290,7 +281,6 @@
 			files = (
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				CF00B0091120E26D00F3503E /* MainMenu.xib in Resources */,
-				CF0080C3116E80820028AA45 /* Growl Registration Ticket.growlRegDict in Resources */,
 				CFE78F1511BA73B700C2A003 /* logo.icns in Resources */,
 				CFE78F5511BA786A00C2A003 /* Credits.rtf in Resources */,
 				CFE78F5911BA797A00C2A003 /* LICENSE in Resources */,
