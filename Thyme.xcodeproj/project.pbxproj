@@ -98,18 +98,11 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CFDFADDD16F4C189008BF5F3 /* Commands */,
 				CF00807D116E75E80028AA45 /* DDHotKeyCenter.h */,
 				CF00807E116E75E80028AA45 /* DDHotKeyCenter.m */,
 				256AC3D80F4B6AC300CF3369 /* ThymeAppDelegate.h */,
 				256AC3D90F4B6AC300CF3369 /* ThymeAppDelegate.m */,
-				CF06879B163C9EBC006796A6 /* StartCommand.h */,
-				CF06879C163C9EBC006796A6 /* StartCommand.m */,
-				CF06879E163CA40E006796A6 /* StopCommand.h */,
-				CF06879F163CA40E006796A6 /* StopCommand.m */,
-				CF0687A1163CA41B006796A6 /* PauseCommand.h */,
-				CF0687A2163CA41B006796A6 /* PauseCommand.m */,
-				CF0687A4163CA42D006796A6 /* ToggleCommand.h */,
-				CF0687A5163CA42D006796A6 /* ToggleCommand.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -198,6 +191,21 @@
 				CF0779E211B9568900439C51 /* Session.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		CFDFADDD16F4C189008BF5F3 /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				CF06879B163C9EBC006796A6 /* StartCommand.h */,
+				CF06879C163C9EBC006796A6 /* StartCommand.m */,
+				CF06879E163CA40E006796A6 /* StopCommand.h */,
+				CF06879F163CA40E006796A6 /* StopCommand.m */,
+				CF0687A1163CA41B006796A6 /* PauseCommand.h */,
+				CF0687A2163CA41B006796A6 /* PauseCommand.m */,
+				CF0687A4163CA42D006796A6 /* ToggleCommand.h */,
+				CF0687A5163CA42D006796A6 /* ToggleCommand.m */,
+			);
+			name = Commands;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,7 +322,7 @@
 				INFOPLIST_FILE = "Thyme-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = Thyme;
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -334,7 +342,7 @@
 				INFOPLIST_FILE = "Thyme-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = Thyme;
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
