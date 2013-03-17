@@ -22,12 +22,33 @@
 		CF0687A6163CA42D006796A6 /* ToggleCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0687A5163CA42D006796A6 /* ToggleCommand.m */; };
 		CF0779E311B9568900439C51 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0779E211B9568900439C51 /* Session.m */; };
 		CF7FFC0B11B942E4005A78A3 /* DataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = CF7FFC0A11B942E4005A78A3 /* DataModel.xcdatamodel */; };
+		CFCBC66416F5E00200DC663A /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFCBC66016F5DFB700DC663A /* ShortcutRecorder.framework */; };
+		CFCBC66516F5E02300DC663A /* PTHotKey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFCBC66216F5DFB700DC663A /* PTHotKey.framework */; };
+		CFCBC66616F5E03400DC663A /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CFCBC66016F5DFB700DC663A /* ShortcutRecorder.framework */; };
+		CFCBC66716F5E03600DC663A /* PTHotKey.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CFCBC66216F5DFB700DC663A /* PTHotKey.framework */; };
 		CFDFADE316F4C606008BF5F3 /* Stopwatch.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDFADE216F4C606008BF5F3 /* Stopwatch.m */; };
 		CFE78F1511BA73B700C2A003 /* logo.icns in Resources */ = {isa = PBXBuildFile; fileRef = CFE78F1411BA73B700C2A003 /* logo.icns */; };
 		CFE78F5511BA786A00C2A003 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CFE78F5411BA786A00C2A003 /* Credits.rtf */; };
 		CFE78F5911BA797A00C2A003 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = CFE78F5811BA797A00C2A003 /* LICENSE */; };
 		CFE78F8211BA7D5D00C2A003 /* logo_small.png in Resources */ = {isa = PBXBuildFile; fileRef = CFE78F8111BA7D5D00C2A003 /* logo_small.png */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CFCBC65F16F5DFB700DC663A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFCBC65A16F5DFB700DC663A /* ShortcutRecorder.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 939837800DA42965007F53F3;
+			remoteInfo = ShortcutRecorder.framework;
+		};
+		CFCBC66116F5DFB700DC663A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFCBC65A16F5DFB700DC663A /* ShortcutRecorder.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E273122E1349EC9000A84433;
+			remoteInfo = PTHotKey.framework;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		613692F111A2982F005A594E /* CopyFiles */ = {
@@ -36,6 +57,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				CFCBC66716F5E03600DC663A /* PTHotKey.framework in CopyFiles */,
+				CFCBC66616F5E03400DC663A /* ShortcutRecorder.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +93,7 @@
 		CF0779E111B9568900439C51 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
 		CF0779E211B9568900439C51 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
 		CF7FFC0A11B942E4005A78A3 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		CFCBC65A16F5DFB700DC663A /* ShortcutRecorder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ShortcutRecorder.xcodeproj; path = ShortcutRecorder/ShortcutRecorder.xcodeproj; sourceTree = "<group>"; };
 		CFDFADE116F4C606008BF5F3 /* Stopwatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stopwatch.h; sourceTree = "<group>"; };
 		CFDFADE216F4C606008BF5F3 /* Stopwatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stopwatch.m; sourceTree = "<group>"; };
 		CFE78F1411BA73B700C2A003 /* logo.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = logo.icns; sourceTree = "<group>"; };
@@ -83,6 +107,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFCBC66516F5E02300DC663A /* PTHotKey.framework in Frameworks */,
+				CFCBC66416F5E00200DC663A /* ShortcutRecorder.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				CF00806E116E75A40028AA45 /* Carbon.framework in Frameworks */,
 			);
@@ -134,6 +160,7 @@
 		29B97314FDCFA39411CA2CEA /* Thyme */ = {
 			isa = PBXGroup;
 			children = (
+				CFCBC65A16F5DFB700DC663A /* ShortcutRecorder.xcodeproj */,
 				CF7FFC0911B942E4005A78A3 /* Models */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -184,6 +211,15 @@
 				CF0779E211B9568900439C51 /* Session.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		CFCBC65B16F5DFB700DC663A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CFCBC66016F5DFB700DC663A /* ShortcutRecorder.framework */,
+				CFCBC66216F5DFB700DC663A /* PTHotKey.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		CFDFADDD16F4C189008BF5F3 /* Commands */ = {
@@ -267,12 +303,35 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Thyme */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CFCBC65B16F5DFB700DC663A /* Products */;
+					ProjectRef = CFCBC65A16F5DFB700DC663A /* ShortcutRecorder.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* Thyme */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CFCBC66016F5DFB700DC663A /* ShortcutRecorder.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ShortcutRecorder.framework;
+			remoteRef = CFCBC65F16F5DFB700DC663A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CFCBC66216F5DFB700DC663A /* PTHotKey.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PTHotKey.framework;
+			remoteRef = CFCBC66116F5DFB700DC663A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8D1107290486CEB800E47090 /* Resources */ = {
@@ -341,6 +400,7 @@
 				GCC_PREFIX_HEADER = Thyme_Prefix.pch;
 				INFOPLIST_FILE = "Thyme-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				PRODUCT_NAME = Thyme;
 				SDKROOT = macosx;
 			};
@@ -361,6 +421,7 @@
 				GCC_PREFIX_HEADER = Thyme_Prefix.pch;
 				INFOPLIST_FILE = "Thyme-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				PRODUCT_NAME = Thyme;
 				SDKROOT = macosx;
 			};
