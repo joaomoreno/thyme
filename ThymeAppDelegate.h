@@ -11,22 +11,19 @@
 
 @interface ThymeAppDelegate : NSObject <NSApplicationDelegate, NSUserNotificationCenterDelegate, StopwatchDelegate>
 {
-    // Timer
     Stopwatch* stopwatch;
-    
-    // Hotkeys
     DDHotKeyCenter *hotKeyCenter;
     
-    // Interface
-    NSWindow *window;
     NSPersistentStoreCoordinator *persistentStoreCoordinator;
     NSManagedObjectModel *managedObjectModel;
     NSManagedObjectContext *managedObjectContext;
     
+    NSWindow *window;
+    
     NSStatusItem *statusItem;
     NSMenu *menu;
-    NSMenuItem *startStopItem;
-    NSMenuItem *resetItem;
+    NSMenuItem *startPauseItem;
+    NSMenuItem *finishItem;
     
     NSMenuItem *sessionsMenuSeparator;
     NSMenuItem *sessionsMenuClearItem;
@@ -34,18 +31,18 @@
 }
 
 @property(nonatomic, retain) Stopwatch *stopwatch;
+@property(nonatomic, retain) DDHotKeyCenter *hotKeyCenter;
 
-@property(retain) DDHotKeyCenter *hotKeyCenter;
+@property(nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property(nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
+@property(nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
 
 @property(nonatomic, retain) IBOutlet NSWindow *window;
-@property(nonatomic, retain, readonly) IBOutlet NSPersistentStoreCoordinator *persistentStoreCoordinator;
-@property(nonatomic, retain, readonly) IBOutlet NSManagedObjectModel *managedObjectModel;
-@property(nonatomic, retain, readonly) IBOutlet NSManagedObjectContext *managedObjectContext;
 
-@property(retain) NSStatusItem *statusItem;
+@property(nonatomic, retain) NSStatusItem *statusItem;
 @property(nonatomic, retain) IBOutlet NSMenu *menu;
-@property(nonatomic, retain) IBOutlet NSMenuItem *startStopItem;
-@property(nonatomic, retain) IBOutlet NSMenuItem *resetItem;
+@property(nonatomic, retain) IBOutlet NSMenuItem *startPauseItem;
+@property(nonatomic, retain) IBOutlet NSMenuItem *finishItem;
 
 @property(nonatomic, retain) NSMenuItem *sessionsMenuSeparator;
 @property(nonatomic, retain) NSMenuItem *sessionsMenuClearItem;
@@ -56,8 +53,7 @@
 - (void)toggleWithNotification:(Boolean)notification;
 - (void)stopWithNotification:(Boolean)notification;
 
-- (IBAction)saveAction:sender;
-- (IBAction)startStop:(id)sender;
-- (IBAction)reset:(id)sender;
+- (IBAction)onStartPauseClick:(id)sender;
+- (IBAction)onFinishClick:(id)sender;
 
 @end

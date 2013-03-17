@@ -22,10 +22,12 @@
 
 - (void)save:(NSTimeInterval)value;
 
-- (IBAction)clear:(id)sender;
 - (void)updateStatusBar;
 - (void)clearSessionsFromMenu;
 - (void)addSessionToMenu:(Session*)session;
+
+- (IBAction)clear:(id)sender;
+- (IBAction)saveAction:(id)sender;
 @end
 
 
@@ -36,8 +38,8 @@
 @synthesize statusItem;
 @synthesize window;
 @synthesize menu;
-@synthesize startStopItem;
-@synthesize resetItem;
+@synthesize startPauseItem;
+@synthesize finishItem;
 @synthesize sessionsMenuSeparator;
 @synthesize sessionsMenuClearItem;
 @synthesize sessionsMenuItems;
@@ -49,8 +51,8 @@
     if (![self.stopwatch isActive]) {
         [self.stopwatch start];
         
-        [startStopItem setTitle:@"Pause"];
-        [resetItem setEnabled:YES];
+        [startPauseItem setTitle:@"Pause"];
+        [finishItem setEnabled:YES];
         
         if (notification) {
             [self notifyStart];
@@ -63,7 +65,7 @@
     if ([self.stopwatch isActive]) {
         [self.stopwatch pause];
         
-        [startStopItem setTitle:@"Continue"];
+        [startPauseItem setTitle:@"Continue"];
         
         if (notification) {
             [self notifyPauseWithDescription:[self.stopwatch description]];
@@ -98,8 +100,8 @@
         NSString* description = [self.stopwatch description];
         [self.stopwatch stop];
         
-        [startStopItem setTitle:@"Start"];
-        [resetItem setEnabled:NO];
+        [startPauseItem setTitle:@"Start"];
+        [finishItem setEnabled:NO];
         
         if (notification) {
             [self notifyPauseWithDescription:description];
@@ -153,12 +155,12 @@
 
 #pragma mark Status Bar
 
-- (IBAction)startStop:(id)sender
+- (IBAction)onStartPauseClick:(id)sender
 {
     [self toggleWithNotification:NO];
 }
 
-- (IBAction)reset:(id)sender
+- (IBAction)onFinishClick:(id)sender
 {
     [self resetWithNotification:NO];
 }
