@@ -64,5 +64,6 @@
 - (IBAction)onStartPauseClick:(id)sender;
 - (IBAction)onFinishClick:(id)sender;
 - (IBAction)onPreferencesClick:(id)sender;
+- (IBAction)onAboutClick:(id)sender;
 
 @end

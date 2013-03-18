@@ -189,6 +189,11 @@
     [NSApp activateIgnoringOtherApps:YES];
 }
 
+- (IBAction)onAboutClick:(id)sender {
+    [[NSApplication sharedApplication] orderFrontStandardAboutPanel:nil];
+    [NSApp activateIgnoringOtherApps:YES];
+}
+
 - (void)updateStatusBar {
     if ([self.stopwatch isStopped]) {
         [statusItem setLength:26.0];

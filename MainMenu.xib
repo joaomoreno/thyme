@@ -158,14 +158,6 @@
 					<int key="connectionID">495</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">orderFrontStandardAboutPanel:</string>
-						<reference key="source" ref="1014"/>
-						<reference key="destination" ref="73292148"/>
-					</object>
-					<int key="connectionID">567</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">window</string>
 						<reference key="source" ref="976324537"/>
@@ -220,6 +212,14 @@
 						<reference key="destination" ref="17283964"/>
 					</object>
 					<int key="connectionID">584</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">onAboutClick:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="73292148"/>
+					</object>
+					<int key="connectionID">586</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -284,9 +284,9 @@
 							<reference ref="609285721"/>
 							<reference ref="632727374"/>
 							<reference ref="589253494"/>
-							<reference ref="73292148"/>
 							<reference ref="960148139"/>
 							<reference ref="17283964"/>
+							<reference ref="73292148"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -311,11 +311,6 @@
 						<reference key="parent" ref="110575045"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">555</int>
-						<reference key="object" ref="73292148"/>
-						<reference key="parent" ref="110575045"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">580</int>
 						<reference key="object" ref="960148139"/>
 						<reference key="parent" ref="110575045"/>
@@ -323,6 +318,11 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">583</int>
 						<reference key="object" ref="17283964"/>
+						<reference key="parent" ref="110575045"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">585</int>
+						<reference key="object" ref="73292148"/>
 						<reference key="parent" ref="110575045"/>
 					</object>
 				</object>
@@ -344,10 +344,10 @@
 					<string>420.IBPluginDependency</string>
 					<string>494.IBPluginDependency</string>
 					<string>533.IBPluginDependency</string>
-					<string>555.IBPluginDependency</string>
 					<string>57.IBPluginDependency</string>
 					<string>580.IBPluginDependency</string>
 					<string>583.IBPluginDependency</string>
+					<string>585.IBPluginDependency</string>
 				</object>
 				<object class="NSArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -382,7 +382,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">584</int>
+			<int key="maxID">586</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -395,6 +395,7 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>clear:</string>
+							<string>onAboutClick:</string>
 							<string>onFinishClick:</string>
 							<string>onPreferencesClick:</string>
 							<string>onStartPauseClick:</string>
@@ -402,6 +403,7 @@
 						</object>
 						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -414,6 +416,7 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>clear:</string>
+							<string>onAboutClick:</string>
 							<string>onFinishClick:</string>
 							<string>onPreferencesClick:</string>
 							<string>onStartPauseClick:</string>
@@ -423,6 +426,10 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBActionInfo">
 								<string key="name">clear:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">onAboutClick:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">
