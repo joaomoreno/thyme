@@ -75,6 +75,24 @@
 						<reference key="NSOnImage" ref="956845633"/>
 						<reference key="NSMixedImage" ref="244085316"/>
 					</object>
+					<object class="NSMenuItem" id="17283964">
+						<reference key="NSMenu" ref="110575045"/>
+						<string key="NSTitle">Preferences...</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="956845633"/>
+						<reference key="NSMixedImage" ref="244085316"/>
+					</object>
+					<object class="NSMenuItem" id="960148139">
+						<reference key="NSMenu" ref="110575045"/>
+						<bool key="NSIsDisabled">YES</bool>
+						<bool key="NSIsSeparator">YES</bool>
+						<string key="NSTitle"/>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="956845633"/>
+						<reference key="NSMixedImage" ref="244085316"/>
+					</object>
 					<object class="NSMenuItem" id="73292148">
 						<reference key="NSMenu" ref="110575045"/>
 						<string key="NSTitle">About Thyme</string>
@@ -109,7 +127,7 @@
 					<int key="NSvFlags">256</int>
 					<string key="NSFrameSize">{267, 192}</string>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1920, 1178}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1280, 778}}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
@@ -195,6 +213,14 @@
 					</object>
 					<int key="connectionID">575</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">onPreferencesClick:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="17283964"/>
+					</object>
+					<int key="connectionID">584</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -259,6 +285,8 @@
 							<reference ref="632727374"/>
 							<reference ref="589253494"/>
 							<reference ref="73292148"/>
+							<reference ref="960148139"/>
+							<reference ref="17283964"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -287,6 +315,16 @@
 						<reference key="object" ref="73292148"/>
 						<reference key="parent" ref="110575045"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">580</int>
+						<reference key="object" ref="960148139"/>
+						<reference key="parent" ref="110575045"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">583</int>
+						<reference key="object" ref="17283964"/>
+						<reference key="parent" ref="110575045"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -308,6 +346,8 @@
 					<string>533.IBPluginDependency</string>
 					<string>555.IBPluginDependency</string>
 					<string>57.IBPluginDependency</string>
+					<string>580.IBPluginDependency</string>
+					<string>583.IBPluginDependency</string>
 				</object>
 				<object class="NSArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -320,6 +360,8 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>{{245, 585}, {267, 192}}</string>
 					<boolean value="NO"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -340,7 +382,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">575</int>
+			<int key="maxID">584</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -353,12 +395,14 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>clear:</string>
-							<string>reset:</string>
+							<string>onFinishClick:</string>
+							<string>onPreferencesClick:</string>
+							<string>onStartPauseClick:</string>
 							<string>saveAction:</string>
-							<string>startStop:</string>
 						</object>
 						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -370,9 +414,10 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>clear:</string>
-							<string>reset:</string>
+							<string>onFinishClick:</string>
+							<string>onPreferencesClick:</string>
+							<string>onStartPauseClick:</string>
 							<string>saveAction:</string>
-							<string>startStop:</string>
 						</object>
 						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -381,15 +426,19 @@
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">
-								<string key="name">reset:</string>
+								<string key="name">onFinishClick:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">onPreferencesClick:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">onStartPauseClick:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">
 								<string key="name">saveAction:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBActionInfo">
-								<string key="name">startStop:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 						</object>
@@ -398,21 +447,15 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>managedObjectContext</string>
-							<string>managedObjectModel</string>
+							<string>finishItem</string>
 							<string>menu</string>
-							<string>persistentStoreCoordinator</string>
-							<string>resetItem</string>
-							<string>startStopItem</string>
+							<string>startPauseItem</string>
 							<string>window</string>
 						</object>
 						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>NSManagedObjectContext</string>
-							<string>NSManagedObjectModel</string>
-							<string>NSMenu</string>
-							<string>NSPersistentStoreCoordinator</string>
 							<string>NSMenuItem</string>
+							<string>NSMenu</string>
 							<string>NSMenuItem</string>
 							<string>NSWindow</string>
 						</object>
@@ -421,38 +464,23 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>managedObjectContext</string>
-							<string>managedObjectModel</string>
+							<string>finishItem</string>
 							<string>menu</string>
-							<string>persistentStoreCoordinator</string>
-							<string>resetItem</string>
-							<string>startStopItem</string>
+							<string>startPauseItem</string>
 							<string>window</string>
 						</object>
 						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBToOneOutletInfo">
-								<string key="name">managedObjectContext</string>
-								<string key="candidateClassName">NSManagedObjectContext</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">managedObjectModel</string>
-								<string key="candidateClassName">NSManagedObjectModel</string>
+								<string key="name">finishItem</string>
+								<string key="candidateClassName">NSMenuItem</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">menu</string>
 								<string key="candidateClassName">NSMenu</string>
 							</object>
 							<object class="IBToOneOutletInfo">
-								<string key="name">persistentStoreCoordinator</string>
-								<string key="candidateClassName">NSPersistentStoreCoordinator</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">resetItem</string>
-								<string key="candidateClassName">NSMenuItem</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">startStopItem</string>
+								<string key="name">startPauseItem</string>
 								<string key="candidateClassName">NSMenuItem</string>
 							</object>
 							<object class="IBToOneOutletInfo">

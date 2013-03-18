@@ -8,6 +8,7 @@
 #import <Cocoa/Cocoa.h>
 #import "DDHotKeyCenter.h"
 #import "Stopwatch.h"
+#import "PreferencesWindowController.h"
 
 @interface ThymeAppDelegate : NSObject <NSApplicationDelegate, NSUserNotificationCenterDelegate, StopwatchDelegate>
 {
@@ -24,6 +25,8 @@
     NSMenu *menu;
     NSMenuItem *startPauseItem;
     NSMenuItem *finishItem;
+    
+    PreferencesWindowController *preferencesWindowController;
     
     NSMenuItem *sessionsMenuSeparator;
     NSMenuItem *sessionsMenuClearItem;
@@ -44,6 +47,8 @@
 @property(nonatomic, retain) IBOutlet NSMenuItem *startPauseItem;
 @property(nonatomic, retain) IBOutlet NSMenuItem *finishItem;
 
+@property(nonatomic, retain) PreferencesWindowController *preferencesWindowController;
+
 @property(nonatomic, retain) NSMenuItem *sessionsMenuSeparator;
 @property(nonatomic, retain) NSMenuItem *sessionsMenuClearItem;
 @property(nonatomic, retain) NSMutableArray *sessionsMenuItems;
@@ -53,7 +58,11 @@
 - (void)toggleWithNotification:(Boolean)notification;
 - (void)stopWithNotification:(Boolean)notification;
 
+- (void)clearHotKeys;
+- (void)resetHotKeys;
+
 - (IBAction)onStartPauseClick:(id)sender;
 - (IBAction)onFinishClick:(id)sender;
+- (IBAction)onPreferencesClick:(id)sender;
 
 @end

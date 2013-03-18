@@ -7,6 +7,7 @@
 
 #import "ThymeAppDelegate.h"
 #import "Session.h"
+#import "ShortcutRecorder/PTHotKey/PTHotKey+ShortcutRecorder.h"
 
 #define KEYCODE_T 17
 #define KEYCODE_R 15
@@ -40,6 +41,7 @@
 @synthesize menu;
 @synthesize startPauseItem;
 @synthesize finishItem;
+@synthesize preferencesWindowController;
 @synthesize sessionsMenuSeparator;
 @synthesize sessionsMenuClearItem;
 @synthesize sessionsMenuItems;
@@ -176,6 +178,17 @@
     [self clearSessionsFromMenu];
 }
 
+- (IBAction)onPreferencesClick:(id)sender {
+    if (self.preferencesWindowController == nil) {
+        PreferencesWindowController* pwc = [[PreferencesWindowController alloc] initWithWindowNibName:@"PreferencesWindowController"];
+        self.preferencesWindowController = pwc;
+        [pwc release];
+    }
+    
+    [self.preferencesWindowController showWindow:nil];
+    [NSApp activateIgnoringOtherApps:YES];
+}
+
 - (void)updateStatusBar {
     if ([self.stopwatch isStopped]) {
         [statusItem setLength:26.0];
@@ -188,15 +201,23 @@
     }
 }
 
-#pragma mark Keyboard Events
+#pragma mark Hot Key Handlers
 
 - (void)startTimer
 {
+    if (self.preferencesWindowController != nil && [[self.preferencesWindowController window] isVisible]) {
+        return;
+    }
+    
     [self toggleWithNotification:YES];
 }
 
 - (void)resetTimer
 {
+    if (self.preferencesWindowController != nil && [[self.preferencesWindowController window] isVisible]) {
+        return;
+    }
+    
     [self stopWithNotification:YES];
 }
 
@@ -257,28 +278,55 @@
     return YES;
 }
 
+#pragma mark NSUserDefaultsDidChangeNotification
+
+- (void)onUserDefaultsChange:(NSNotification*)notification {
+    [self resetHotKeys];
+}
+
+#pragma mark Hot Keys
+
+- (void)clearHotKeys {
+    [self.hotKeyCenter unregisterHotKeysWithTarget:self];
+}
+
+- (void)resetHotKeys {
+    [self clearHotKeys];
+    
+    NSString *key = @"startPause";
+    NSDictionary* playPauseCombo = [[NSUserDefaults standardUserDefaults] valueForKey:key];
+    
+    NSInteger keyCode = [[playPauseCombo valueForKey:@"keyCode"] integerValue];
+    NSUInteger modifierKeys = [[playPauseCombo valueForKey:@"modifierFlags"] unsignedIntegerValue];
+    
+    [self.hotKeyCenter registerHotKeyWithKeyCode:keyCode modifierFlags:modifierKeys target:self action:@selector(startTimer) object:nil];
+    
+    NSDictionary* finishCombo = [[NSUserDefaults standardUserDefaults] valueForKey:@"finish"];
+    keyCode = [[finishCombo valueForKey:@"keyCode"] integerValue];
+    modifierKeys = [[finishCombo valueForKey:@"modifierFlags"] unsignedIntegerValue];
+    
+    [self.hotKeyCenter registerHotKeyWithKeyCode:keyCode modifierFlags:modifierKeys target:self action:@selector(resetTimer) object:nil];
+}
+
 #pragma mark NSApplication
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     [window close];
-    
-    // Configure the Global hotkey
+
+    // Setup the hotkey center
     DDHotKeyCenter *center = [[DDHotKeyCenter alloc] init];
     self.hotKeyCenter = center;
     [center release];
+
+    // Setup user defaults notification
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserDefaultsChange:) name:NSUserDefaultsDidChangeNotification object:nil];
+
+    // Setup default key bindings
+    NSDictionary *defaults = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"defaults" ofType:@"plist"]];
     
-    [hotKeyCenter registerHotKeyWithKeyCode:KEYCODE_T
-                              modifierFlags:NSControlKeyMask
-                                     target:self
-                                     action:@selector(startTimer)
-                                     object:nil];
-                                     
-    [hotKeyCenter registerHotKeyWithKeyCode:KEYCODE_R
-                              modifierFlags:NSControlKeyMask
-                                     target:self
-                                     action:@selector(resetTimer)
-                                     object:nil];                                     
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
+    [[NSUserDefaultsController sharedUserDefaultsController] setInitialValues:defaults];                                  
     
     // Configure notifications
     [NSUserNotificationCenter defaultUserNotificationCenter].delegate = self;

@@ -22,10 +22,13 @@
 		CF0687A6163CA42D006796A6 /* ToggleCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0687A5163CA42D006796A6 /* ToggleCommand.m */; };
 		CF0779E311B9568900439C51 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0779E211B9568900439C51 /* Session.m */; };
 		CF7FFC0B11B942E4005A78A3 /* DataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = CF7FFC0A11B942E4005A78A3 /* DataModel.xcdatamodel */; };
+		CFB66C3316F7B922009DEE3F /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = CFB66C3216F7B922009DEE3F /* defaults.plist */; };
 		CFCBC66416F5E00200DC663A /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFCBC66016F5DFB700DC663A /* ShortcutRecorder.framework */; };
 		CFCBC66516F5E02300DC663A /* PTHotKey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFCBC66216F5DFB700DC663A /* PTHotKey.framework */; };
 		CFCBC66616F5E03400DC663A /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CFCBC66016F5DFB700DC663A /* ShortcutRecorder.framework */; };
 		CFCBC66716F5E03600DC663A /* PTHotKey.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CFCBC66216F5DFB700DC663A /* PTHotKey.framework */; };
+		CFD3D42216F700C700A23F33 /* PreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3D42016F700C700A23F33 /* PreferencesWindowController.m */; };
+		CFD3D42316F700C700A23F33 /* PreferencesWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFD3D42116F700C700A23F33 /* PreferencesWindowController.xib */; };
 		CFDFADE316F4C606008BF5F3 /* Stopwatch.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDFADE216F4C606008BF5F3 /* Stopwatch.m */; };
 		CFE78F1511BA73B700C2A003 /* logo.icns in Resources */ = {isa = PBXBuildFile; fileRef = CFE78F1411BA73B700C2A003 /* logo.icns */; };
 		CFE78F5511BA786A00C2A003 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CFE78F5411BA786A00C2A003 /* Credits.rtf */; };
@@ -93,7 +96,11 @@
 		CF0779E111B9568900439C51 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
 		CF0779E211B9568900439C51 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
 		CF7FFC0A11B942E4005A78A3 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		CFB66C3216F7B922009DEE3F /* defaults.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = defaults.plist; sourceTree = "<group>"; };
 		CFCBC65A16F5DFB700DC663A /* ShortcutRecorder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ShortcutRecorder.xcodeproj; path = ShortcutRecorder/ShortcutRecorder.xcodeproj; sourceTree = "<group>"; };
+		CFD3D41F16F700C700A23F33 /* PreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesWindowController.h; sourceTree = "<group>"; };
+		CFD3D42016F700C700A23F33 /* PreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesWindowController.m; sourceTree = "<group>"; };
+		CFD3D42116F700C700A23F33 /* PreferencesWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindowController.xib; sourceTree = "<group>"; };
 		CFDFADE116F4C606008BF5F3 /* Stopwatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stopwatch.h; sourceTree = "<group>"; };
 		CFDFADE216F4C606008BF5F3 /* Stopwatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stopwatch.m; sourceTree = "<group>"; };
 		CFE78F1411BA73B700C2A003 /* logo.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = logo.icns; sourceTree = "<group>"; };
@@ -120,10 +127,12 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CFD3D41E16F700B700A23F33 /* Windows */,
 				CFDFADDE16F4C1D2008BF5F3 /* Deps */,
 				CFDFADDD16F4C189008BF5F3 /* Commands */,
 				256AC3D80F4B6AC300CF3369 /* ThymeAppDelegate.h */,
 				256AC3D90F4B6AC300CF3369 /* ThymeAppDelegate.m */,
+				CF00B0081120E26D00F3503E /* MainMenu.xib */,
 				CFDFADE116F4C606008BF5F3 /* Stopwatch.h */,
 				CFDFADE216F4C606008BF5F3 /* Stopwatch.m */,
 			);
@@ -183,7 +192,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CFDFADE016F4C43B008BF5F3 /* XIB */,
+				CFB66C3216F7B922009DEE3F /* defaults.plist */,
 				CFDFADDF16F4C41E008BF5F3 /* Logo */,
 				CF068799163C9CEC006796A6 /* scriptSupport.sdef */,
 				8D1107310486CEB800E47090 /* Thyme-Info.plist */,
@@ -222,6 +231,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		CFD3D41E16F700B700A23F33 /* Windows */ = {
+			isa = PBXGroup;
+			children = (
+				CFD3D41F16F700C700A23F33 /* PreferencesWindowController.h */,
+				CFD3D42016F700C700A23F33 /* PreferencesWindowController.m */,
+				CFD3D42116F700C700A23F33 /* PreferencesWindowController.xib */,
+			);
+			name = Windows;
+			sourceTree = "<group>";
+		};
 		CFDFADDD16F4C189008BF5F3 /* Commands */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,14 +273,6 @@
 				CFE78F1411BA73B700C2A003 /* logo.icns */,
 			);
 			name = Logo;
-			sourceTree = "<group>";
-		};
-		CFDFADE016F4C43B008BF5F3 /* XIB */ = {
-			isa = PBXGroup;
-			children = (
-				CF00B0081120E26D00F3503E /* MainMenu.xib */,
-			);
-			name = XIB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,6 +357,8 @@
 				CFE78F8211BA7D5D00C2A003 /* logo_small.png in Resources */,
 				CF06879A163C9CEC006796A6 /* scriptSupport.sdef in Resources */,
 				AE000F6316B457E1009A89B0 /* logo_small@2x.png in Resources */,
+				CFD3D42316F700C700A23F33 /* PreferencesWindowController.xib in Resources */,
+				CFB66C3316F7B922009DEE3F /* defaults.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +379,7 @@
 				CF0687A3163CA41B006796A6 /* PauseCommand.m in Sources */,
 				CF0687A6163CA42D006796A6 /* ToggleCommand.m in Sources */,
 				CFDFADE316F4C606008BF5F3 /* Stopwatch.m in Sources */,
+				CFD3D42216F700C700A23F33 /* PreferencesWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
