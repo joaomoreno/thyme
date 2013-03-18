@@ -41,7 +41,7 @@
 			<object class="NSWindowTemplate" id="533228923">
 				<int key="NSWindowStyleMask">19</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{120, 65}, {263, 137}}</string>
+				<string key="NSWindowRect">{{566, 207}, {263, 137}}</string>
 				<int key="NSWTFlags">-1535638528</int>
 				<string key="NSWindowTitle">Thyme Preferences</string>
 				<string key="NSWindowClass">NSPanel</string>
@@ -67,7 +67,7 @@
 							<string key="NSFrame">{{123, 61}, {120, 24}}</string>
 							<reference key="NSSuperview" ref="585613456"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="586782210"/>
+							<reference key="NSNextKeyView" ref="1036541674"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<string key="NSClassName">SRRecorderControl</string>
 						</object>
@@ -133,7 +133,7 @@
 							</object>
 							<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 						</object>
-						<object class="NSButton" id="586782210">
+						<object class="NSButton" id="1036541674">
 							<reference key="NSNextResponder" ref="585613456"/>
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{57, 13}, {148, 32}}</string>
@@ -142,13 +142,13 @@
 							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
-							<object class="NSButtonCell" key="NSCell" id="195391543">
+							<object class="NSButtonCell" key="NSCell" id="667992168">
 								<int key="NSCellFlags">67108864</int>
 								<int key="NSCellFlags2">134217728</int>
 								<string key="NSContents">Reset to Defaults</string>
 								<reference key="NSSupport" ref="401495887"/>
 								<string key="NSCellIdentifier">_NS:9</string>
-								<reference key="NSControlView" ref="586782210"/>
+								<reference key="NSControlView" ref="1036541674"/>
 								<int key="NSButtonFlags">-2038284288</int>
 								<int key="NSButtonFlags2">129</int>
 								<string key="NSAlternateContents"/>
@@ -158,7 +158,7 @@
 							</object>
 							<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 						</object>
-						<object class="NSBox" id="640865258">
+						<object class="NSBox" id="711955673">
 							<reference key="NSNextResponder" ref="585613456"/>
 							<int key="NSvFlags">12</int>
 							<string key="NSFrame">{{12, 50}, {239, 5}}</string>
@@ -232,7 +232,7 @@
 					<object class="IBActionConnection" key="connection">
 						<string key="label">onResetToDefaultsClick:</string>
 						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="586782210"/>
+						<reference key="destination" ref="1036541674"/>
 					</object>
 					<int key="connectionID">107</int>
 				</object>
@@ -283,8 +283,8 @@
 						<int key="objectID">6</int>
 						<reference key="object" ref="585613456"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="640865258"/>
-							<reference ref="586782210"/>
+							<reference ref="711955673"/>
+							<reference ref="1036541674"/>
 							<reference ref="645802244"/>
 							<reference ref="658558804"/>
 							<reference ref="916041888"/>
@@ -330,20 +330,20 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">102</int>
-						<reference key="object" ref="586782210"/>
+						<reference key="object" ref="1036541674"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="195391543"/>
+							<reference ref="667992168"/>
 						</array>
 						<reference key="parent" ref="585613456"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">103</int>
-						<reference key="object" ref="195391543"/>
-						<reference key="parent" ref="586782210"/>
+						<reference key="object" ref="667992168"/>
+						<reference key="parent" ref="1036541674"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">106</int>
-						<reference key="object" ref="640865258"/>
+						<reference key="object" ref="711955673"/>
 						<reference key="parent" ref="585613456"/>
 					</object>
 				</array>
@@ -357,6 +357,8 @@
 				<string key="106.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="28.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="29.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<boolean value="YES" key="5.IBNSWindowAutoPositionCentersHorizontal"/>
+				<boolean value="YES" key="5.IBNSWindowAutoPositionCentersVertical"/>
 				<string key="5.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<boolean value="YES" key="5.NSWindowTemplate.visibleAtLaunch"/>
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
