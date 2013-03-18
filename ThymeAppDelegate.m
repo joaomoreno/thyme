@@ -7,7 +7,7 @@
 
 #import "ThymeAppDelegate.h"
 #import "Session.h"
-#import "ShortcutRecorder/PTHotKey/PTHotKey+ShortcutRecorder.h"
+#import "ShortcutRecorder/PTHotKey/PTKeyCodeTranslator.h"
 
 #define KEYCODE_T 17
 #define KEYCODE_R 15
@@ -305,12 +305,16 @@
     NSUInteger modifierKeys = [[playPauseCombo valueForKey:@"modifierFlags"] unsignedIntegerValue];
     
     [self.hotKeyCenter registerHotKeyWithKeyCode:keyCode modifierFlags:modifierKeys target:self action:@selector(startTimer) object:nil];
+    self.startPauseItem.keyEquivalent = [[PTKeyCodeTranslator currentTranslator] translateKeyCode:keyCode];
+    self.startPauseItem.keyEquivalentModifierMask = modifierKeys;
     
     NSDictionary* finishCombo = [[NSUserDefaults standardUserDefaults] valueForKey:@"finish"];
     keyCode = [[finishCombo valueForKey:@"keyCode"] integerValue];
     modifierKeys = [[finishCombo valueForKey:@"modifierFlags"] unsignedIntegerValue];
     
     [self.hotKeyCenter registerHotKeyWithKeyCode:keyCode modifierFlags:modifierKeys target:self action:@selector(resetTimer) object:nil];
+    self.finishItem.keyEquivalent = [[PTKeyCodeTranslator currentTranslator] translateKeyCode:keyCode];
+    self.finishItem.keyEquivalentModifierMask = modifierKeys;
 }
 
 #pragma mark NSApplication
