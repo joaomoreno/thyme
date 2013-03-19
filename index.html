@@ -6,87 +6,157 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
 	<title>joaomoreno/thyme @ GitHub</title>
+
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" />
+	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 	
 	<style type="text/css">
 		body {
-  		margin-top: 1.0em;
-  		background-color: #fff;
-		  font-family: "Georgia", serif;
-  		color: #111;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-		h1 { font-size: 3.8em; color: #e33; margin-bottom: 3px; padding-top: 40px }
-		h1 .small { font-size: 0.4em;  }
-		h1 a { text-decoration: none }
-		h2 { font-size: 1.5em; color: #e33; }
-    h3 { text-align: center; color: #e33; }
-    a { color: #e33; padding: 2px 0px; }
-    a.highlight:hover { color: #fff; background-color: #e33; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic; line-height: 1.3em; }
-    .download { float: right; }
-		pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-    p { line-height: 28px; font-size: 17px; }
-    code { font-size: 80%; color: #e33; }
+			padding-bottom: 40px;
+		}
+
+		h1 {
+			margin-top: 0;
+		}
+
+		h4:not(:first-child) {
+			margin-top: 22px;
+		}
+
+		.lead {
+			font-size: 18px;
+			margin-bottom: 0;
+		}
+
+		.container-narrow {
+			margin: 0 auto;
+			max-width: 700px;
+		}
+
+		.container-narrow > hr {
+			margin: 30px 0;
+		}
+
+		.page-header {
+			padding-top: 20px;
+		}
+
+		.buttons {
+			margin-top: 12px;
+		}
+
+		img {
+			margin: 10px 0;
+		}
 	</style>
 	
 </head>
 
 <body>
-  <a href="http://github.com/joaomoreno/thyme"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+	<div class="container-narrow">
+		<div class="page-header row-fluid">
+			<div class="span6">
+				<h1>Thyme <small class="muted">by <a href="http://github.com/joaomoreno">joaomoreno</a></small></h1>
+				<p class="lead">A timer for OS X. As simple as that.</p>
+			</div>
+			<div class="span6">
+				<ul class="buttons inline pull-right">
+					<li><a class="btn" href="http://github.com/joaomoreno/thyme" alt="Fork on GitHub">Fork in GitHub</a></li>
+					<li><a class="btn btn-primary" href="dist/Thyme-0.4.dmg" alt="Download Thyme"><i class="icon-download-alt icon-white"></i> Download v0.4</a></li>
+				</ul>
+			</div>
+		</div>
 
-  <div id="container">
+		<div class="row-fluid">
+			<div class="span6">
+				<h4>Time Your Tasks</h4>
+				<p>Use Thyme to control how much time you spend on your tasks.</p>
 
-    <div class="download">
-      <a class="nohighlight" href="https://github.com/downloads/joaomoreno/thyme/Thyme%200.3.dmg"><img border="0" src="screen.png"></a>
-    </div>
+				<h4>Keep a Record</h4>
+				<p>Thyme remembers the time you've spent when using it, so you don't have to.</p>
+				<p><img src="img/preferences.png"></p>
+			</div>
 
-    <h1><a class="highlight" href="http://github.com/joaomoreno/thyme">Thyme</a>
-      <span class="small">by <a class="highlight" href="http://joaomoreno.com/">João</a></span></h1>
+			<div class="span6">
+				<p><img src="img/main.png"></p>
+				<h4>Global Keyboard Shortcuts</h4>
+				<p>You can use global keyboard shortcuts to trigger Thyme.</p>
+				<p><span class="label label-info">New in v0.4</span> You can now customize the keyboard shortcuts using the new Preferences dialog.</p>
+			</div>
+		</div>
 
-    <div class="description">
-      Thyme is a timer for OS X. <br/>It's as simple as that.
-    </div>
-
-    <p>With Thyme you can keep track of the time you spend doing your tasks. Thyme also remembers every time you used it, so you don't have to.</p>
-
-    <h2>Keyboard Shortcuts</h2>
-
-    <p>At any time, press <strong>Ctrl-T</strong> to start and pause Thyme. <strong>Ctrl-R</strong> stops it.</p>
-
-    <h2>Download &amp; Install</h2>
-    <p><a class="highlight" href="https://github.com/downloads/joaomoreno/thyme/Thyme%200.3.dmg">Download Thyme 0.3</a></p>
-
-    <p>
-      <strong><em>New in 0.3:</em></strong> Thyme now supports four Applescript commands: <code>start</code>, <code>stop</code>, <code>pause</code> and <code>toggle</code>. Example:
-    </p>
-
-    <p>
-<pre>tell application "Thyme"
-    start # other commands: stop, pause, toggle
+		<div class="row-fluid">
+			<div class="span12">
+				<h4>Actionscript</h4>
+				<p>Thyme supports four different Actionscript commands: <code>start</code>, <code>stop</code>, <code>pause</code> and <code>toggle</code>. Here's how:</p>
+				<pre>tell application "Thyme"
+    start
 end tell</pre>
-    </p>
+			</div>
+		</div>
 
-    <h2>Source Code</h2>
-    <p>You can hack Thyme by cloning the project with <a class="highlight" href="http://git-scm.com">git</a> like so:
-      <pre>$ git clone git://github.com/joaomoreno/thyme</pre>
-    </p>
+		<hr>
 
-    <p>
-        If you did something really cool, just send me a fork request on <a class="highlight" href="http://github.com/joaomoreno/thyme">GitHub</a>.
-    </p>
+		<div class="row-fluid">
+			<div class="span12">
+				<p class="text-center"><small>MIT Licensed &mdash; &copy; 2010 João Moreno</small></p>
+			</div>
+		</div>
+	</div>
 
-    <div class="footer">
-          project hosted on GitHub : <a class="highlight" href="http://github.com/joaomoreno/thyme">joaomoreno/thyme</a>
-    </div>
+	
 
-  </div>
+	<!--
+	<div id="container">
 
-  <script type="text/javascript">
+		<div class="download">
+			<a class="nohighlight" href="https://github.com/downloads/joaomoreno/thyme/Thyme%200.3.dmg"><img border="0" src="screen.png"></a>
+		</div>
+
+		<h1><a class="highlight" href="http://github.com/joaomoreno/thyme">Thyme</a>
+			<span class="small">by <a class="highlight" href="http://joaomoreno.com/">João</a></span></h1>
+
+		<div class="description">
+			Thyme is a timer for OS X. <br/>It's as simple as that.
+		</div>
+
+		<p>With Thyme you can keep track of the time you spend doing your tasks. Thyme also remembers every time you used it, so you don't have to.</p>
+
+		<h2>Keyboard Shortcuts</h2>
+
+		<p>At any time, press <strong>Ctrl-T</strong> to start and pause Thyme. <strong>Ctrl-R</strong> stops it.</p>
+
+		<h2>Download &amp; Install</h2>
+		<p><a class="highlight" href="https://github.com/downloads/joaomoreno/thyme/Thyme%200.3.dmg">Download Thyme 0.3</a></p>
+
+		<p>
+			<strong><em>New in 0.3:</em></strong> Thyme now supports four Applescript commands: <code>start</code>, <code>stop</code>, <code>pause</code> and <code>toggle</code>. Example:
+		</p>
+
+		<p>
+<pre>tell application "Thyme"
+		start # other commands: stop, pause, toggle
+end tell</pre>
+		</p>
+
+		<h2>Source Code</h2>
+		<p>You can hack Thyme by cloning the project with <a class="highlight" href="http://git-scm.com">git</a> like so:
+			<pre>$ git clone git://github.com/joaomoreno/thyme</pre>
+		</p>
+
+		<p>
+				If you did something really cool, just send me a fork request on <a class="highlight" href="http://github.com/joaomoreno/thyme">GitHub</a>.
+		</p>
+
+		<div class="footer">
+					project hosted on GitHub : <a class="highlight" href="http://github.com/joaomoreno/thyme">joaomoreno/thyme</a>
+		</div>
+
+	</div>
+-->
+
+	<script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
 </script>
