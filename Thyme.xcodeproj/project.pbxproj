@@ -21,6 +21,9 @@
 		CF0687A3163CA41B006796A6 /* PauseCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0687A2163CA41B006796A6 /* PauseCommand.m */; };
 		CF0687A6163CA42D006796A6 /* ToggleCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0687A5163CA42D006796A6 /* ToggleCommand.m */; };
 		CF0779E311B9568900439C51 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0779E211B9568900439C51 /* Session.m */; };
+		CF2A633F175188960089E16F /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = CF2A633E175188960089E16F /* Growl Registration Ticket.growlRegDict */; };
+		CF2A634617518C470089E16F /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2A634517518C470089E16F /* Growl.framework */; };
+		CF2A634917518CA30089E16F /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF2A634517518C470089E16F /* Growl.framework */; };
 		CF7FFC0B11B942E4005A78A3 /* DataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = CF7FFC0A11B942E4005A78A3 /* DataModel.xcdatamodel */; };
 		CFB66C3316F7B922009DEE3F /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = CFB66C3216F7B922009DEE3F /* defaults.plist */; };
 		CFCBC66416F5E00200DC663A /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFCBC66016F5DFB700DC663A /* ShortcutRecorder.framework */; };
@@ -62,6 +65,7 @@
 			files = (
 				CFCBC66716F5E03600DC663A /* PTHotKey.framework in CopyFiles */,
 				CFCBC66616F5E03400DC663A /* ShortcutRecorder.framework in CopyFiles */,
+				CF2A634917518CA30089E16F /* Growl.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +99,8 @@
 		CF0687A5163CA42D006796A6 /* ToggleCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToggleCommand.m; sourceTree = "<group>"; };
 		CF0779E111B9568900439C51 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
 		CF0779E211B9568900439C51 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
+		CF2A633E175188960089E16F /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
+		CF2A634517518C470089E16F /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = Frameworks/Growl.framework; sourceTree = "<group>"; };
 		CF7FFC0A11B942E4005A78A3 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		CFB66C3216F7B922009DEE3F /* defaults.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = defaults.plist; sourceTree = "<group>"; };
 		CFCBC65A16F5DFB700DC663A /* ShortcutRecorder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ShortcutRecorder.xcodeproj; path = ShortcutRecorder/ShortcutRecorder.xcodeproj; sourceTree = "<group>"; };
@@ -118,6 +124,7 @@
 				CFCBC66416F5E00200DC663A /* ShortcutRecorder.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				CF00806E116E75A40028AA45 /* Carbon.framework in Frameworks */,
+				CF2A634617518C470089E16F /* Growl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +206,7 @@
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				CFE78F5411BA786A00C2A003 /* Credits.rtf */,
 				CFE78F5811BA797A00C2A003 /* LICENSE */,
+				CF2A633E175188960089E16F /* Growl Registration Ticket.growlRegDict */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -206,6 +214,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CF2A634517518C470089E16F /* Growl.framework */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
@@ -359,6 +368,7 @@
 				AE000F6316B457E1009A89B0 /* logo_small@2x.png in Resources */,
 				CFD3D42316F700C700A23F33 /* PreferencesWindowController.xib in Resources */,
 				CFB66C3316F7B922009DEE3F /* defaults.plist in Resources */,
+				CF2A633F175188960089E16F /* Growl Registration Ticket.growlRegDict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +416,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Frameworks\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
@@ -416,7 +427,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				PRODUCT_NAME = Thyme;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.7;
 			};
 			name = Debug;
 		};
@@ -425,10 +436,12 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Frameworks\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -437,7 +450,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				PRODUCT_NAME = Thyme;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.7;
 			};
 			name = Release;
 		};
@@ -450,7 +463,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = NO;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.7;
 				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Debug;
@@ -463,7 +476,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = NO;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.7;
 				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Release;

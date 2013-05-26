@@ -23,7 +23,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>LSMinimumSystemVersion</key>
-	<string>10.6</string>
+	<string>10.7</string>
 	<key>LSUIElement</key>
 	<true/>
 	<key>NSAppleScriptEnabled</key>

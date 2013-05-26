@@ -249,38 +249,17 @@
 
 - (void)notifyStart
 {
-    NSUserNotification* notification = [[NSUserNotification alloc] init];
-    
-    notification.title = @"Thyme";
-    notification.informativeText = @"Started";
-    
-    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
+    [GrowlApplicationBridge notifyWithTitle:@"Thyme" description:@"Started" notificationName:@"start" iconData:nil priority:0 isSticky:NO clickContext:nil];
 }
 
 - (void)notifyPauseWithDescription:(NSString*)description
 {
-    NSUserNotification* notification = [[NSUserNotification alloc] init];
-    
-    notification.title = @"Thyme";
-    notification.informativeText = [@"Paused at " stringByAppendingString:description];
-    
-    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
+    [GrowlApplicationBridge notifyWithTitle:@"Thyme" description:[@"Paused at " stringByAppendingString:description] notificationName:@"pause" iconData:nil priority:0 isSticky:NO clickContext:nil];
 }
 
 - (void)notifyStopWithDescription:(NSString*)description
 {
-    NSUserNotification* notification = [[NSUserNotification alloc] init];
-    
-    notification.title = @"Thyme";
-    notification.informativeText = [@"Stopped at " stringByAppendingString:description];
-    
-    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
-}
-
-#pragma mark NSUserNotificationCenterDelegate
-
-- (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification {
-    return YES;
+    [GrowlApplicationBridge notifyWithTitle:@"Thyme" description:[@"Stopped at " stringByAppendingString:description] notificationName:@"stop" iconData:nil priority:0 isSticky:NO clickContext:nil];
 }
 
 #pragma mark NSUserDefaultsDidChangeNotification
@@ -327,6 +306,9 @@
     DDHotKeyCenter *center = [[DDHotKeyCenter alloc] init];
     self.hotKeyCenter = center;
     [center release];
+    
+    // Setup Growl
+    [GrowlApplicationBridge setGrowlDelegate:self];
 
     // Setup user defaults notification
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserDefaultsChange:) name:NSUserDefaultsDidChangeNotification object:nil];
@@ -335,10 +317,7 @@
     NSDictionary *defaults = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"defaults" ofType:@"plist"]];
     
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
-    [[NSUserDefaultsController sharedUserDefaultsController] setInitialValues:defaults];                                  
-    
-    // Configure notifications
-    [NSUserNotificationCenter defaultUserNotificationCenter].delegate = self;
+    [[NSUserDefaultsController sharedUserDefaultsController] setInitialValues:defaults];
     
     // Create class attributes
     NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:20];
