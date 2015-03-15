@@ -15,6 +15,7 @@
 }
 
 @property (nonatomic, retain) IBOutlet SRRecorderControl *startPauseShortcutRecorder;
+@property (nonatomic, retain) IBOutlet SRRecorderControl *restartShortcutRecorder;
 @property (nonatomic, retain) IBOutlet SRRecorderControl *finishShortcutRecorder;
 
 - (IBAction)onResetToDefaultsClick:(id)sender;

@@ -40,6 +40,7 @@
 @synthesize window;
 @synthesize menu;
 @synthesize startPauseItem;
+@synthesize restartItem;
 @synthesize finishItem;
 @synthesize preferencesWindowController;
 @synthesize sessionsMenuSeparator;
@@ -54,6 +55,7 @@
         [self.stopwatch start];
         
         [startPauseItem setTitle:@"Pause"];
+        [restartItem setEnabled:YES];
         [finishItem setEnabled:YES];
         
         if (notification) {
@@ -103,11 +105,20 @@
         [self.stopwatch stop];
         
         [startPauseItem setTitle:@"Start"];
+        [restartItem setEnabled:NO];
         [finishItem setEnabled:NO];
         
         if (notification) {
             [self notifyPauseWithDescription:description];
         }
+    }
+}
+
+- (void)restartWithNotification:(Boolean)notification
+{
+    if (![self.stopwatch isStopped]) {
+        [self resetWithNotification:notification];
+        [self startWithNotification:notification];
     }
 }
 
@@ -127,11 +138,11 @@
 {
     if ([self.sessionsMenuItems count] == 0)
     {
-        [menu insertItem:self.sessionsMenuSeparator atIndex:2];
-        [menu insertItem:self.sessionsMenuClearItem atIndex:3];
+        [menu insertItem:self.sessionsMenuSeparator atIndex:3];
+        [menu insertItem:self.sessionsMenuClearItem atIndex:4];
     }
     
-    NSInteger index = 3 + [self.sessionsMenuItems count];
+    NSInteger index = 4 + [self.sessionsMenuItems count];
     
     NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:[session stringRepresentation] action:@selector(lol) keyEquivalent:@""];
     [item setEnabled:NO];
@@ -160,6 +171,11 @@
 - (IBAction)onStartPauseClick:(id)sender
 {
     [self toggleWithNotification:NO];
+}
+
+- (IBAction)onRestartClick:(id)sender
+{
+    [self restartWithNotification:NO];
 }
 
 - (IBAction)onFinishClick:(id)sender
@@ -218,6 +234,15 @@
     }
     
     [self toggleWithNotification:YES];
+}
+
+- (void)restartTimer
+{
+    if (self.preferencesWindowController != nil && [[self.preferencesWindowController window] isVisible]) {
+        return;
+    }
+    
+    [self restartWithNotification:YES];
 }
 
 - (void)resetTimer
@@ -280,23 +305,36 @@
 - (void)resetHotKeys {
     [self clearHotKeys];
     
-    NSString *key = @"startPause";
-    NSDictionary* playPauseCombo = [[NSUserDefaults standardUserDefaults] valueForKey:key];
+    // Start, pause
+    NSDictionary* combo = [[NSUserDefaults standardUserDefaults] valueForKey:@"startPause"];
     
-    NSInteger keyCode = [[playPauseCombo valueForKey:@"keyCode"] integerValue];
-    NSUInteger modifierKeys = [[playPauseCombo valueForKey:@"modifierFlags"] unsignedIntegerValue];
+    NSInteger keyCode = [[combo valueForKey:@"keyCode"] integerValue];
+    NSUInteger modifierKeys = [[combo valueForKey:@"modifierFlags"] unsignedIntegerValue];
     
     [self.hotKeyCenter registerHotKeyWithKeyCode:keyCode modifierFlags:modifierKeys target:self action:@selector(startTimer) object:nil];
     self.startPauseItem.keyEquivalent = [[PTKeyCodeTranslator currentTranslator] translateKeyCode:keyCode];
     self.startPauseItem.keyEquivalentModifierMask = modifierKeys;
     
-    NSDictionary* finishCombo = [[NSUserDefaults standardUserDefaults] valueForKey:@"finish"];
-    keyCode = [[finishCombo valueForKey:@"keyCode"] integerValue];
-    modifierKeys = [[finishCombo valueForKey:@"modifierFlags"] unsignedIntegerValue];
+    // Restart
+    combo = [[NSUserDefaults standardUserDefaults] valueForKey:@"restart"];
+    keyCode = [[combo valueForKey:@"keyCode"] integerValue];
+    modifierKeys = [[combo valueForKey:@"modifierFlags"] unsignedIntegerValue];
+    
+    [self.hotKeyCenter registerHotKeyWithKeyCode:keyCode modifierFlags:modifierKeys target:self action:@selector(restartTimer) object:nil];
+    self.restartItem.keyEquivalent = [[PTKeyCodeTranslator currentTranslator] translateKeyCode:keyCode];
+    self.restartItem.keyEquivalentModifierMask = modifierKeys;
+    
+    // Finish
+    combo = [[NSUserDefaults standardUserDefaults] valueForKey:@"finish"];
+    keyCode = [[combo valueForKey:@"keyCode"] integerValue];
+    modifierKeys = [[combo valueForKey:@"modifierFlags"] unsignedIntegerValue];
     
     [self.hotKeyCenter registerHotKeyWithKeyCode:keyCode modifierFlags:modifierKeys target:self action:@selector(resetTimer) object:nil];
     self.finishItem.keyEquivalent = [[PTKeyCodeTranslator currentTranslator] translateKeyCode:keyCode];
     self.finishItem.keyEquivalentModifierMask = modifierKeys;
+    
+    [[[NSUserDefaults standardUserDefaults] dictionaryWithValuesForKeys:[NSArray arrayWithObjects:@"startPause", @"restart", @"finish", nil]] writeToFile:@"/Users/joao/Desktop/defaults.plist" atomically:YES];
+
 }
 
 #pragma mark NSApplication

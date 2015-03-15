@@ -15,6 +15,7 @@
 @implementation PreferencesWindowController
 
 @synthesize startPauseShortcutRecorder;
+@synthesize restartShortcutRecorder;
 @synthesize finishShortcutRecorder;
 
 - (id)initWithWindow:(NSWindow *)window
@@ -33,6 +34,7 @@
     
     NSUserDefaultsController *defaults = [NSUserDefaultsController sharedUserDefaultsController];
     [self.startPauseShortcutRecorder bind:NSValueBinding toObject:defaults withKeyPath:@"values.startPause" options:nil];
+    [self.restartShortcutRecorder bind:NSValueBinding toObject:defaults withKeyPath:@"values.restart" options:nil];
     [self.finishShortcutRecorder bind:NSValueBinding toObject:defaults withKeyPath:@"values.finish" options:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onWindowResignKey) name:NSWindowDidResignKeyNotification object:nil];
@@ -50,6 +52,7 @@
 
 - (BOOL)shortcutRecorder:(SRRecorderControl *)aRecorder canRecordShortcut:(NSDictionary *)aShortcut {
     return !SRShortcutEqualToShortcut([self.startPauseShortcutRecorder objectValue], aShortcut) &&
+           !SRShortcutEqualToShortcut([self.restartShortcutRecorder objectValue], aShortcut) &&
            !SRShortcutEqualToShortcut([self.finishShortcutRecorder objectValue], aShortcut);
 }
 

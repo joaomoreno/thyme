@@ -46,6 +46,7 @@
 @property(nonatomic, retain) NSStatusItem *statusItem;
 @property(nonatomic, retain) IBOutlet NSMenu *menu;
 @property(nonatomic, retain) IBOutlet NSMenuItem *startPauseItem;
+@property(nonatomic, retain) IBOutlet NSMenuItem *restartItem;
 @property(nonatomic, retain) IBOutlet NSMenuItem *finishItem;
 
 @property(nonatomic, retain) PreferencesWindowController *preferencesWindowController;
