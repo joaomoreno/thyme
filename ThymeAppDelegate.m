@@ -547,7 +547,7 @@
         [alert release];
         alert = nil;
         
-        if (answer == NSAlertAlternateReturn)
+        if (answer == NSAlertSecondButtonReturn)
             return NSTerminateCancel;
     }
 

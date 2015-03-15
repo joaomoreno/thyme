@@ -7,4 +7,5 @@ build
 *.mode2v3
 *.moved-aside
 xcuserdata
+xcshareddata
 
