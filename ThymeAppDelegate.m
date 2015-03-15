@@ -349,6 +349,22 @@
     }
 }
 
+#pragma mark Sleep/Wake
+
+- (void) onSleep: (NSNotification*) note
+{
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"pauseOnSleep"]) {
+        [self pauseWithNotification:NO];
+    }
+}
+
+- (void) onWake: (NSNotification*) note
+{
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"pauseOnSleep"]) {
+        [self startWithNotification:NO];
+    }
+}
+
 #pragma mark NSApplication
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -366,8 +382,24 @@
     // Setup user defaults notification
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserDefaultsChange:) name:NSUserDefaultsDidChangeNotification object:nil];
     
-    // Update hot keys
-    [self resetHotKeys];
+    // Setup defaults
+    NSDictionary *defaults = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"defaults" ofType:@"plist"]];
+    
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
+    [[NSUserDefaultsController sharedUserDefaultsController] setInitialValues:defaults];
+    
+    // Listen to sleep/wake
+    [[[NSWorkspace sharedWorkspace] notificationCenter]
+     addObserver:self
+     selector:@selector(onSleep:)
+     name:NSWorkspaceWillSleepNotification
+     object:nil];
+    
+    [[[NSWorkspace sharedWorkspace] notificationCenter]
+     addObserver:self
+     selector:@selector(onWake:)
+     name:NSWorkspaceDidWakeNotification
+     object:nil];
     
     // Create class attributes
     NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:20];

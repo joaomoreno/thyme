@@ -2,38 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>finish</key>
-	<dict>
-		<key>characters</key>
-		<string></string>
-		<key>charactersIgnoringModifiers</key>
-		<string>r</string>
-		<key>keyCode</key>
-		<integer>15</integer>
-		<key>modifierFlags</key>
-		<integer>262144</integer>
-	</dict>
-	<key>restart</key>
-	<dict>
-		<key>characters</key>
-		<string></string>
-		<key>charactersIgnoringModifiers</key>
-		<string>R</string>
-		<key>keyCode</key>
-		<integer>15</integer>
-		<key>modifierFlags</key>
-		<integer>393216</integer>
-	</dict>
-	<key>startPause</key>
-	<dict>
-		<key>characters</key>
-		<string></string>
-		<key>charactersIgnoringModifiers</key>
-		<string>t</string>
-		<key>keyCode</key>
-		<integer>17</integer>
-		<key>modifierFlags</key>
-		<integer>262144</integer>
-	</dict>
+	<key>pauseOnSleep</key>
+	<true/>
 </dict>
 </plist>
