@@ -23,13 +23,13 @@
 		CF0779E311B9568900439C51 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0779E211B9568900439C51 /* Session.m */; };
 		CF2A633F175188960089E16F /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = CF2A633E175188960089E16F /* Growl Registration Ticket.growlRegDict */; };
 		CF2A634617518C470089E16F /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2A634517518C470089E16F /* Growl.framework */; };
-		CF2A634917518CA30089E16F /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF2A634517518C470089E16F /* Growl.framework */; };
+		CF2A634917518CA30089E16F /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF2A634517518C470089E16F /* Growl.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		CF7FFC0B11B942E4005A78A3 /* DataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = CF7FFC0A11B942E4005A78A3 /* DataModel.xcdatamodel */; };
 		CFB66C3316F7B922009DEE3F /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = CFB66C3216F7B922009DEE3F /* defaults.plist */; };
 		CFCBC66416F5E00200DC663A /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFCBC66016F5DFB700DC663A /* ShortcutRecorder.framework */; };
 		CFCBC66516F5E02300DC663A /* PTHotKey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFCBC66216F5DFB700DC663A /* PTHotKey.framework */; };
-		CFCBC66616F5E03400DC663A /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CFCBC66016F5DFB700DC663A /* ShortcutRecorder.framework */; };
-		CFCBC66716F5E03600DC663A /* PTHotKey.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CFCBC66216F5DFB700DC663A /* PTHotKey.framework */; };
+		CFCBC66616F5E03400DC663A /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CFCBC66016F5DFB700DC663A /* ShortcutRecorder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		CFCBC66716F5E03600DC663A /* PTHotKey.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CFCBC66216F5DFB700DC663A /* PTHotKey.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		CFD3D42216F700C700A23F33 /* PreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3D42016F700C700A23F33 /* PreferencesWindowController.m */; };
 		CFD3D42316F700C700A23F33 /* PreferencesWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFD3D42116F700C700A23F33 /* PreferencesWindowController.xib */; };
 		CFDFADE316F4C606008BF5F3 /* Stopwatch.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDFADE216F4C606008BF5F3 /* Stopwatch.m */; };
@@ -312,7 +312,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0610;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Thyme" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -427,7 +427,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				PRODUCT_NAME = Thyme;
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -450,20 +450,19 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				PRODUCT_NAME = Thyme;
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				ONLY_ACTIVE_ARCH = NO;
-				SDKROOT = macosx10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
 				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Debug;
@@ -471,12 +470,11 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = NO;
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Release;

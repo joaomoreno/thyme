@@ -198,7 +198,10 @@
     if ([self.stopwatch isStopped]) {
         [statusItem setLength:26.0];
         [statusItem setTitle:@""];
-        [statusItem setImage:[NSImage imageNamed:@"logo_small"]];
+        
+        NSImage *logo = [NSImage imageNamed:@"logo_small"];
+        [logo setTemplate:YES];
+        [statusItem setImage: logo];
     } else {
         [statusItem setLength:[self.stopwatch value] > 3600 ? 72.0 : 46.0];
         [statusItem setTitle:[self.stopwatch description]];
@@ -336,6 +339,7 @@
     self.statusItem = [statusBar statusItemWithLength:46.0];
     [statusItem setHighlightMode:YES];
     [statusItem setMenu:menu];
+    
     [self updateStatusBar];
     
     // Populate data
