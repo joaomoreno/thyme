@@ -37,15 +37,13 @@
     [self.restartShortcutRecorder bind:NSValueBinding toObject:defaults withKeyPath:@"values.restart" options:nil];
     [self.finishShortcutRecorder bind:NSValueBinding toObject:defaults withKeyPath:@"values.finish" options:nil];
     
+    [self.startPauseShortcutRecorder clearButtonRect];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onWindowResignKey) name:NSWindowDidResignKeyNotification object:nil];
 }
 
 - (void)onWindowResignKey {
     [self.window close];
-}
-
-- (IBAction)onResetToDefaultsClick:(id)sender {
-    [[NSUserDefaultsController sharedUserDefaultsController] revertToInitialValues:nil];
 }
 
 #pragma mark SRRecorderControlDelegate

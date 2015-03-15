@@ -11,13 +11,12 @@
 
 @interface PreferencesWindowController : NSWindowController <SRRecorderControlDelegate> {
     SRRecorderControl *startPauseShortcutRecorder;
+    SRRecorderControl *restartShortcutRecorder;
     SRRecorderControl *finishShortcutRecorder;
 }
 
 @property (nonatomic, retain) IBOutlet SRRecorderControl *startPauseShortcutRecorder;
 @property (nonatomic, retain) IBOutlet SRRecorderControl *restartShortcutRecorder;
 @property (nonatomic, retain) IBOutlet SRRecorderControl *finishShortcutRecorder;
-
-- (IBAction)onResetToDefaultsClick:(id)sender;
 
 @end

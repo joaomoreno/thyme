@@ -300,41 +300,53 @@
 
 - (void)clearHotKeys {
     [self.hotKeyCenter unregisterHotKeysWithTarget:self];
+    
+    self.startPauseItem.keyEquivalent = @"";
+    self.startPauseItem.keyEquivalentModifierMask = 0;
+    
+    self.restartItem.keyEquivalent = @"";
+    self.restartItem.keyEquivalentModifierMask = 0;
+    
+    self.finishItem.keyEquivalent = @"";
+    self.finishItem.keyEquivalentModifierMask = 0;
 }
 
 - (void)resetHotKeys {
     [self clearHotKeys];
     
+    NSDictionary* combo;
+    NSInteger keyCode;
+    NSUInteger modifierKeys;
+    
     // Start, pause
-    NSDictionary* combo = [[NSUserDefaults standardUserDefaults] valueForKey:@"startPause"];
-    
-    NSInteger keyCode = [[combo valueForKey:@"keyCode"] integerValue];
-    NSUInteger modifierKeys = [[combo valueForKey:@"modifierFlags"] unsignedIntegerValue];
-    
-    [self.hotKeyCenter registerHotKeyWithKeyCode:keyCode modifierFlags:modifierKeys target:self action:@selector(startTimer) object:nil];
-    self.startPauseItem.keyEquivalent = [[PTKeyCodeTranslator currentTranslator] translateKeyCode:keyCode];
-    self.startPauseItem.keyEquivalentModifierMask = modifierKeys;
+    if ((combo = [[NSUserDefaults standardUserDefaults] valueForKey:@"startPause"]) != nil) {
+        keyCode = [[combo valueForKey:@"keyCode"] integerValue];
+        modifierKeys = [[combo valueForKey:@"modifierFlags"] unsignedIntegerValue];
+        
+        [self.hotKeyCenter registerHotKeyWithKeyCode:keyCode modifierFlags:modifierKeys target:self action:@selector(startTimer) object:nil];
+        self.startPauseItem.keyEquivalent = [[PTKeyCodeTranslator currentTranslator] translateKeyCode:keyCode];
+        self.startPauseItem.keyEquivalentModifierMask = modifierKeys;
+    }
     
     // Restart
-    combo = [[NSUserDefaults standardUserDefaults] valueForKey:@"restart"];
-    keyCode = [[combo valueForKey:@"keyCode"] integerValue];
-    modifierKeys = [[combo valueForKey:@"modifierFlags"] unsignedIntegerValue];
-    
-    [self.hotKeyCenter registerHotKeyWithKeyCode:keyCode modifierFlags:modifierKeys target:self action:@selector(restartTimer) object:nil];
-    self.restartItem.keyEquivalent = [[PTKeyCodeTranslator currentTranslator] translateKeyCode:keyCode];
-    self.restartItem.keyEquivalentModifierMask = modifierKeys;
+    if ((combo = [[NSUserDefaults standardUserDefaults] valueForKey:@"restart"]) != nil) {
+        keyCode = [[combo valueForKey:@"keyCode"] integerValue];
+        modifierKeys = [[combo valueForKey:@"modifierFlags"] unsignedIntegerValue];
+        
+        [self.hotKeyCenter registerHotKeyWithKeyCode:keyCode modifierFlags:modifierKeys target:self action:@selector(restartTimer) object:nil];
+        self.restartItem.keyEquivalent = [[PTKeyCodeTranslator currentTranslator] translateKeyCode:keyCode];
+        self.restartItem.keyEquivalentModifierMask = modifierKeys;
+    }
     
     // Finish
-    combo = [[NSUserDefaults standardUserDefaults] valueForKey:@"finish"];
-    keyCode = [[combo valueForKey:@"keyCode"] integerValue];
-    modifierKeys = [[combo valueForKey:@"modifierFlags"] unsignedIntegerValue];
-    
-    [self.hotKeyCenter registerHotKeyWithKeyCode:keyCode modifierFlags:modifierKeys target:self action:@selector(resetTimer) object:nil];
-    self.finishItem.keyEquivalent = [[PTKeyCodeTranslator currentTranslator] translateKeyCode:keyCode];
-    self.finishItem.keyEquivalentModifierMask = modifierKeys;
-    
-    [[[NSUserDefaults standardUserDefaults] dictionaryWithValuesForKeys:[NSArray arrayWithObjects:@"startPause", @"restart", @"finish", nil]] writeToFile:@"/Users/joao/Desktop/defaults.plist" atomically:YES];
-
+    if ((combo = [[NSUserDefaults standardUserDefaults] valueForKey:@"finish"]) != nil) {
+        keyCode = [[combo valueForKey:@"keyCode"] integerValue];
+        modifierKeys = [[combo valueForKey:@"modifierFlags"] unsignedIntegerValue];
+        
+        [self.hotKeyCenter registerHotKeyWithKeyCode:keyCode modifierFlags:modifierKeys target:self action:@selector(resetTimer) object:nil];
+        self.finishItem.keyEquivalent = [[PTKeyCodeTranslator currentTranslator] translateKeyCode:keyCode];
+        self.finishItem.keyEquivalentModifierMask = modifierKeys;
+    }
 }
 
 #pragma mark NSApplication
@@ -353,12 +365,9 @@
 
     // Setup user defaults notification
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserDefaultsChange:) name:NSUserDefaultsDidChangeNotification object:nil];
-
-    // Setup default key bindings
-    NSDictionary *defaults = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"defaults" ofType:@"plist"]];
     
-    [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
-    [[NSUserDefaultsController sharedUserDefaultsController] setInitialValues:defaults];
+    // Update hot keys
+    [self resetHotKeys];
     
     // Create class attributes
     NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:20];
