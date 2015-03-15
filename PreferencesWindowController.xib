@@ -40,7 +40,7 @@
 			<object class="NSWindowTemplate" id="533228923">
 				<int key="NSWindowStyleMask">19</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{566, 207}, {318, 159}}</string>
+				<string key="NSWindowRect">{{566, 207}, {318, 179}}</string>
 				<int key="NSWTFlags">-1535638528</int>
 				<string key="NSWindowTitle">Thyme Preferences</string>
 				<string key="NSWindowClass">NSPanel</string>
@@ -53,27 +53,27 @@
 						<object class="NSCustomView" id="916041888">
 							<reference key="NSNextResponder" ref="585613456"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{123, 115}, {183, 24}}</string>
+							<string key="NSFrame">{{123, 135}, {183, 24}}</string>
 							<reference key="NSSuperview" ref="585613456"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="66438972"/>
+							<reference key="NSNextKeyView" ref="749935824"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<string key="NSClassName">SRRecorderControl</string>
 						</object>
 						<object class="NSCustomView" id="645802244">
 							<reference key="NSNextResponder" ref="585613456"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{123, 51}, {183, 24}}</string>
+							<string key="NSFrame">{{123, 71}, {183, 24}}</string>
 							<reference key="NSSuperview" ref="585613456"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
+							<reference key="NSNextKeyView" ref="1029156744"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<string key="NSClassName">SRRecorderControl</string>
 						</object>
 						<object class="NSTextField" id="903585298">
 							<reference key="NSNextResponder" ref="585613456"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{29, 119}, {89, 17}}</string>
+							<string key="NSFrame">{{29, 139}, {89, 17}}</string>
 							<reference key="NSSuperview" ref="585613456"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="916041888"/>
@@ -115,7 +115,7 @@
 						<object class="NSTextField" id="658558804">
 							<reference key="NSNextResponder" ref="585613456"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{35, 54}, {82, 18}}</string>
+							<string key="NSFrame">{{35, 74}, {82, 18}}</string>
 							<reference key="NSSuperview" ref="585613456"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="645802244"/>
@@ -134,61 +134,61 @@
 							<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 							<int key="NSTextFieldAlignmentRectInsetsVersion">1</int>
 						</object>
-						<object class="NSCustomView" id="900755474">
+						<object class="NSCustomView" id="665468951">
 							<reference key="NSNextResponder" ref="585613456"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{123, 83}, {183, 24}}</string>
+							<string key="NSFrame">{{123, 103}, {183, 24}}</string>
 							<reference key="NSSuperview" ref="585613456"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="658558804"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<string key="NSClassName">SRRecorderControl</string>
 						</object>
-						<object class="NSTextField" id="66438972">
+						<object class="NSTextField" id="749935824">
 							<reference key="NSNextResponder" ref="585613456"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{36, 86}, {82, 18}}</string>
+							<string key="NSFrame">{{36, 106}, {82, 18}}</string>
 							<reference key="NSSuperview" ref="585613456"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="900755474"/>
+							<reference key="NSNextKeyView" ref="665468951"/>
 							<string key="NSReuseIdentifierKey">_NS:1535</string>
 							<bool key="NSEnabled">YES</bool>
-							<object class="NSTextFieldCell" key="NSCell" id="165770452">
+							<object class="NSTextFieldCell" key="NSCell" id="1035625126">
 								<int key="NSCellFlags">68157504</int>
 								<int key="NSCellFlags2">71304192</int>
 								<string key="NSContents">Restart:</string>
 								<reference key="NSSupport" ref="401495887"/>
 								<string key="NSCellIdentifier">_NS:1535</string>
-								<reference key="NSControlView" ref="66438972"/>
+								<reference key="NSControlView" ref="749935824"/>
 								<reference key="NSBackgroundColor" ref="161670515"/>
 								<reference key="NSTextColor" ref="1046278798"/>
 							</object>
 							<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 							<int key="NSTextFieldAlignmentRectInsetsVersion">1</int>
 						</object>
-						<object class="NSButton" id="815031483">
+						<object class="NSButton" id="1029156744">
 							<reference key="NSNextResponder" ref="585613456"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{18, 18}, {290, 18}}</string>
+							<string key="NSFrame">{{18, 38}, {290, 18}}</string>
 							<reference key="NSSuperview" ref="585613456"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
+							<reference key="NSNextKeyView" ref="645044376"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
-							<object class="NSButtonCell" key="NSCell" id="50516145">
+							<object class="NSButtonCell" key="NSCell" id="242576473">
 								<int key="NSCellFlags">67108864</int>
 								<int key="NSCellFlags2">268435456</int>
-								<string key="NSContents">Pause on sleep</string>
+								<string key="NSContents">Pause during sleep</string>
 								<reference key="NSSupport" ref="401495887"/>
 								<string key="NSCellIdentifier">_NS:9</string>
-								<reference key="NSControlView" ref="815031483"/>
+								<reference key="NSControlView" ref="1029156744"/>
 								<int key="NSButtonFlags">1211912448</int>
 								<int key="NSButtonFlags2">2</int>
-								<object class="NSCustomResource" key="NSNormalImage">
+								<object class="NSCustomResource" key="NSNormalImage" id="844255567">
 									<string key="NSClassName">NSImage</string>
 									<string key="NSResourceName">NSSwitch</string>
 								</object>
-								<object class="NSButtonImageSource" key="NSAlternateImage">
+								<object class="NSButtonImageSource" key="NSAlternateImage" id="703109318">
 									<string key="NSImageName">NSSwitch</string>
 								</object>
 								<string key="NSAlternateContents"/>
@@ -198,8 +198,35 @@
 							</object>
 							<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 						</object>
+						<object class="NSButton" id="645044376">
+							<reference key="NSNextResponder" ref="585613456"/>
+							<int key="NSvFlags">268</int>
+							<string key="NSFrame">{{18, 18}, {290, 18}}</string>
+							<reference key="NSSuperview" ref="585613456"/>
+							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
+							<string key="NSReuseIdentifierKey">_NS:9</string>
+							<bool key="NSEnabled">YES</bool>
+							<object class="NSButtonCell" key="NSCell" id="873244303">
+								<int key="NSCellFlags">67108864</int>
+								<int key="NSCellFlags2">268435456</int>
+								<string key="NSContents">Pause during screensaver / screen lock</string>
+								<reference key="NSSupport" ref="401495887"/>
+								<string key="NSCellIdentifier">_NS:9</string>
+								<reference key="NSControlView" ref="645044376"/>
+								<int key="NSButtonFlags">1211912448</int>
+								<int key="NSButtonFlags2">2</int>
+								<reference key="NSNormalImage" ref="844255567"/>
+								<reference key="NSAlternateImage" ref="703109318"/>
+								<string key="NSAlternateContents"/>
+								<string key="NSKeyEquivalent"/>
+								<int key="NSPeriodicDelay">200</int>
+								<int key="NSPeriodicInterval">25</int>
+							</object>
+							<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+						</object>
 					</array>
-					<string key="NSFrameSize">{318, 159}</string>
+					<string key="NSFrameSize">{318, 179}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="903585298"/>
@@ -240,7 +267,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">restartShortcutRecorder</string>
 						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="900755474"/>
+						<reference key="destination" ref="665468951"/>
 					</object>
 					<int key="connectionID">114</int>
 				</object>
@@ -248,9 +275,17 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">pauseOnSleepButton</string>
 						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="815031483"/>
+						<reference key="destination" ref="1029156744"/>
 					</object>
 					<int key="connectionID">126</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">pauseOnScreensaverButton</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="645044376"/>
+					</object>
+					<int key="connectionID">129</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -301,11 +336,12 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="916041888"/>
 							<reference ref="903585298"/>
-							<reference ref="900755474"/>
+							<reference ref="665468951"/>
 							<reference ref="645802244"/>
-							<reference ref="66438972"/>
+							<reference ref="749935824"/>
 							<reference ref="658558804"/>
-							<reference ref="815031483"/>
+							<reference ref="1029156744"/>
+							<reference ref="645044376"/>
 						</array>
 						<reference key="parent" ref="533228923"/>
 					</object>
@@ -347,34 +383,47 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">111</int>
-						<reference key="object" ref="900755474"/>
+						<reference key="object" ref="665468951"/>
 						<reference key="parent" ref="585613456"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">112</int>
-						<reference key="object" ref="66438972"/>
+						<reference key="object" ref="749935824"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="165770452"/>
+							<reference ref="1035625126"/>
 						</array>
 						<reference key="parent" ref="585613456"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">113</int>
-						<reference key="object" ref="165770452"/>
-						<reference key="parent" ref="66438972"/>
+						<reference key="object" ref="1035625126"/>
+						<reference key="parent" ref="749935824"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">117</int>
-						<reference key="object" ref="815031483"/>
+						<reference key="object" ref="1029156744"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="50516145"/>
+							<reference ref="242576473"/>
 						</array>
 						<reference key="parent" ref="585613456"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">118</int>
-						<reference key="object" ref="50516145"/>
-						<reference key="parent" ref="815031483"/>
+						<reference key="object" ref="242576473"/>
+						<reference key="parent" ref="1029156744"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">127</int>
+						<reference key="object" ref="645044376"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="873244303"/>
+						</array>
+						<reference key="parent" ref="585613456"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">128</int>
+						<reference key="object" ref="873244303"/>
+						<reference key="parent" ref="645044376"/>
 					</object>
 				</array>
 			</object>
@@ -387,11 +436,13 @@
 				<string key="113.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="117.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="118.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="127.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="128.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="28.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="29.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<boolean value="YES" key="5.IBNSWindowAutoPositionCentersHorizontal"/>
 				<boolean value="YES" key="5.IBNSWindowAutoPositionCentersVertical"/>
-				<string key="5.IBPersistedLastKnownCanvasPosition">{461, 411.5}</string>
+				<string key="5.IBPersistedLastKnownCanvasPosition">{461, 421.5}</string>
 				<string key="5.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<boolean value="YES" key="5.NSWindowTemplate.visibleAtLaunch"/>
 				<reference key="6.IBNSViewMetadataGestureRecognizers" ref="0"/>
@@ -405,7 +456,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">126</int>
+			<int key="maxID">129</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -414,6 +465,7 @@
 					<string key="superclassName">NSWindowController</string>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="finishShortcutRecorder">SRRecorderControl</string>
+						<string key="pauseOnScreensaverButton">NSButton</string>
 						<string key="pauseOnSleepButton">NSButton</string>
 						<string key="restartShortcutRecorder">SRRecorderControl</string>
 						<string key="startPauseShortcutRecorder">SRRecorderControl</string>
@@ -422,6 +474,10 @@
 						<object class="IBToOneOutletInfo" key="finishShortcutRecorder">
 							<string key="name">finishShortcutRecorder</string>
 							<string key="candidateClassName">SRRecorderControl</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="pauseOnScreensaverButton">
+							<string key="name">pauseOnScreensaverButton</string>
+							<string key="candidateClassName">NSButton</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="pauseOnSleepButton">
 							<string key="name">pauseOnSleepButton</string>

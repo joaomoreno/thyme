@@ -365,6 +365,24 @@
     }
 }
 
+#pragma mark Screensaver
+
+- (void) onScreensaverStart: (NSNotification*) note
+{
+    NSLog(@"screensaver start");
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"pauseOnScreensaver"]) {
+        [self pauseWithNotification:NO];
+    }
+}
+
+- (void) onScreensaverStop: (NSNotification*) note
+{
+    NSLog(@"screensaver stop");
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"pauseOnScreensaver"]) {
+        [self startWithNotification:NO];
+    }
+}
+
 #pragma mark NSApplication
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -400,6 +418,31 @@
      selector:@selector(onWake:)
      name:NSWorkspaceDidWakeNotification
      object:nil];
+    
+    // Listen to screensaver
+    [[NSDistributedNotificationCenter defaultCenter]
+      addObserver:self
+      selector:@selector(onScreensaverStart:)
+      name:@"com.apple.screensaver.didstart"
+      object:nil];
+    
+    [[NSDistributedNotificationCenter defaultCenter]
+      addObserver:self
+      selector:@selector(onScreensaverStop:)
+      name:@"com.apple.screensaver.didstop"
+      object:nil];
+    
+    [[NSDistributedNotificationCenter defaultCenter]
+      addObserver:self
+      selector:@selector(onScreensaverStart:)
+      name:@"com.apple.screenIsLocked"
+      object:nil];
+    
+    [[NSDistributedNotificationCenter defaultCenter]
+      addObserver:self
+      selector:@selector(onScreensaverStop:)
+      name:@"com.apple.screenIsUnlocked"
+      object:nil];
     
     // Create class attributes
     NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:20];

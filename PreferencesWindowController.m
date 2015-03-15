@@ -18,6 +18,7 @@
 @synthesize restartShortcutRecorder;
 @synthesize finishShortcutRecorder;
 @synthesize pauseOnSleepButton;
+@synthesize pauseOnScreensaverButton;
 
 - (id)initWithWindow:(NSWindow *)window
 {
@@ -40,6 +41,7 @@
     [self.finishShortcutRecorder bind:NSValueBinding toObject:defaults withKeyPath:@"values.finish" options:nil];
     
     [self.pauseOnSleepButton bind:NSValueBinding toObject:defaults withKeyPath:@"values.pauseOnSleep" options:nil];
+    [self.pauseOnScreensaverButton bind:NSValueBinding toObject:defaults withKeyPath:@"values.pauseOnScreensaver" options:nil];
     
     [self.startPauseShortcutRecorder clearButtonRect];
     
