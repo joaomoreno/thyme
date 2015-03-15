@@ -30,6 +30,7 @@
     PreferencesWindowController *preferencesWindowController;
     
     NSMenuItem *sessionsMenuSeparator;
+    NSMenuItem *sessionsMenuExportItem;
     NSMenuItem *sessionsMenuClearItem;
     NSMutableArray *sessionsMenuItems;
 }
@@ -52,8 +53,11 @@
 @property(nonatomic, retain) PreferencesWindowController *preferencesWindowController;
 
 @property(nonatomic, retain) NSMenuItem *sessionsMenuSeparator;
+@property(nonatomic, retain) NSMenuItem *sessionsMenuExportItem;
 @property(nonatomic, retain) NSMenuItem *sessionsMenuClearItem;
 @property(nonatomic, retain) NSMutableArray *sessionsMenuItems;
+
+- (void)export;
 
 - (void)startWithNotification:(Boolean)notification;
 - (void)pauseWithNotification:(Boolean)notification;

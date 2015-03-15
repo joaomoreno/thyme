@@ -44,6 +44,7 @@
 @synthesize finishItem;
 @synthesize preferencesWindowController;
 @synthesize sessionsMenuSeparator;
+@synthesize sessionsMenuExportItem;
 @synthesize sessionsMenuClearItem;
 @synthesize sessionsMenuItems;
 
@@ -125,6 +126,7 @@
 - (void)clearSessionsFromMenu
 {
     [menu removeItem:self.sessionsMenuSeparator];
+    [menu removeItem:self.sessionsMenuExportItem];
     [menu removeItem:self.sessionsMenuClearItem];
     
     for (NSMenuItem *item in self.sessionsMenuItems) {
@@ -139,7 +141,8 @@
     if ([self.sessionsMenuItems count] == 0)
     {
         [menu insertItem:self.sessionsMenuSeparator atIndex:3];
-        [menu insertItem:self.sessionsMenuClearItem atIndex:4];
+        [menu insertItem:self.sessionsMenuExportItem atIndex:4];
+        [menu insertItem:self.sessionsMenuClearItem atIndex:5];
     }
     
     NSInteger index = 4 + [self.sessionsMenuItems count];
@@ -223,6 +226,35 @@
         [statusItem setTitle:[self.stopwatch description]];
         [statusItem setImage:nil];
     }
+}
+
+#pragma mark Export
+
+- (void)export {
+    NSError *error;
+    
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:[Session allSessionsAsDictionaries]
+                                                       options:0
+                                                         error:&error];
+    
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    
+    NSSavePanel *panel = [NSSavePanel savePanel];
+    [panel setCanCreateDirectories:NO];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSLocale *enUSPOSIXLocale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
+    [dateFormatter setLocale:enUSPOSIXLocale];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    
+    [panel setNameFieldStringValue:[NSString stringWithFormat:@"thyme-%@.json", [dateFormatter stringFromDate:[NSDate date]]]];
+    [dateFormatter release];
+    
+    if ([panel runModal] == NSModalResponseOK) {
+        [jsonData writeToURL:[panel URL] atomically:YES];
+    }
+    
+    [jsonString release];
 }
 
 #pragma mark Hot Key Handlers
@@ -454,6 +486,10 @@
     NSMenuItem *clearMenuItem = [[NSMenuItem alloc] initWithTitle:@"Clear" action:@selector(clear:) keyEquivalent:@""];
     self.sessionsMenuClearItem = clearMenuItem;
     [clearMenuItem release];
+    
+    NSMenuItem *exportMenuItem = [[NSMenuItem alloc] initWithTitle:@"Export..." action:@selector(export) keyEquivalent:@""];
+    self.sessionsMenuExportItem = exportMenuItem;
+    [exportMenuItem release];
     
     self.stopwatch = [[Stopwatch alloc] initWithDelegate:self];
     
@@ -692,6 +728,7 @@
     [hotKeyCenter release];
     
     [sessionsMenuSeparator release];
+    [sessionsMenuExportItem release];
     [sessionsMenuClearItem release];
     [sessionsMenuItems release];
 	

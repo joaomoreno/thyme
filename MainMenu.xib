@@ -51,7 +51,7 @@
 							<string key="NSResourceName">NSMenuMixedState</string>
 						</object>
 					</object>
-					<object class="NSMenuItem" id="715413416">
+					<object class="NSMenuItem" id="48964978">
 						<reference key="NSMenu" ref="110575045"/>
 						<bool key="NSIsDisabled">YES</bool>
 						<string key="NSTitle">Restart</string>
@@ -229,7 +229,7 @@
 					<object class="IBActionConnection" key="connection">
 						<string key="label">onRestartClick:</string>
 						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="715413416"/>
+						<reference key="destination" ref="48964978"/>
 					</object>
 					<int key="connectionID">588</int>
 				</object>
@@ -237,7 +237,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">restartItem</string>
 						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="715413416"/>
+						<reference key="destination" ref="48964978"/>
 					</object>
 					<int key="connectionID">589</int>
 				</object>
@@ -302,7 +302,7 @@
 							<reference ref="960148139"/>
 							<reference ref="17283964"/>
 							<reference ref="73292148"/>
-							<reference ref="715413416"/>
+							<reference ref="48964978"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -343,7 +343,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">587</int>
-						<reference key="object" ref="715413416"/>
+						<reference key="object" ref="48964978"/>
 						<reference key="parent" ref="110575045"/>
 					</object>
 				</array>
@@ -372,7 +372,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">589</int>
+			<int key="maxID">591</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -381,6 +381,7 @@
 					<string key="superclassName">NSObject</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="onAboutClick:">id</string>
+						<string key="onExportClick:">id</string>
 						<string key="onFinishClick:">id</string>
 						<string key="onPreferencesClick:">id</string>
 						<string key="onStartPauseClick:">id</string>
@@ -388,6 +389,10 @@
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="onAboutClick:">
 							<string key="name">onAboutClick:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="onExportClick:">
+							<string key="name">onExportClick:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="onFinishClick:">
@@ -442,6 +447,7 @@
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="clear:">id</string>
 						<string key="onAboutClick:">id</string>
+						<string key="onExportClick:">id</string>
 						<string key="onFinishClick:">id</string>
 						<string key="onPreferencesClick:">id</string>
 						<string key="onRestartClick:">id</string>
@@ -455,6 +461,10 @@
 						</object>
 						<object class="IBActionInfo" key="onAboutClick:">
 							<string key="name">onAboutClick:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="onExportClick:">
+							<string key="name">onExportClick:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="onFinishClick:">

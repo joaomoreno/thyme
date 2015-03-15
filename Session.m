@@ -55,6 +55,18 @@
     return result;
 }
 
++ (NSArray*)allSessionsAsDictionaries
+{
+    NSArray *sessions = [Session allSessions];
+    NSMutableArray *result = [NSMutableArray arrayWithCapacity:sessions.count];
+    
+    [sessions enumerateObjectsUsingBlock:^(Session *session, NSUInteger index, BOOL *stop) {
+        [result addObject:[session asDictionary]];
+    }];
+    
+    return result;
+}
+
 + (Session*)sessionWithSeconds:(NSInteger)_seconds minutes:(NSInteger)_minutes hours:(NSInteger)_hours
 {
     Session* session = (Session*) [NSEntityDescription insertNewObjectForEntityForName:@"Session" 
@@ -79,6 +91,26 @@
 - (NSString*)stringRepresentation
 {
     return [NSString stringWithFormat:@"%@ - %@", [self timeStringRepresentation], [self formatDate]];
+}
+
+- (NSDictionary*)asDictionary
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSLocale *enUSPOSIXLocale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
+    [dateFormatter setLocale:enUSPOSIXLocale];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ"];
+    
+    NSNumber *duration = [NSNumber numberWithUnsignedInteger:[self.seconds unsignedIntegerValue]
+        + (([self.minutes unsignedIntegerValue] + ([self.hours unsignedIntegerValue] * 60)) * 60)];
+    
+    NSDictionary *result = [NSDictionary dictionaryWithObjectsAndKeys:
+                            [dateFormatter stringFromDate:self.date], @"date",
+                            duration, @"duration",
+                            nil];
+    
+    [dateFormatter release];
+    
+    return result;
 }
 
 @end
