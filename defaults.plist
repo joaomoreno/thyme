@@ -6,5 +6,9 @@
 	<true/>
 	<key>pauseOnSleep</key>
 	<true/>
+	<key>hideSeconds</key>
+	<true/>
+	<key>flashTimeSeperator</key>
+	<false/>
 </dict>
 </plist>

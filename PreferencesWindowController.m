@@ -19,6 +19,8 @@
 @synthesize finishShortcutRecorder;
 @synthesize pauseOnSleepButton;
 @synthesize pauseOnScreensaverButton;
+@synthesize hideSeconds;
+@synthesize flashTimeSeperator;
 
 - (id)initWithWindow:(NSWindow *)window
 {
@@ -42,6 +44,8 @@
     
     [self.pauseOnSleepButton bind:NSValueBinding toObject:defaults withKeyPath:@"values.pauseOnSleep" options:nil];
     [self.pauseOnScreensaverButton bind:NSValueBinding toObject:defaults withKeyPath:@"values.pauseOnScreensaver" options:nil];
+    [self.hideSeconds bind:NSValueBinding toObject:defaults withKeyPath:@"values.hideSeconds" options:nil];
+    [self.flashTimeSeperator bind:NSValueBinding toObject:defaults withKeyPath:@"values.flashTimeSeperator" options:nil];
     
     [self.startPauseShortcutRecorder clearButtonRect];
     
