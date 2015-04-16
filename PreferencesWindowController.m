@@ -17,10 +17,12 @@
 @synthesize startPauseShortcutRecorder;
 @synthesize restartShortcutRecorder;
 @synthesize finishShortcutRecorder;
+@synthesize startOnStartup;
 @synthesize pauseOnSleepButton;
 @synthesize pauseOnScreensaverButton;
 @synthesize hideSeconds;
 @synthesize flashTimeSeperator;
+@synthesize showNotifications;
 
 - (id)initWithWindow:(NSWindow *)window
 {
@@ -42,10 +44,12 @@
     [self.restartShortcutRecorder bind:NSValueBinding toObject:defaults withKeyPath:@"values.restart" options:nil];
     [self.finishShortcutRecorder bind:NSValueBinding toObject:defaults withKeyPath:@"values.finish" options:nil];
     
+    [self.startOnStartup bind:NSValueBinding toObject:defaults withKeyPath:@"values.startOnStartup" options:nil];
     [self.pauseOnSleepButton bind:NSValueBinding toObject:defaults withKeyPath:@"values.pauseOnSleep" options:nil];
     [self.pauseOnScreensaverButton bind:NSValueBinding toObject:defaults withKeyPath:@"values.pauseOnScreensaver" options:nil];
     [self.hideSeconds bind:NSValueBinding toObject:defaults withKeyPath:@"values.hideSeconds" options:nil];
     [self.flashTimeSeperator bind:NSValueBinding toObject:defaults withKeyPath:@"values.flashTimeSeperator" options:nil];
+    [self.showNotifications bind:NSValueBinding toObject:defaults withKeyPath:@"values.showNotifications" options:nil];
     
     [self.startPauseShortcutRecorder clearButtonRect];
     

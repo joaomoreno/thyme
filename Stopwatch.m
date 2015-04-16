@@ -51,8 +51,6 @@
     long minutes = (seconds / 60) % 60;
     seconds = seconds % 60;
     
-    NSLog(@"%hhd", [[NSUserDefaults standardUserDefaults] boolForKey:@"flashTimeSeperator"]);
-    
     // Toggling seperator
     if(self.seperatorIsActive || ![[NSUserDefaults standardUserDefaults] boolForKey:@"flashTimeSeperator"]) {
         seperator = @":";
@@ -119,11 +117,12 @@
     [self.timer invalidate];
     self.timer = nil;
     
+    // Force the seperator to show
+    self.seperatorIsActive = TRUE;
+    
     if (self.delegate) {
         [self.delegate didPause:self];
     }
-    
-    
 }
 
 - (void) reset:(NSTimeInterval) value {

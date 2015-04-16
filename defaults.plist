@@ -10,5 +10,9 @@
 	<true/>
 	<key>flashTimeSeperator</key>
 	<false/>
+	<key>startTimerOnStartup</key>
+	<false/>
+	<key>showNotifications</key>
+	<false/>
 </dict>
 </plist>
