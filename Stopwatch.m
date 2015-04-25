@@ -12,7 +12,7 @@
 @property (nonatomic, retain) NSTimer* timer;
 @property (nonatomic, retain) NSDate* reference;
 @property (nonatomic) NSTimeInterval accum;
-@property (nonatomic) BOOL seperatorIsActive;
+@property (nonatomic) BOOL separatorIsActive;
 - (void) tick;
 @end
 
@@ -22,14 +22,14 @@
 @synthesize timer;
 @synthesize reference;
 @synthesize accum;
-@synthesize seperatorIsActive;
+@synthesize separatorIsActive;
 
 - (id)init {
     if (self = [super init]) {
         self.timer = nil;
         self.reference = [NSDate date];
         self.accum = 0;
-        self.seperatorIsActive = TRUE;
+        self.separatorIsActive = TRUE;
     }
     
     return self;
@@ -52,13 +52,13 @@
     seconds = seconds % 60;
     
     // Toggling seperator
-    if(self.seperatorIsActive || ![[NSUserDefaults standardUserDefaults] boolForKey:@"flashTimeSeperator"]) {
+    if(self.separatorIsActive || ![[NSUserDefaults standardUserDefaults] boolForKey:@"flashTimeSeparator"]) {
         seperator = @":";
-        self.seperatorIsActive = FALSE;
+        self.separatorIsActive = FALSE;
     }
     else {
         seperator = @" ";
-        self.seperatorIsActive = TRUE;
+        self.separatorIsActive = TRUE;
     }
     
     if([[NSUserDefaults standardUserDefaults] boolForKey:@"hideSeconds"]) {
@@ -117,8 +117,8 @@
     [self.timer invalidate];
     self.timer = nil;
     
-    // Force the seperator to show
-    self.seperatorIsActive = TRUE;
+    // Force the separator to show
+    self.separatorIsActive = TRUE;
     
     if (self.delegate) {
         [self.delegate didPause:self];

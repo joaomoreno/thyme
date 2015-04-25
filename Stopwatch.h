@@ -24,7 +24,7 @@
     NSTimer* timer;
     NSDate* reference;
     NSTimeInterval accum;
-    BOOL seperatorIsActive;
+    BOOL separatorIsActive;
 }
 
 @property (nonatomic, assign) id<StopwatchDelegate> delegate;

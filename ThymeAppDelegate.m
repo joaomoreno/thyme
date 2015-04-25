@@ -416,7 +416,9 @@
 - (void) onScreensaverStop: (NSNotification*) note
 {
     NSLog(@"screensaver stop");
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"pauseOnScreensaver"]) {
+    NSLog(@"Clock was active: %hhd", stopwatch.isPaused);
+    
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"pauseOnScreensaver"] && !stopwatch.isPaused) {
         [self startWithNotification:NO];
     }
 }

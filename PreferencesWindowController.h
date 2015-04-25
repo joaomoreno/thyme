@@ -18,7 +18,7 @@
     NSButton *pauseOnSleepButton;
     NSButton *pauseOnScreensaverButton;
     NSButton *hideSeconds;
-    NSButton *flashTimeSeperator;
+    NSButton *flashTimeSeparator;
     NSButton *showNotifications;
 }
 
@@ -30,7 +30,7 @@
 @property (nonatomic, retain) IBOutlet NSButton *pauseOnSleepButton;
 @property (nonatomic, retain) IBOutlet NSButton *pauseOnScreensaverButton;
 @property (nonatomic, retain) IBOutlet NSButton *hideSeconds;
-@property (nonatomic, retain) IBOutlet NSButton *flashTimeSeperator;
 @property (nonatomic, retain) IBOutlet NSButton *showNotifications;
+@property (nonatomic, retain) IBOutlet NSButton *flashTimeSeparator;
 
 @end
