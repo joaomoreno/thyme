@@ -309,17 +309,23 @@
 
 - (void)notifyStart
 {
-    [GrowlApplicationBridge notifyWithTitle:@"Thyme" description:@"Started" notificationName:@"start" iconData:nil priority:0 isSticky:NO clickContext:nil];
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"showNotifications"]) {
+        [GrowlApplicationBridge notifyWithTitle:@"Thyme" description:@"Started" notificationName:@"start" iconData:nil priority:0 isSticky:NO clickContext:nil];
+    }
 }
 
 - (void)notifyPauseWithDescription:(NSString*)description
 {
-    [GrowlApplicationBridge notifyWithTitle:@"Thyme" description:[@"Paused at " stringByAppendingString:description] notificationName:@"pause" iconData:nil priority:0 isSticky:NO clickContext:nil];
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"showNotifications"]) {
+        [GrowlApplicationBridge notifyWithTitle:@"Thyme" description:[@"Paused at " stringByAppendingString:description] notificationName:@"pause" iconData:nil priority:0 isSticky:NO clickContext:nil];
+    }
 }
 
 - (void)notifyStopWithDescription:(NSString*)description
 {
-    [GrowlApplicationBridge notifyWithTitle:@"Thyme" description:[@"Stopped at " stringByAppendingString:description] notificationName:@"stop" iconData:nil priority:0 isSticky:NO clickContext:nil];
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"showNotifications"]) {
+        [GrowlApplicationBridge notifyWithTitle:@"Thyme" description:[@"Stopped at " stringByAppendingString:description] notificationName:@"stop" iconData:nil priority:0 isSticky:NO clickContext:nil];
+    }
 }
 
 #pragma mark NSUserDefaultsDidChangeNotification
@@ -410,7 +416,9 @@
 - (void) onScreensaverStop: (NSNotification*) note
 {
     NSLog(@"screensaver stop");
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"pauseOnScreensaver"]) {
+    NSLog(@"Clock was active: %hhd", stopwatch.isPaused);
+    
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"pauseOnScreensaver"] && !stopwatch.isPaused) {
         [self startWithNotification:NO];
     }
 }
@@ -507,6 +515,10 @@
     
     // Start controller
     [self resetWithNotification:NO];
+    
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"startOnStartup"]) {
+        [self startTimer];
+    }
 }
 
 /**

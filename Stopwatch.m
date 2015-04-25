@@ -12,6 +12,7 @@
 @property (nonatomic, retain) NSTimer* timer;
 @property (nonatomic, retain) NSDate* reference;
 @property (nonatomic) NSTimeInterval accum;
+@property (nonatomic) BOOL separatorIsActive;
 - (void) tick;
 @end
 
@@ -21,12 +22,14 @@
 @synthesize timer;
 @synthesize reference;
 @synthesize accum;
+@synthesize separatorIsActive;
 
 - (id)init {
     if (self = [super init]) {
         self.timer = nil;
         self.reference = [NSDate date];
         self.accum = 0;
+        self.separatorIsActive = TRUE;
     }
     
     return self;
@@ -41,15 +44,31 @@
 }
 
 - (NSString*) description {
+    NSString *seperator = @":";
+    
     long seconds = (long) floor([self value]);
     long hours = seconds / 3600;
     long minutes = (seconds / 60) % 60;
     seconds = seconds % 60;
     
-    if (hours > 0) {
-        return [NSString stringWithFormat:@"%02ld:%02ld:%02ld", hours, minutes, seconds];
-    } else {
-        return [NSString stringWithFormat:@"%02ld:%02ld", minutes, seconds];
+    // Toggling seperator
+    if(self.separatorIsActive || ![[NSUserDefaults standardUserDefaults] boolForKey:@"flashTimeSeparator"]) {
+        seperator = @":";
+        self.separatorIsActive = FALSE;
+    }
+    else {
+        seperator = @" ";
+        self.separatorIsActive = TRUE;
+    }
+    
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"hideSeconds"]) {
+        return [NSString stringWithFormat:@"%02ld%@%02ld", hours, seperator, minutes];
+    }
+    else if (hours > 0) {
+        return [NSString stringWithFormat:@"%02ld%@%02ld%@%02ld", hours, seperator, minutes, seperator, seconds];
+    }
+    else {
+        return [NSString stringWithFormat:@"%02ld%@%02ld", minutes, seperator, seconds];
     }
 }
 
@@ -97,6 +116,9 @@
     
     [self.timer invalidate];
     self.timer = nil;
+    
+    // Force the separator to show
+    self.separatorIsActive = TRUE;
     
     if (self.delegate) {
         [self.delegate didPause:self];

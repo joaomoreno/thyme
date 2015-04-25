@@ -13,14 +13,24 @@
     SRRecorderControl *startPauseShortcutRecorder;
     SRRecorderControl *restartShortcutRecorder;
     SRRecorderControl *finishShortcutRecorder;
+    
+    NSButton *startOnStartup;
     NSButton *pauseOnSleepButton;
     NSButton *pauseOnScreensaverButton;
+    NSButton *hideSeconds;
+    NSButton *flashTimeSeparator;
+    NSButton *showNotifications;
 }
 
 @property (nonatomic, retain) IBOutlet SRRecorderControl *startPauseShortcutRecorder;
 @property (nonatomic, retain) IBOutlet SRRecorderControl *restartShortcutRecorder;
 @property (nonatomic, retain) IBOutlet SRRecorderControl *finishShortcutRecorder;
+
+@property (nonatomic, retain) IBOutlet NSButton *startOnStartup;
 @property (nonatomic, retain) IBOutlet NSButton *pauseOnSleepButton;
 @property (nonatomic, retain) IBOutlet NSButton *pauseOnScreensaverButton;
+@property (nonatomic, retain) IBOutlet NSButton *hideSeconds;
+@property (nonatomic, retain) IBOutlet NSButton *showNotifications;
+@property (nonatomic, retain) IBOutlet NSButton *flashTimeSeparator;
 
 @end

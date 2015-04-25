@@ -20,10 +20,11 @@
 @interface Stopwatch : NSObject {
     id<StopwatchDelegate> delegate;
     
-@private
+    @private
     NSTimer* timer;
     NSDate* reference;
     NSTimeInterval accum;
+    BOOL separatorIsActive;
 }
 
 @property (nonatomic, assign) id<StopwatchDelegate> delegate;
