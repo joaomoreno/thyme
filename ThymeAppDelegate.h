@@ -33,6 +33,9 @@
     NSMenuItem *sessionsMenuExportItem;
     NSMenuItem *sessionsMenuClearItem;
     NSMutableArray *sessionsMenuItems;
+    
+    BOOL startOnWake;
+    BOOL startOnScreensaverEnd;
 }
 
 @property(nonatomic, retain) Stopwatch *stopwatch;

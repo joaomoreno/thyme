@@ -386,13 +386,15 @@
 - (void) onSleep: (NSNotification*) note
 {
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"pauseOnSleep"]) {
+        startOnWake = [self.stopwatch isActive];
         [self pauseWithNotification:NO];
     }
 }
 
 - (void) onWake: (NSNotification*) note
 {
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"pauseOnSleep"]) {
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"pauseOnSleep"] && startOnWake) {
+        startOnWake = NO;
         [self startWithNotification:NO];
     }
 }
@@ -401,16 +403,16 @@
 
 - (void) onScreensaverStart: (NSNotification*) note
 {
-    NSLog(@"screensaver start");
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"pauseOnScreensaver"]) {
+        startOnScreensaverEnd = [self.stopwatch isActive];
         [self pauseWithNotification:NO];
     }
 }
 
 - (void) onScreensaverStop: (NSNotification*) note
 {
-    NSLog(@"screensaver stop");
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"pauseOnScreensaver"]) {
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"pauseOnScreensaver"] && startOnScreensaverEnd) {
+        startOnScreensaverEnd = NO;
         [self startWithNotification:NO];
     }
 }
@@ -420,7 +422,9 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     [window close];
-
+    startOnWake = NO;
+    startOnScreensaverEnd = NO;
+    
     // Setup the hotkey center
     DDHotKeyCenter *center = [[DDHotKeyCenter alloc] init];
     self.hotKeyCenter = center;
