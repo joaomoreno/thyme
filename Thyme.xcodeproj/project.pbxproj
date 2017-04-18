@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		256AC3DA0F4B6AC300CF3369 /* ThymeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* ThymeAppDelegate.m */; };
+		2C888B1E1EA6050F003E4A96 /* TagWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C888B1D1EA6050F003E4A96 /* TagWindowController.xib */; };
+		2C888B231EA6076F003E4A96 /* TagWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C888B221EA6076F003E4A96 /* TagWindowController.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -81,6 +83,9 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		2C888B1D1EA6050F003E4A96 /* TagWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagWindowController.xib; sourceTree = "<group>"; };
+		2C888B211EA60761003E4A96 /* TagWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagWindowController.h; sourceTree = "<group>"; };
+		2C888B221EA6076F003E4A96 /* TagWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagWindowController.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Thyme-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Thyme-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Thyme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thyme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE000F6216B457E1009A89B0 /* logo_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_small@2x.png"; sourceTree = "<group>"; };
@@ -246,6 +251,9 @@
 				CFD3D41F16F700C700A23F33 /* PreferencesWindowController.h */,
 				CFD3D42016F700C700A23F33 /* PreferencesWindowController.m */,
 				CFD3D42116F700C700A23F33 /* PreferencesWindowController.xib */,
+				2C888B1D1EA6050F003E4A96 /* TagWindowController.xib */,
+				2C888B211EA60761003E4A96 /* TagWindowController.h */,
+				2C888B221EA6076F003E4A96 /* TagWindowController.m */,
 			);
 			name = Windows;
 			sourceTree = "<group>";
@@ -360,6 +368,7 @@
 			files = (
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				CF00B0091120E26D00F3503E /* MainMenu.xib in Resources */,
+				2C888B1E1EA6050F003E4A96 /* TagWindowController.xib in Resources */,
 				CFE78F1511BA73B700C2A003 /* logo.icns in Resources */,
 				CFE78F5511BA786A00C2A003 /* Credits.rtf in Resources */,
 				CFE78F5911BA797A00C2A003 /* LICENSE in Resources */,
@@ -379,6 +388,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C888B231EA6076F003E4A96 /* TagWindowController.m in Sources */,
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				256AC3DA0F4B6AC300CF3369 /* ThymeAppDelegate.m in Sources */,
 				CF00807F116E75E80028AA45 /* DDHotKeyCenter.m in Sources */,
