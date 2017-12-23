@@ -214,17 +214,24 @@
 }
 
 - (void)updateStatusBar {
+    NSStatusBarButton *button = [statusItem button];
+    
     if ([self.stopwatch isStopped]) {
-        [statusItem setLength:26.0];
-        [statusItem setTitle:@""];
-        
         NSImage *logo = [NSImage imageNamed:@"logo_small"];
         [logo setTemplate:YES];
-        [statusItem setImage: logo];
+        [statusItem setLength:26.0];
+        [button setTitle:@""];
+        [button setImage:logo];
+        [button setAppearsDisabled:false];
     } else {
         [statusItem setLength:[self.stopwatch value] > 3600 ? 72.0 : 46.0];
-        [statusItem setTitle:[self.stopwatch description]];
-        [statusItem setImage:nil];
+        [button setTitle:[self.stopwatch description]];
+        [button setImage:nil];
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"appearDisabledWhilePaused"]) {
+            [button setAppearsDisabled:![self.stopwatch isActive]];
+        } else {
+            [button setAppearsDisabled:false];
+        }
     }
 }
 
