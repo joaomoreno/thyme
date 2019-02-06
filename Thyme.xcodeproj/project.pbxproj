@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		256AC3DA0F4B6AC300CF3369 /* ThymeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* ThymeAppDelegate.m */; };
+		2C14F3AE220B6F4D0087FA3F /* DDHotKeyUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C14F3A7220B6F4C0087FA3F /* DDHotKeyUtilities.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -40,6 +41,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2C14F3AB220B6F4D0087FA3F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFCBC65A16F5DFB700DC663A /* ShortcutRecorder.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0D6B2468180304DE00CE1142;
+			remoteInfo = Demo;
+		};
 		CFCBC65F16F5DFB700DC663A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CFCBC65A16F5DFB700DC663A /* ShortcutRecorder.xcodeproj */;
@@ -81,6 +89,8 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		2C14F3A7220B6F4C0087FA3F /* DDHotKeyUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHotKeyUtilities.m; sourceTree = "<group>"; };
+		2C14F3AD220B6F4D0087FA3F /* DDHotKeyUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHotKeyUtilities.h; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Thyme-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Thyme-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Thyme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thyme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE000F6216B457E1009A89B0 /* logo_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_small@2x.png"; sourceTree = "<group>"; };
@@ -236,6 +246,7 @@
 			children = (
 				CFCBC66016F5DFB700DC663A /* ShortcutRecorder.framework */,
 				CFCBC66216F5DFB700DC663A /* PTHotKey.framework */,
+				2C14F3AC220B6F4D0087FA3F /* Demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -268,6 +279,8 @@
 		CFDFADDE16F4C1D2008BF5F3 /* Deps */ = {
 			isa = PBXGroup;
 			children = (
+				2C14F3AD220B6F4D0087FA3F /* DDHotKeyUtilities.h */,
+				2C14F3A7220B6F4C0087FA3F /* DDHotKeyUtilities.m */,
 				CF00807D116E75E80028AA45 /* DDHotKeyCenter.h */,
 				CF00807E116E75E80028AA45 /* DDHotKeyCenter.m */,
 			);
@@ -337,6 +350,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		2C14F3AC220B6F4D0087FA3F /* Demo.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Demo.app;
+			remoteRef = 2C14F3AB220B6F4D0087FA3F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		CFCBC66016F5DFB700DC663A /* ShortcutRecorder.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -381,6 +401,7 @@
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				256AC3DA0F4B6AC300CF3369 /* ThymeAppDelegate.m in Sources */,
+				2C14F3AE220B6F4D0087FA3F /* DDHotKeyUtilities.m in Sources */,
 				CF00807F116E75E80028AA45 /* DDHotKeyCenter.m in Sources */,
 				CF7FFC0B11B942E4005A78A3 /* DataModel.xcdatamodel in Sources */,
 				CF0779E311B9568900439C51 /* Session.m in Sources */,
