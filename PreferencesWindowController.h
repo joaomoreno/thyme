@@ -15,7 +15,7 @@
     SRRecorderControl *finishShortcutRecorder;
     NSButton *pauseOnSleepButton;
     NSButton *pauseOnScreensaverButton;
-    NSButton *appearDisabledWhilePaused;
+    NSButton *appearDisabledWhilePausedButton;
 }
 
 @property (nonatomic, retain) IBOutlet SRRecorderControl *startPauseShortcutRecorder;
