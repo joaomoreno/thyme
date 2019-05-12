@@ -23,6 +23,6 @@
 @property (nonatomic, retain) IBOutlet SRRecorderControl *finishShortcutRecorder;
 @property (nonatomic, retain) IBOutlet NSButton *pauseOnSleepButton;
 @property (nonatomic, retain) IBOutlet NSButton *pauseOnScreensaverButton;
-@property (nonatomic, retain) IBOutlet NSButton *appearDisabledWhilePaused;
+@property (nonatomic, retain) IBOutlet NSButton *appearDisabledWhilePausedButton;
 
 @end
