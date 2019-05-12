@@ -19,7 +19,7 @@
 @synthesize finishShortcutRecorder;
 @synthesize pauseOnSleepButton;
 @synthesize pauseOnScreensaverButton;
-@synthesize appearDisabledWhilePaused;
+@synthesize appearDisabledWhilePausedButton;
 
 - (id)initWithWindow:(NSWindow *)window
 {
