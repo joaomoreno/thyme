@@ -19,6 +19,7 @@
 @synthesize finishShortcutRecorder;
 @synthesize pauseOnSleepButton;
 @synthesize pauseOnScreensaverButton;
+@synthesize askForTagOnFinishButton;
 
 - (id)initWithWindow:(NSWindow *)window
 {
@@ -42,6 +43,7 @@
     
     [self.pauseOnSleepButton bind:NSValueBinding toObject:defaults withKeyPath:@"values.pauseOnSleep" options:nil];
     [self.pauseOnScreensaverButton bind:NSValueBinding toObject:defaults withKeyPath:@"values.pauseOnScreensaver" options:nil];
+    [self.askForTagOnFinishButton bind:NSValueBinding toObject:defaults withKeyPath:@"values.askForTagOnFinishButton" options:nil];
     
     [self.startPauseShortcutRecorder clearButtonRect];
     
