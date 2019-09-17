@@ -17,6 +17,7 @@
 
 @implementation Session 
 
+@dynamic tag;
 @dynamic hours;
 @dynamic minutes;
 @dynamic seconds;
@@ -67,11 +68,12 @@
     return result;
 }
 
-+ (Session*)sessionWithSeconds:(NSInteger)_seconds minutes:(NSInteger)_minutes hours:(NSInteger)_hours
++ (Session*)sessionWithSeconds:(NSInteger)_seconds minutes:(NSInteger)_minutes hours:(NSInteger)_hours tag:(NSString*)_tag
 {
     Session* session = (Session*) [NSEntityDescription insertNewObjectForEntityForName:@"Session" 
                                                      inManagedObjectContext:AppDelegate.managedObjectContext];
 
+    session.tag = _tag;
     session.hours = [NSNumber numberWithInt:_hours];
     session.minutes = [NSNumber numberWithInt:_minutes];
     session.seconds = [NSNumber numberWithInt:_seconds];
@@ -90,7 +92,11 @@
 
 - (NSString*)stringRepresentation
 {
-    return [NSString stringWithFormat:@"%@ - %@", [self timeStringRepresentation], [self formatDate]];
+    NSString* formatString = @"%@ - %@ - %@";
+    if([self.tag isEqual: @""]){
+       formatString = @"%@ - %@";
+    }
+    return [NSString stringWithFormat:formatString, [self timeStringRepresentation], [self formatDate], [self tag]];
 }
 
 - (NSDictionary*)asDictionary
@@ -106,6 +112,7 @@
     NSDictionary *result = [NSDictionary dictionaryWithObjectsAndKeys:
                             [dateFormatter stringFromDate:self.date], @"date",
                             duration, @"duration",
+                            self.tag, @"tag",
                             nil];
     
     [dateFormatter release];
