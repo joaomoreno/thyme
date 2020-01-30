@@ -15,6 +15,7 @@
     SRRecorderControl *finishShortcutRecorder;
     NSButton *pauseOnSleepButton;
     NSButton *pauseOnScreensaverButton;
+    NSButton *askForTagOnFinishButton;
     NSButton *appearDisabledWhilePausedButton;
 }
 
@@ -23,6 +24,7 @@
 @property (nonatomic, retain) IBOutlet SRRecorderControl *finishShortcutRecorder;
 @property (nonatomic, retain) IBOutlet NSButton *pauseOnSleepButton;
 @property (nonatomic, retain) IBOutlet NSButton *pauseOnScreensaverButton;
+@property (nonatomic, retain) IBOutlet NSButton *askForTagOnFinishButton;
 @property (nonatomic, retain) IBOutlet NSButton *appearDisabledWhilePausedButton;
 
 @end

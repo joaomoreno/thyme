@@ -21,7 +21,7 @@
 - (void)notifyPauseWithDescription:(NSString*)description;
 - (void)notifyStopWithDescription:(NSString*)description;
 
-- (void)save:(NSTimeInterval)value;
+- (void)save:(NSTimeInterval)value : (NSString*)tag;
 
 - (void)updateStatusBar;
 - (void)clearSessionsFromMenu;
@@ -29,6 +29,7 @@
 
 - (IBAction)clear:(id)sender;
 - (IBAction)saveAction:(id)sender;
+- (IBAction)okButtonAction:(id)sender;
 @end
 
 
@@ -43,10 +44,12 @@
 @synthesize restartItem;
 @synthesize finishItem;
 @synthesize preferencesWindowController;
+@synthesize tagWindowController;
 @synthesize sessionsMenuSeparator;
 @synthesize sessionsMenuExportItem;
 @synthesize sessionsMenuClearItem;
 @synthesize sessionsMenuItems;
+@synthesize lastStopWatchValue;
 
 #pragma mark Controller
 
@@ -109,6 +112,22 @@
         [restartItem setEnabled:NO];
         [finishItem setEnabled:NO];
         
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"askForTagOnFinishButton"]) {
+            //Show tag window
+            if (self.tagWindowController == nil) {
+                TagWindowController* pwc = [[TagWindowController alloc] initWithWindowNibName:@"TagWindowController"];
+                self.tagWindowController = pwc;
+                [pwc release];
+            }
+            
+            [self.tagWindowController showWindow:nil];
+        }
+        else{
+            [self save: lastStopWatchValue : @""];
+        }
+        
+        [NSApp activateIgnoringOtherApps:YES];
+        
         if (notification) {
             [self notifyPauseWithDescription:description];
         }
@@ -156,16 +175,49 @@
 
 #pragma mark Model
 
-- (void)save:(NSTimeInterval)value {
+- (void)save:(NSTimeInterval)value :(NSString*)tag {
+    
     long totalSeconds = (long) floor(value);
     long hours = totalSeconds / 3600;
     long minutes = (totalSeconds / 60) % 60;
     long seconds = totalSeconds % 60;
-
+    NSString* defaultTag = @"";
+    
+    if (tag && tag.length > 0)
+    {
+        defaultTag = tag;
+    }
+    
     if (totalSeconds > 0) {
-        Session *session = [Session sessionWithSeconds:seconds minutes:minutes hours:hours];
+        Session *session = [Session sessionWithSeconds:seconds minutes:minutes hours:hours tag:defaultTag];
         [self saveAction:self];
         [self addSessionToMenu:session];
+    }
+}
+
+- (IBAction)okButtonAction:(id)sender
+{
+    if([sender isKindOfClass:[NSButton class]]){
+        NSButton *button = (NSButton *)sender;
+        if([button.identifier  isEqual: @"tagWindowOkButton"]){
+            [self save: lastStopWatchValue : self.tagWindowController.tagField.stringValue];
+        }
+        if (self.tagWindowController) {
+            [self.tagWindowController close];
+        }
+    }
+}
+
+- (IBAction)cancelButtonAction:(id)sender
+{
+    if([sender isKindOfClass:[NSButton class]]){
+        NSButton *button = (NSButton *)sender;
+        if([button.identifier  isEqual: @"tagWindowCancelButton"]){
+            [self save: lastStopWatchValue : @""];
+            if (self.tagWindowController) {
+                [self.tagWindowController close];
+            }
+        }
     }
 }
 
@@ -304,7 +356,7 @@
 }
 
 - (void) didStop:(id)stopwatch withValue:(NSTimeInterval)value {
-    [self save:value];
+    self.lastStopWatchValue = value;
     [self updateStatusBar];
 }
 
@@ -742,6 +794,8 @@
     [sessionsMenuExportItem release];
     [sessionsMenuClearItem release];
     [sessionsMenuItems release];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 	
     [super dealloc];
 }

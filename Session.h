@@ -12,6 +12,7 @@
 {
 }
 
+@property (nonatomic, retain) NSString * tag;
 @property (nonatomic, retain) NSNumber * hours;
 @property (nonatomic, retain) NSNumber * minutes;
 @property (nonatomic, retain) NSNumber * seconds;
@@ -19,7 +20,7 @@
 
 + (NSArray*)allSessions;
 + (NSArray*)allSessionsAsDictionaries;
-+ (Session*)sessionWithSeconds:(NSInteger)_seconds minutes:(NSInteger)_minutes hours:(NSInteger)_hours;
++ (Session*)sessionWithSeconds:(NSInteger)_seconds minutes:(NSInteger)_minutes hours:(NSInteger)_hours tag:(NSString*)_tag;
 - (NSString*)timeStringRepresentation;
 - (NSString*)stringRepresentation;
 - (NSDictionary *)asDictionary;
