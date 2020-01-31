@@ -10,20 +10,18 @@
 
 #import <Cocoa/Cocoa.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 //a convenient typedef for the required signature of a hotkey block callback
 typedef void (^DDHotKeyTask)(NSEvent*);
 
 @interface DDHotKey : NSObject
 
 // creates a new hotkey but does not register it
-+ (instancetype)hotKeyWithKeyCode:(unsigned short)keyCode modifierFlags:(NSUInteger)flags task:(DDHotKeyTask _Nullable)task;
++ (instancetype)hotKeyWithKeyCode:(unsigned short)keyCode modifierFlags:(NSUInteger)flags task:(DDHotKeyTask)task;
 
-@property (nonatomic, assign, readonly, nullable) id target;
-@property (nonatomic, readonly, nullable) SEL action;
-@property (nonatomic, strong, readonly, nullable) id object;
-@property (nonatomic, copy, readonly, nullable) DDHotKeyTask task;
+@property (nonatomic, assign, readonly) id target;
+@property (nonatomic, readonly) SEL action;
+@property (nonatomic, strong, readonly) id object;
+@property (nonatomic, copy, readonly) DDHotKeyTask task;
 
 @property (nonatomic, readonly) unsigned short keyCode;
 @property (nonatomic, readonly) NSUInteger modifierFlags;
@@ -34,26 +32,26 @@ typedef void (^DDHotKeyTask)(NSEvent*);
 
 @interface DDHotKeyCenter : NSObject
 
-@property (class, readonly, nonnull) DDHotKeyCenter *sharedHotKeyCenter;
++ (instancetype)sharedHotKeyCenter;
 
 /**
  Register a hotkey.
  */
-- (DDHotKey * _Nullable)registerHotKey:(DDHotKey *)hotKey withError:(NSError **)error;
+- (DDHotKey *)registerHotKey:(DDHotKey *)hotKey;
 
 /**
  Register a target/action hotkey.
- The modifierFlags must be a bitwise OR of NSEventModifierFlagCommand, NSEventModifierFlagOption, NSEventModifierFlagControl, or NSEventModifierFlagShift;
+ The modifierFlags must be a bitwise OR of NSCommandKeyMask, NSAlternateKeyMask, NSControlKeyMask, or NSShiftKeyMask;
  Returns the hotkey registered.  If registration failed, returns nil.
  */
-- (DDHotKey * _Nullable)registerHotKeyWithKeyCode:(unsigned short)keyCode modifierFlags:(NSUInteger)flags target:(id)target action:(SEL)action object:(id)object error:(NSError **)error;
+- (DDHotKey *)registerHotKeyWithKeyCode:(unsigned short)keyCode modifierFlags:(NSUInteger)flags target:(id)target action:(SEL)action object:(id)object;
 
 /**
  Register a block callback hotkey.
- The modifierFlags must be a bitwise OR of NSEventModifierFlagCommand, NSEventModifierFlagOption, NSEventModifierFlagControl, or NSEventModifierFlagShift;
+ The modifierFlags must be a bitwise OR of NSCommandKeyMask, NSAlternateKeyMask, NSControlKeyMask, or NSShiftKeyMask;
  Returns the hotkey registered.  If registration failed, returns nil.
  */
-- (DDHotKey * _Nullable)registerHotKeyWithKeyCode:(unsigned short)keyCode modifierFlags:(NSUInteger)flags task:(DDHotKeyTask)task error:(NSError **)error;
+- (DDHotKey *)registerHotKeyWithKeyCode:(unsigned short)keyCode modifierFlags:(NSUInteger)flags task:(DDHotKeyTask)task;
 
 /**
  See if a hotkey exists with the specified keycode and modifier flags.
@@ -89,8 +87,7 @@ typedef void (^DDHotKeyTask)(NSEvent*);
 /**
  Returns a set of currently registered hotkeys
  **/
-- (NSSet<DDHotKey *> *)registeredHotKeys;
+- (NSSet *)registeredHotKeys;
 
 @end
 
-NS_ASSUME_NONNULL_END

@@ -10,5 +10,5 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString * _Nonnull DDStringFromKeyCode(unsigned short keyCode, NSUInteger modifiers);
+extern NSString *DDStringFromKeyCode(unsigned short keyCode, NSUInteger modifiers);
 extern UInt32 DDCarbonModifierFlagsFromCocoaModifiers(NSUInteger flags);

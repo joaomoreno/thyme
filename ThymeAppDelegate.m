@@ -485,9 +485,10 @@
     startOnScreensaverEnd = NO;
     
     // Setup the hotkey center
-    DDHotKeyCenter *center = [[DDHotKeyCenter alloc] init];
-    self.hotKeyCenter = center;
-    [center release];
+    //DDHotKeyCenter *center = [[DDHotKeyCenter alloc] init];
+    //self.hotKeyCenter = center;
+    //[center release];
+    self.hotKeyCenter = [DDHotKeyCenter sharedHotKeyCenter];
     
     // Setup Growl
     [GrowlApplicationBridge setGrowlDelegate:self];
