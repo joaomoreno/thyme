@@ -10,7 +10,6 @@
 
 #import "DDHotKeyUtilities.h"
 #import <Carbon/Carbon.h>
-#import <Cocoa/Cocoa.h>
 
 static NSDictionary *_DDKeyCodeToCharacterMap(void);
 static NSDictionary *_DDKeyCodeToCharacterMap(void) {
@@ -74,16 +73,16 @@ NSString *DDStringFromKeyCode(unsigned short keyCode, NSUInteger modifiers) {
     NSMutableString *final = [NSMutableString stringWithString:@""];
     NSDictionary *characterMap = _DDKeyCodeToCharacterMap();
     
-    if (modifiers & NSEventModifierFlagControl) {
+    if (modifiers & NSControlKeyMask) {
         [final appendString:[characterMap objectForKey:@(kVK_Control)]];
     }
-    if (modifiers & NSEventModifierFlagOption) {
+    if (modifiers & NSAlternateKeyMask) {
         [final appendString:[characterMap objectForKey:@(kVK_Option)]];
     }
-    if (modifiers & NSEventModifierFlagShift) {
+    if (modifiers & NSShiftKeyMask) {
         [final appendString:[characterMap objectForKey:@(kVK_Shift)]];
     }
-    if (modifiers & NSEventModifierFlagCommand) {
+    if (modifiers & NSCommandKeyMask) {
         [final appendString:[characterMap objectForKey:@(kVK_Command)]];
     }
     
@@ -136,10 +135,10 @@ NSString *DDStringFromKeyCode(unsigned short keyCode, NSUInteger modifiers) {
 
 UInt32 DDCarbonModifierFlagsFromCocoaModifiers(NSUInteger flags) {
     UInt32 newFlags = 0;
-    if ((flags & NSEventModifierFlagControl) > 0) { newFlags |= controlKey; }
-    if ((flags & NSEventModifierFlagCommand) > 0) { newFlags |= cmdKey; }
-    if ((flags & NSEventModifierFlagShift) > 0) { newFlags |= shiftKey; }
-    if ((flags & NSEventModifierFlagOption) > 0) { newFlags |= optionKey; }
-    if ((flags & NSEventModifierFlagCapsLock) > 0) { newFlags |= alphaLock; }
+    if ((flags & NSControlKeyMask) > 0) { newFlags |= controlKey; }
+    if ((flags & NSCommandKeyMask) > 0) { newFlags |= cmdKey; }
+    if ((flags & NSShiftKeyMask) > 0) { newFlags |= shiftKey; }
+    if ((flags & NSAlternateKeyMask) > 0) { newFlags |= optionKey; }
+    if ((flags & NSAlphaShiftKeyMask) > 0) { newFlags |= alphaLock; }
     return newFlags;
 }

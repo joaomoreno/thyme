@@ -35,6 +35,10 @@
     //[self.okButton bind:NSValueBinding toObject:defaults withKeyPath:@"values.askForTagOnFinishButton" options:nil];
 }
 
+- (void)onWindowResignKey {
+    [self.window close];
+}
+
 #pragma mark SRRecorderControlDelegate
 
 @end
